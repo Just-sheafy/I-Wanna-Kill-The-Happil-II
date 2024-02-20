@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, -1, x, y, image_xscale, image_yscale, image_angle, make_color_rgb(Hamjung03D1.r, Hamjung03D1.g, Hamjung03D1.b), image_alpha);

@@ -1,0 +1,11 @@
+var zx = instance_create_depth(x, y, -4, fruit);
+zx.sprite_index = sprFruitC;
+zx.direction = random_range(120, 240);
+zx.speed = 8;
+zx.as = 1;
+zx = instance_create_depth(x, y, -4, fruit);
+zx.sprite_index = sprFruitC;
+zx.direction = random_range(120, 240);
+zx.speed = 8;
+zx.as = -1;
+alarm[0] = 6;

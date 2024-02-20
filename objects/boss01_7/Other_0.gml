@@ -1,0 +1,1 @@
+if dest {instance_destroy();}

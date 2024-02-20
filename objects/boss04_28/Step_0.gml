@@ -1,0 +1,1 @@
+image_angle += -sign(vspeed)*(2*image_index-1);

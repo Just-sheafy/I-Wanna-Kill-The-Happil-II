@@ -1,0 +1,1 @@
+if !world.items[0] or !world.BH_ok {visible = false;}

@@ -1,0 +1,1 @@
+if (vspeed != 0 and place_meeting(x, y+vspeed, block)) vspeed = 0;

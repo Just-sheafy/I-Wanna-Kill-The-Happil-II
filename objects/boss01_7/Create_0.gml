@@ -1,0 +1,11 @@
+image_speed = 1/10;
+dest = 0;
+vspeed = 8;
+alarm[0] = 4;
+alarm[1] = 32;
+alarm[2] = 360;
+var zx = instance_create_depth(x, y, -10, Boss01_n);
+zx.image_index = 2;
+zx.sid = id;
+zx.image_alpha = 1;
+zx.a = -1;

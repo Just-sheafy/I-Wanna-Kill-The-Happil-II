@@ -1,0 +1,21 @@
+vspeed = 30;
+friction = 0.6;
+audio_play_sound(snd03_1, 0, false);
+alarm[0] = 50;
+nothit = true;
+canhit = true;
+patt = 0;
+pat = 0;
+a = 0;
+b = 0;
+d = 0;
+h = 0;
+oy = 0;
+key = world.jumpKey;
+press = 0;
+broken = false;
+
+spr_before = sprPlayerIdle;
+img_before = 0;
+player_x = 0;
+player_y = 0;

@@ -1,0 +1,1 @@
+if !instance_exists(player) {instance_destroy();}

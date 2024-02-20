@@ -1,0 +1,1 @@
+if x >= room_width+32 and hspeed > 0 {instance_destroy();}

@@ -1,0 +1,1 @@
+if place_meeting(x, y+1, block) {vspeed = -abs(vspeed); y += vspeed;}

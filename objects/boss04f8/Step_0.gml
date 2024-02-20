@@ -1,0 +1,1 @@
+if (!instance_exists(player)) alarm[1] = 0;

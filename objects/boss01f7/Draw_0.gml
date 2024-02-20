@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, make_color_rgb(127+50*sin(degtorad(d)), 127+50*sin(degtorad(d)), 127+50*sin(degtorad(d))), image_alpha);

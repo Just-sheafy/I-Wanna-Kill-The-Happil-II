@@ -1,0 +1,1 @@
+alarm[0] = irandom_range(3, 9);

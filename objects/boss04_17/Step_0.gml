@@ -1,0 +1,1 @@
+if (recover < 100) recover += 1;

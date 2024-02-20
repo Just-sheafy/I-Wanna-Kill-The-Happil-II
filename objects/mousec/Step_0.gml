@@ -1,0 +1,1 @@
+if world.items[1] {instance_destroy();}

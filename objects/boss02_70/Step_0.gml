@@ -1,0 +1,1 @@
+if !instance_exists(player) and a {if !world.achieve[23] {world.achieve[23] = 1;}}

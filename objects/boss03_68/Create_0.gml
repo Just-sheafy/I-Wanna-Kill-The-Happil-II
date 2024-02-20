@@ -1,0 +1,10 @@
+k = 0;
+oy = y;
+vy = 0;
+gra = 0;
+var zx = instance_create_depth(x, y, -10, Boss03_n);
+zx.image_index = 22;
+zx.sid = id;
+audio_play_sound(sndVJump, 0, false);
+alarm[0] = 4;
+patt = 0;

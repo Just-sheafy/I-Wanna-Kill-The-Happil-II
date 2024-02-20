@@ -1,0 +1,1 @@
+instance_create_depth(x, y-24, -5, Boss02_35);

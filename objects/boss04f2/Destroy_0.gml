@@ -1,0 +1,1 @@
+if (ds_exists(fruit_list, ds_type_list)) ds_list_destroy(fruit_list);

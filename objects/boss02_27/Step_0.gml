@@ -1,0 +1,1 @@
+if !qwer {image_angle += 15;}

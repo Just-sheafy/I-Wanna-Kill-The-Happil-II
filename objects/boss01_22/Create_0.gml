@@ -1,0 +1,12 @@
+audio_play_sound(snd01_1, 0, false);
+image_xscale = 2;
+image_yscale = 2;
+vspeed = -10;
+gravity = 0.1;
+var zx = instance_create_depth(x-16, y+124, -10, Boss01_n);
+zx.image_index = 14;
+zx.sid = id;
+zx.image_alpha = 1;
+zx.a = -1;
+zx.ox = -16;
+zx.oy = 124;

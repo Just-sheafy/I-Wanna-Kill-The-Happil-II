@@ -1,0 +1,1 @@
+if !instance_exists(Hamjung02Bs3) {b = 1;}

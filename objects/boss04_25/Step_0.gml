@@ -1,0 +1,1 @@
+if ((y < -64 and vspeed < 0) or (y > room_height + 64 and vspeed > 0)) instance_destroy();

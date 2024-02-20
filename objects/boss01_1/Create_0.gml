@@ -1,0 +1,15 @@
+image_speed = 1/5;
+vspeed = 16;
+alarm[0] = 14;
+patt = 0;
+ang = 0;
+audio_play_sound(sndWarning1, 0, false);
+instance_create_depth(0, 0, -8, Boss01_h);
+canhit = 1;
+nothit = 0;
+var zx = instance_create_depth(x, y, -10, Boss01_n);
+zx.sid = id;
+zx.ox = -91;
+zx.oy = -32;
+zx.image_alpha = 1;
+zx.a = -1;

@@ -1,0 +1,1 @@
+if a and !place_meeting(x, y, player) {a = false;}

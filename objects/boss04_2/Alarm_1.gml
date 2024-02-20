@@ -1,0 +1,65 @@
+// guided koopa
+
+var temp, zx, l;
+
+if (patt == 0) {
+    xx = room_width/2-50;
+    yy = room_height/2;
+    angle = 270 - 45;
+    if (instance_exists(player)) {
+        if (player.Gravity) angle = 270 - 45;
+        else angle = 90 - 45;
+    }
+    type = 1;
+    patt += 1;
+    alarm[1] = 50;
+} else if (patt == 1) {
+    temp = instance_create_depth(x, y, -1, Boss04_6);
+    temp.alarm[0] = irandom_range(450, 550);
+    temp.vspeed = -4;
+    temp.gravity_direction = 270;
+    if (instance_exists(player)) {
+        if (!player.Gravity) {temp.vspeed = 4; temp.gravity_direction = 90; temp.image_angle = 180;}
+    }
+    audio_play_sound(snd02_2, 0, false);
+    
+    zx = instance_create_depth(0, 0, 0, view_an2);
+    zx.asdf = 8;
+    
+    patt += 1;
+    alarm[1] = 80;
+} else if (patt == 2) {
+    angle = 0;
+    xx = random_range(192-32, 192+32);
+    yy = random_range(288-32, 288+32);
+    
+    patt += 1;
+    alarm[1] = 50;
+} else {
+    patt = 0;
+    type = -1;
+    
+    l = ds_list_create();
+    ds_list_add(l, 0);
+    ds_list_add(l, 1);
+    ds_list_add(l, 2);
+    ds_list_add(l, 3);
+    ds_list_add(l, 4);
+    ds_list_add(l, 5);
+    ds_list_add(l, 6);
+    ds_list_delete(l, 1);
+    if (Boss04_1.reverse_next) {
+        ds_list_delete_element(l, 0);
+        ds_list_delete_element(l, 4);
+        ds_list_delete_element(l, 6);
+    }
+    if (!can_thwomp or (instance_exists(Boss04_h2) and Boss04_h.hp < Boss04_h2.hp)) ds_list_delete_element(l, 6);
+    
+    ds_list_shuffle(l);
+    if (instance_exists(player)) alarm[ds_list_find_value(l, 0)] = irandom_range(50, 100);
+    if (ds_list_find_value(l, 0) == 6) {
+        with(Boss04_3) can_thwomp = false;
+    }
+    
+    ds_list_destroy(l);
+}

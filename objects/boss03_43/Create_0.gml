@@ -1,0 +1,13 @@
+speed = point_distance(x, y, 400, 272)/45;
+direction = point_direction(x, y, 400, 272);
+friction = speed/91;
+var zx = instance_create_depth(x, y, -10, Boss03_n);
+zx.image_index = 14;
+zx.sid = id;
+zx.image_alpha = 1;
+zx.a = -1;
+patt = 0;
+pat = 0;
+a = 0;
+s = 0;
+alarm[0] = 60;

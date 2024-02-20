@@ -1,0 +1,2 @@
+ox += hspeed;
+oy += vspeed;

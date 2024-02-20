@@ -1,0 +1,10 @@
+oy = y;
+d = 0;
+image_xscale = 0;
+image_yscale = 4;
+var zx = instance_create_depth(x, y, -10, Boss03_n);
+zx.image_index = 17;
+zx.sid = id;
+zx.ox = -110;
+alarm[0] = 100;
+a = 0;

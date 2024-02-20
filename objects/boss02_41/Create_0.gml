@@ -1,0 +1,12 @@
+canhit = 1;
+image_alpha = 0.05;
+instance_create_depth(0, 0, -8, Boss02_h5);
+asdf = 0;
+oy = y;
+d = 0;
+alarm[0] = 16;
+alarm[1] = 16;
+alarm[2] = 120;
+var zx = instance_create_depth(x, y, -10, Boss02_n);
+zx.image_index = 10;
+zx.sid = id;

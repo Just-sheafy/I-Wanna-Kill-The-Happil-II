@@ -1,0 +1,1 @@
+if !instance_exists(player) {instance_destroy(); with(dark1) {instance_destroy();}}

@@ -1,0 +1,1 @@
+if y >= room_height+100 and vspeed > 0 {instance_destroy();}

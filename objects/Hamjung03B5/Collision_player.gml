@@ -1,0 +1,1 @@
+if a {world.achieve[25] = true; a = false;}

@@ -1,0 +1,1 @@
+if y < -600 and vspeed < 0 {instance_destroy();}

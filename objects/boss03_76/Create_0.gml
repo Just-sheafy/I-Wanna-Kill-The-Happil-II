@@ -1,0 +1,1 @@
+sprite_index = choose(sprBoss03_69, sprBoss03_70, sprBoss03_71);

@@ -1,0 +1,14 @@
+asdf = 44;
+alarm[0] = 60;
+alarm[1] = 2;
+alarm[2] = 30;
+alarm[3] = 240;
+alarm[4] = 540;
+alarm[5] = 960;
+alarm[6] = 1440;
+alarm[7] = 840;
+x = random(736)+32;
+y = random(544)+32;
+ox = x;
+oy = y;
+a = 0;

@@ -1,0 +1,10 @@
+var zx = instance_create_depth(x, y, -10, Boss03_n);
+zx.image_index = 24;
+zx.sid = id;
+zx.ox = -110;
+vspeed = 12;
+friction = 0.25;
+d = 0;
+alarm[0] = 45;
+alarm[1] = 450;
+audio_play_sound(snd03_29, 0, false);

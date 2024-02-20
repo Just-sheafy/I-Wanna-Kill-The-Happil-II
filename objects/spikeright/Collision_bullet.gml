@@ -1,0 +1,1 @@
+if asdf {other.hspeed = 0; other.vspeed = -16;}

@@ -1,0 +1,9 @@
+image_index = 1;
+image_speed = 0;
+image_xscale = 2;
+image_yscale = 2;
+direction = point_direction(x, y, 400, 224);
+speed = point_distance(x, y, 400, 224)/10;
+friction = point_distance(x, y, 400, 224)/200;
+ang = 0;
+alarm[0] = 50;

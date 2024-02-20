@@ -1,0 +1,1 @@
+if ang {instance_destroy();}

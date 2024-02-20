@@ -1,0 +1,9 @@
+alarm[0] = 4;
+hspeed = 4;
+oy = y;
+d = 0;
+var zx = instance_create_depth(x, y, -10, Boss03_n);
+zx.image_index = 7;
+zx.sid = id;
+zx.image_alpha = 1;
+zx.a = -1;

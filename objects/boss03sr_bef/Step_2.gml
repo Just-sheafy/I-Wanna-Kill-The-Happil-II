@@ -1,0 +1,1 @@
+with(player) { reset_jumps(); }

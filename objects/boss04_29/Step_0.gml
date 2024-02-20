@@ -1,0 +1,1 @@
+if (!asdf) image_angle += 3*(1-2*image_index);

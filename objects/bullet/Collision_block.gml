@@ -1,0 +1,1 @@
+if (other.hateBullet) instance_destroy();

@@ -1,0 +1,1 @@
+if x <= -32 and hspeed < 0 {instance_destroy();}

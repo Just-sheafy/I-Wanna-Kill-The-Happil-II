@@ -1,0 +1,1 @@
+if !instance_exists(view_an2) {instance_destroy();}

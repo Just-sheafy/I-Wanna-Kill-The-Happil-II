@@ -1,0 +1,1 @@
+if x >= room_width+350 {instance_destroy();}

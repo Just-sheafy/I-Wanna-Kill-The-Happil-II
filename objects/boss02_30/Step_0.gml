@@ -1,0 +1,1 @@
+if y >= 640 and !a {visible = false; gravity = 0; speed = 0; a = 1; alarm[0] = 15+irandom(45);}

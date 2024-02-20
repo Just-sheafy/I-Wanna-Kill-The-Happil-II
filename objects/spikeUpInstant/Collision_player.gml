@@ -1,0 +1,1 @@
+with(other) kill_player(true);

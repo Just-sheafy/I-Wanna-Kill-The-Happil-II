@@ -1,0 +1,1 @@
+if y < 528 {vspeed = 8;} else {y = 528; vspeed = 0;}
