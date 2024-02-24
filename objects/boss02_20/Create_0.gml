@@ -1,4 +1,4 @@
-audio_play_sound(snd02_12, 0, false);
+audio_play_sound(snd02_12, 0, false, world.sound_vol);
 image_alpha = 0.1;
 vs = -4;
 alarm[0] = 65;

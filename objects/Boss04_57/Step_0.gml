@@ -21,8 +21,8 @@ if (key_time <= 0) {
 	
 	if (num >= key_restricted) {
 		key_time = 200;
-		audio_play_sound(snd04_44, 0, false);
-		audio_play_sound(snd04_45, 0, false);
+		audio_play_sound(snd04_44, 0, false, world.sound_vol);
+		audio_play_sound(snd04_45, 0, false, world.sound_vol);
 		
 		if (world.items[3]) instance_create_depth(400, room_height + 300, -50, Boss04_58);
 		

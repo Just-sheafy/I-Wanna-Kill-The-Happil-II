@@ -1,6 +1,6 @@
 if (!revive) {
     instance_destroy();
-    audio_play_sound(sndDeath, 0, false);
+    audio_play_sound(sndDeath, 0, false, world.sound_vol);
     instance_create_depth(x, y, -1, Boss03Sr_12);
 } else {
     instance_destroy();

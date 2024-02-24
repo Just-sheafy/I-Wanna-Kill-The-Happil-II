@@ -1,7 +1,7 @@
 if (!player.Gravity or player.GravityH) {
     player.Gravity = true;
     player.GravityH = false;
-    audio_play_sound(sndVJump, 0, false);
+    audio_play_sound(sndVJump, 0, false, world.sound_vol);
 }
 if (room != Stage02K and room != Stage04G) world.warn = 0;
 with(player) io_clear();

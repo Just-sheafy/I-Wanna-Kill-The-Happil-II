@@ -4,7 +4,7 @@ if (patt == 0) {
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 15;
     
-    audio_play_sound(snd04_3, 0, false);
+    audio_play_sound(snd04_3, 0, false, world.sound_vol);
     
     xxx = xx - room_width/2;
     yyy = yy - room_height/2;
@@ -14,7 +14,7 @@ if (patt == 0) {
     patt += 1;
     alarm[2] = 45;
 } else if (patt == 1) {
-    audio_play_sound(snd04_23, 0, false);
+    audio_play_sound(snd04_23, 0, false, world.sound_vol);
     instance_create_depth(400, 304, 8, Boss04_19);
     
     patt += 1;
@@ -41,7 +41,7 @@ if (patt == 0) {
 	with(playerHealth) {not_check = true;}
 	
 	if (world.items[0] && world.BH_ok) {
-		audio_play_sound(sndBlockFall, 0, false);
+		audio_play_sound(sndBlockFall, 0, false, world.sound_vol);
 		with(Boss04_h) {
 			sprite_index = sprBoss04_h3;
 			var temp = instance_create_depth(x+219, y, 9, Boss04_52);
@@ -68,7 +68,7 @@ if (patt == 0) {
     if (next_avoidance == 1) {
         zx = instance_create_depth(0, 0, 0, soundEx);
         zx.M1 = world.Instance;
-        zx.M2 = audio_play_sound(global.contrary, 10, false);
+        zx.M2 = audio_play_sound(global.contrary, 10, false, world.sound_vol);
         zx.nope = 1;
         zx.arck = 0;
 		world.Instance = zx.M1;
@@ -76,7 +76,7 @@ if (patt == 0) {
     } else {
         zx = instance_create_depth(0, 0, 0, soundEx);
         zx.M1 = world.Instance;
-        zx.M2 = audio_play_sound(global.catastrophe, 10, false);
+        zx.M2 = audio_play_sound(global.catastrophe, 10, false, world.sound_vol);
         zx.nope = 1;
         zx.arck = 0;
 		world.Instance = zx.M1;

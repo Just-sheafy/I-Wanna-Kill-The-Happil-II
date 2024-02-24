@@ -9,6 +9,6 @@ if (room != initRoom and room != beforeRoom and room != startRoom and room != lo
     if(!instance_exists(objPause)){
 		var cam = view_camera[0];
         instance_create_depth(camera_get_view_x(cam),camera_get_view_y(cam),-1200,objPause);
-		audio_play_sound(sndPaused, 0, false);
+		audio_play_sound(sndPaused, 0, false, world.sound_vol);
     }
 }

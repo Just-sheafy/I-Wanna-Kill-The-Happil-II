@@ -16,7 +16,7 @@ if (patt == 0) {
     with(objCl1) a = 2;
     with(objCl2) a = 2;
     with(objCl3) stop = true;
-    Instance = audio_play_sound(snd04_1, 0, false);
+    Instance = audio_play_sound(snd04_1, 0, false, world.sound_vol);
     
     if (instance_exists(player)) {
         player.frozen = true;
@@ -34,7 +34,7 @@ if (patt == 0) {
     alarm[0] = 80;
 } else if (patt == 3) {
     audio_stop_sound(Instance);
-    Instance = audio_play_sound(snd04_2, 0, true);
+    Instance = audio_play_sound(snd04_2, 0, true, world.sound_vol);
     
     patt += 1;
     alarm[0] = 150;
@@ -55,7 +55,7 @@ if (patt == 0) {
 			audio_stop_sound(Instance);
             filePlaying = 18;
             curMusic = global.stage04Bs1;
-            Instance = audio_play_sound(curMusic, 10, true);
+            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
         }
     }
 	

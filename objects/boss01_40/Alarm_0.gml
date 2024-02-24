@@ -20,7 +20,7 @@ if (patt < 3) {
         zx.gravity_direction = -60+120/3*i+zx.direction+random(120/3);
         zx.gravity = random_range(0, 0.15);
     }
-    audio_play_sound(sndShoot, 0, false);
+    audio_play_sound(sndShoot, 0, false, world.sound_vol);
     patt = 0;
     if (!patt_end) alarm[0] = 4;
 }

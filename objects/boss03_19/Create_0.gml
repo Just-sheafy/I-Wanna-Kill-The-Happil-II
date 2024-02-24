@@ -5,7 +5,7 @@ gravity = 0.4;
 alarm[0] = 4;
 alarm[1] = 3;
 a = 0;
-audio_play_sound(snd03_10, 0, false);
+audio_play_sound(snd03_10, 0, false, world.sound_vol);
 var zx = instance_create_depth(x, y, -10, Boss03_n);
 zx.image_index = 3;
 zx.sid = id;

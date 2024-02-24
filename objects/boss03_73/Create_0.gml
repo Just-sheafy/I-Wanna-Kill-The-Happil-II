@@ -7,4 +7,4 @@ friction = 0.25;
 d = 0;
 alarm[0] = 45;
 alarm[1] = 450;
-audio_play_sound(snd03_29, 0, false);
+audio_play_sound(snd03_29, 0, false, world.sound_vol);

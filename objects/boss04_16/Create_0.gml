@@ -8,4 +8,4 @@ rot = 0;
 image_speed = 1/12;
 patt = 0;
 alarm[0] = 12;
-audio_play_sound(sndSwitch, 0, false);
+audio_play_sound(sndSwitch, 0, false, world.sound_vol);

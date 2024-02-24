@@ -10,7 +10,7 @@ if (file_exists("SaveMusicTemp.dat")) {
     if (file_exists("SaveMusic.dat")) {
 		fin = file_bin_open("SaveMusic.dat", 0);
         
-		Instance = audio_play_sound(file_bin_read_byte(fin), 10, true);
+		Instance = audio_play_sound(file_bin_read_byte(fin), 10, true, music_vol);
 		audio_sound_set_track_position(Instance, file_bin_read_byte(fin));
         
         file_bin_close(fin);

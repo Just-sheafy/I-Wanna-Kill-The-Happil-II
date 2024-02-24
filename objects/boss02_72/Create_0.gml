@@ -1,7 +1,7 @@
 image_speed = 0;
 vspeed = -11;
 gravity = 0.2;
-audio_play_sound(snd02_30, 0, false);
+audio_play_sound(snd02_30, 0, false, world.sound_vol);
 
 var zx = instance_create_depth(x, y+70, -10, Boss02_n);
 zx.image_index = 3;

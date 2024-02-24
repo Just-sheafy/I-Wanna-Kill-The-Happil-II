@@ -2,7 +2,7 @@ var temp;
 
 if (ds_exists(list_x, ds_type_list)) {
 	if (ds_list_size(list_x) > 0) {
-		audio_play_sound(sndSr01_5, 0, false);
+		audio_play_sound(sndSr01_5, 0, false, world.sound_vol);
 	
 		temp = instance_create_depth(ds_list_find_value(list_x, 0)+16, -32, depth, Boss01Sr_7);
 		temp.image_angle = 90;

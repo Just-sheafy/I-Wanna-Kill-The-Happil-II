@@ -5,14 +5,14 @@ if (!instance_exists(player)) {
 patt += 1;
 if (patt >= 250 and patt <= 550) {
     if (patt == 250) {
-		Instance = audio_play_sound(global.Clear2, 10, false);
+		Instance = audio_play_sound(global.Clear2, 10, false, world.music_vol);
 		player.depth = depth - 1;
 		alarm[0] = 18;
 	}
 	if (patt == 438) alarm[1] = 18;
     radius = 1200 - 3.5*(patt-250);
 } else if (patt >= 650 and patt <= 700) {
-    if (patt == 650) Instance = audio_play_sound(sndClear, 0, false);
+    if (patt == 650) Instance = audio_play_sound(sndClear, 0, false, world.sound_vol);
     radius = 150 - 3*(patt-650);
 } else if (patt == 750) {
     switch(room) {

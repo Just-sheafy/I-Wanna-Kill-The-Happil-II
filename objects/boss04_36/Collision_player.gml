@@ -7,7 +7,7 @@ else if world.kill {
 	with(surf_lens) { not_recover = true; }
 	with(Boss04_54) { sid = Boss04_36; length = point_distance(Boss04_36.x, Boss04_36.y, x, y);
 		angle = point_direction(Boss04_36.x, Boss04_36.y, x, y); image_angle = angle + 90; }
-	audio_play_sound(snd04_43, 0, false);
+	audio_play_sound(snd04_43, 0, false, world.sound_vol);
 	
 	world.deaths[0]++;
 	with(world) {saveDeaths();}

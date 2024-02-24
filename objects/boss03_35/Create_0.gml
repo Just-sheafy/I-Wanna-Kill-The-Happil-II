@@ -6,7 +6,7 @@ gravity_direction = 180;
 gravity = 0.4;
 alarm[0] = 11;
 alarm[11] = 2;
-audio_play_sound(snd03_9, 0, false);
+audio_play_sound(snd03_9, 0, false, world.sound_vol);
 var zx = instance_create_depth(x, y, -10, Boss03_n);
 zx.image_index = 9;
 zx.sid = id;

@@ -7,10 +7,10 @@ if patt == 0 {
 		zx.a = 0;
 		zx.noise = 30;
 		zx.noise_dec = 0.5;
-		audio_play_sound(snd02_31, 0, false);
+		audio_play_sound(snd02_31, 0, false, world.sound_vol);
 	}
 	
-    audio_play_sound(snd02_4, 0, false);
+    audio_play_sound(snd02_4, 0, false, world.sound_vol);
 	zx = instance_create_depth(0, 0, -100, dark1);
 	zx.alpha_dec = 0.02;
     zx = instance_create_depth(400, 352, -2, Boss02_4);
@@ -65,7 +65,7 @@ if patt == 0 {
 ////////////////////////////////////////////////////////////////////
 else if patt == 2 {
     instance_create_depth(0, 0, -100, light);
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     zx = instance_create_depth(0, 0, 0, view_an2);
@@ -99,7 +99,7 @@ else if patt == 5 {
         zx = instance_create_depth(576, 80, -1, Boss02_36);
         zx.ox = zx.x; zx.oy = zx.y;
     }
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     zx = instance_create_depth(0, 0, 0, view_an2);
@@ -137,7 +137,7 @@ else if patt == 8 {
         zx = instance_create_depth(576, 80, -1, Boss02_36);
         zx.ox = zx.x; zx.oy = zx.y;
     }
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     zx = instance_create_depth(0, 0, 0, view_an2);

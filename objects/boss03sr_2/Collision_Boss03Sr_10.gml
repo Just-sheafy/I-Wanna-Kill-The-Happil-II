@@ -1,6 +1,6 @@
 if nodie {exit;}
 audio_stop_sound(sndSr03_3);
-audio_play_sound(sndSr03_3, 0, false);
+audio_play_sound(sndSr03_3, 0, false, world.sound_vol);
 instance_destroy();
 var zx = instance_create_depth(x, y, -5, Explo1);
 zx.image_xscale = 1/2;

@@ -1,4 +1,4 @@
-audio_play_sound(snd01_4, 0, false);
+audio_play_sound(snd01_4, 0, false, world.sound_vol);
 instance_create_depth(0, 0, -100, light);
 instance_destroy();
 

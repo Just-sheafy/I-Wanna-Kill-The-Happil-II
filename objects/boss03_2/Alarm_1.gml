@@ -2,7 +2,7 @@ var zx;
 
 if c < 10 {
     if c == 0 {
-		audio_play_sound(snd03_22, 0, false);
+		audio_play_sound(snd03_22, 0, false, world.sound_vol);
 		zx = instance_create_depth(0, 0, 0, view_an3);
 		zx.asdf = 20;
 	}

@@ -15,7 +15,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = -0.5;
 	            curMusic = global.None;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case beforeRoom:
@@ -24,7 +24,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 0;
 	            curMusic = global.title;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case loadRoom:
@@ -33,7 +33,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 0.25;
 	            curMusic = global.Option;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage01Hd:
@@ -43,7 +43,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 0.5;
 	            curMusic = global.stageItem;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage04Hd:
@@ -51,7 +51,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 0.75;
 	            curMusic = global.stageItem2;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage01A:
@@ -67,7 +67,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 1;
 	            curMusic = global.stage01A;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage01J:
@@ -75,7 +75,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 1.5;
 	            curMusic = global.stage01B;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage01Bs2:
@@ -83,7 +83,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 3.8;
 	            curMusic = global.phantom;
-	            Instance = audio_play_sound(curMusic, 10, false);
+	            Instance = audio_play_sound(curMusic, 10, false, world.music_vol);
 				audio_sound_set_track_position(Instance, 1.8);
 	        }
 	        break;
@@ -92,7 +92,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 3.5;
 	            curMusic = global.stage01Bs2;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage02A:
@@ -109,7 +109,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 4;
 	            curMusic = global.stage02A;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage02K:
@@ -118,7 +118,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 4.5;
 	            curMusic = global.stage02B;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage02Bs2:
@@ -126,7 +126,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 7;
 	            curMusic = global.stage02Bs2;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage02Bs3:
@@ -134,7 +134,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 7.5;
 	            curMusic = global.stage02Bs3;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage02Bs4:
@@ -142,7 +142,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 6;
 	            curMusic = global.stage02Bs1;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 				audio_sound_set_track_position(Instance, 120.07);
 	        }
 	        break;
@@ -151,7 +151,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 7.8;
 	            curMusic = global.lovetrap;
-	            Instance = audio_play_sound(curMusic, 10, false);
+	            Instance = audio_play_sound(curMusic, 10, false, world.music_vol);
 	        }
 	        break;
 	    case Stage03A:
@@ -169,7 +169,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 8;
 	            curMusic = global.stage03A;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage03L:
@@ -177,7 +177,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 9;
 	            curMusic = global.stage03B;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage03Bs2:
@@ -185,7 +185,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 12;
 	            curMusic = global.mental;
-	            Instance = audio_play_sound(curMusic, 10, false);
+	            Instance = audio_play_sound(curMusic, 10, false, world.music_vol);
 				audio_sound_set_track_position(Instance, 1.6);
 	        }
 	        break;
@@ -194,7 +194,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 13;
 	            curMusic = global.stage03Bs2;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage03Bs4:
@@ -202,7 +202,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 14;
 	            curMusic = global.dotkid;
-	            Instance = audio_play_sound(curMusic, 10, false);
+	            Instance = audio_play_sound(curMusic, 10, false, world.music_vol);
 				audio_sound_set_track_position(Instance, 1.5);
 	        }
 	        break;
@@ -211,7 +211,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 15;
 	            curMusic = global.stage03Bs3;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage04A:
@@ -230,7 +230,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 16;
 	            curMusic = global.stage04A;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage04M:
@@ -238,7 +238,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 17;
 	            curMusic = global.stage04B;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage04Bs2:
@@ -246,7 +246,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 19;
 	            curMusic = global.contrary;
-	            Instance = audio_play_sound(curMusic, 10, false);
+	            Instance = audio_play_sound(curMusic, 10, false, world.music_vol);
 				audio_sound_set_track_position(Instance, 0.7);
 	        }
 	        break;
@@ -255,7 +255,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 20;
 	            curMusic = global.catastrophe;
-	            Instance = audio_play_sound(curMusic, 10, false);
+	            Instance = audio_play_sound(curMusic, 10, false, world.music_vol);
 				audio_sound_set_track_position(Instance, 0.7);
 	        }
 	        break;
@@ -264,7 +264,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 21;
 	            curMusic = global.stage04Bs2;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage04Bs5:
@@ -272,7 +272,7 @@ function musicFunctions() {
 				audio_stop_channel(0);
 	            filePlaying = 22;
 	            curMusic = global.stage04Bs3;
-	            Instance = audio_play_sound(curMusic, 10, true);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;
 	    case Stage04Bs6:
@@ -282,7 +282,7 @@ function musicFunctions() {
 						audio_stop_channel(0);
 					    filePlaying = 24;
 					    curMusic = global.stage04Bs4;
-					    Instance = audio_play_sound(curMusic, 10, true);
+					    Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 					}
 				}
 			} else {
@@ -290,7 +290,7 @@ function musicFunctions() {
 					audio_stop_channel(0);
 		            filePlaying = -1;
 		            curMusic = global.Silent;
-		            Instance = audio_play_sound(curMusic, 10, true);
+		            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 		        }
 			}
 	        break;

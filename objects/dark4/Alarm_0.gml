@@ -1,6 +1,6 @@
 if a < 5 {
     if image_alpha < 1 {image_alpha += 0.2;}
-    if a == 0 {Instance = audio_play_sound(global.Clear, 10, false);}
+    if a == 0 {Instance = audio_play_sound(global.Clear, 10, false, world.music_vol);}
     a += 1;
     alarm[0] = 18;
 } else if a == 5 {

@@ -1,7 +1,7 @@
 var zx;
 
 if (patt <= 5) {
-	audio_play_sound(sndSwitch, 0, false);
+	audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 12;
 } else if (patt <= 13) {
@@ -9,7 +9,7 @@ if (patt <= 5) {
         image_angle = 0; image_speed = 1/4;
         speed = 0; gravity = 0; gravity_direction = 270;
     }
-	audio_play_sound(sndSwitch, 0, false);
+	audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 4;
 } else if (patt == 14) {
@@ -76,7 +76,7 @@ if (patt <= 5) {
         spike4.gravity_direction = 315+180;
     }
     
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 15;
     

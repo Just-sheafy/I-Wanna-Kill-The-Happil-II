@@ -7,7 +7,7 @@ if (patt == 0) {
 	patt += 1;
 	alarm[3] = 50;
 } else {
-	audio_play_sound(sndSr01_7, 0, false);
+	audio_play_sound(sndSr01_7, 0, false, world.sound_vol);
 	
 	patt = 0;
 	temp = instance_create_depth(x, y, depth, Boss01Sr_8);

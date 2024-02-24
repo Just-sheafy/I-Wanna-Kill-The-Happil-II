@@ -4,7 +4,7 @@ with(world) {music_speed = 0;}
 with(soundEx) {if (world.Instance != M1) audio_stop_sound(M1); if (world.Instance != M2) audio_stop_sound(M2);}
 with(soundEx2) {if (world.Instance != M1) audio_stop_sound(M1); if (world.Instance != M2) audio_stop_sound(M2);}
 
-world.Kill = audio_play_sound(global.Sdeath, 5, false); audio_play_sound(sndDeath, 0, false);
+world.Kill = audio_play_sound(global.Sdeath, 5, false, world.sound_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);
 world.filePlaying = -1; //For music purposes
 
 bsq = instance_create_layer(x, y, "Player", bloodSquirt);

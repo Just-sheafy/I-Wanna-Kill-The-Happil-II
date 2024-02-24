@@ -12,7 +12,7 @@ if instance_exists(player) {
         if (!player.Gravity or player.GravityH) {
             player.GravityH = false;
             player.Gravity = true;
-            audio_play_sound(sndVJump, 0, false);
+            audio_play_sound(sndVJump, 0, false, world.sound_vol);
         }
         switch(room) {
             case Stage01Hd: room_goto(Stage01J);

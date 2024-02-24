@@ -1,7 +1,7 @@
 if (room == Stage04Bs6) {
 	instance_destroy();
 	with(objEndCredit) {
-		audio_play_sound(sndBossHit, 0, false);
+		audio_play_sound(sndBossHit, 0, false, world.sound_vol);
 		t = max(t_bound, t-20*t_spd);
 		if (number_hit >= 0) number_hit = min(8, number_hit+1);
 		else ALPHA = 0.5;

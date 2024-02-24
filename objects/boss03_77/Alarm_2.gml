@@ -10,6 +10,6 @@ instance_create_depth(0, 0, -100, light);
 zx = instance_create_depth(0, 0, 0, view_an3);
 zx.asdf = 30;
 vspeed = 10;
-audio_play_sound(sndExplo, 0, false);
+audio_play_sound(sndExplo, 0, false, world.sound_vol);
 
 alarm[2] = 30;

@@ -63,7 +63,7 @@ if (!ready) {
 	} else if (ready_time == 435) {
 		zx = instance_create_depth(0, 0, 0, view_an3);
 		zx.asdf = 20;
-		audio_play_sound(snd04_20, 0, false);
+		audio_play_sound(snd04_20, 0, false, world.sound_vol);
 		with(Boss01Sr_5) { depth = -5; image_index += 1; vspeed = -12; }
 	} else if (ready_time == 482 && instance_exists(player)) {
 		ready = true;
@@ -112,7 +112,7 @@ if (move >= 1) {
 			
 			scale_AIM = 1;
 			
-			audio_play_sound(snd03_17, 0, false);
+			audio_play_sound(snd03_17, 0, false, world.sound_vol);
 			zx = instance_create_depth(0, 0, 0, view_an1);
 			zx.asdf = 30;
 			
@@ -210,7 +210,7 @@ if (scale == 1) {
 				!goDown(false) && !goLeftHex(false) && !goRightHex(false))) {
 			var xx, yy, __scale = 20/32, __width = 64*__scale, __height = 64*__scale, __round = 2;
 			
-			audio_play_sound(sndBoo, 0, false);
+			audio_play_sound(sndBoo, 0, false, world.sound_vol);
 			with(player) kill_player();
 			
 			xx = __width*0.6;

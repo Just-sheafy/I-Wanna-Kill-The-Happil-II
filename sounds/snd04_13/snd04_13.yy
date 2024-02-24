@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.633333,
+  "duration": 0.120125,
   "parent": {
     "name": "Stage04",
     "path": "folders/Sounds/sound/Boss/Stage04.yy",

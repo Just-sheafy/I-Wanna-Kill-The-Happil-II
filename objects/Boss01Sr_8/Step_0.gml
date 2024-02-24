@@ -16,7 +16,7 @@ if (x <= 100) {
 	hspd = -abs(hspd);
 }
 if (y >= 384 && vspd > 0) {
-	audio_play_sound(sndSr01_1, 0, false);
+	audio_play_sound(sndSr01_1, 0, false, world.sound_vol);
 	y -= abs(vspd);
 	vspd = -10;
 	if (instance_exists(player)) {

@@ -38,7 +38,7 @@ if (patt == 0) {
     shield_id.image_alpha = max(0, shield_id.image_alpha-0.6);
     shield_id.recover = 0;
     
-    audio_play_sound(snd04_10, 0, false);
+    audio_play_sound(snd04_10, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 10;
     
@@ -56,7 +56,7 @@ if (patt == 0) {
     temp = instance_create_depth(x, y, 0, Boss04_26);
     temp.hspeed = -8;
     
-    audio_play_sound(snd01_6, 0, false);
+    audio_play_sound(snd01_6, 0, false, world.sound_vol);
     patt += 1;
     alarm[6] = 80;
 } else if (patt == 4) {
@@ -80,19 +80,22 @@ if (patt == 0) {
     ds_list_add(l, 5);
     ds_list_add(l, 6);
     ds_list_delete(l, 6);
-    if (instance_exists(Boss04_6)) ds_list_delete_element(l, 1);
+    if (!can_koopa or instance_exists(Boss02_8) or instance_exists(Boss04_6)) ds_list_delete_element(l, 1);
+    if (Boss04_1.rush_next) ds_list_delete_element(l, 2);
     if (Boss04_1.reverse_next) {
         ds_list_delete_element(l, 0);
         ds_list_delete_element(l, 4);
         ds_list_delete_element(l, 6);
     }
-    if (!can_thwomp or (instance_exists(Boss04_h2) and Boss04_h.hp < Boss04_h2.hp)) ds_list_delete_element(l, 6);
     
     ds_list_shuffle(l);
     if (instance_exists(player)) alarm[ds_list_find_value(l, 0)] = irandom_range(50, 100);
-    if (ds_list_find_value(l, 0) == 6) {
+    if (ds_list_find_value(l, 0) == 1) {
+		with(Boss04_3) can_koopa = false;
+	} else if (ds_list_find_value(l, 0) == 6) {
         with(Boss04_3) can_thwomp = false;
     }
     
+	can_koopa = true;
     ds_list_destroy(l);
 }

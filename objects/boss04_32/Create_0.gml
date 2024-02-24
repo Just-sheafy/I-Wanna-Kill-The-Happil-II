@@ -14,7 +14,7 @@ Instance = -1;
 
 player_x = 0;
 player_y = 0;
-spr_before = sprPlayerIdle_guy;
+spr_before = sprPlayerIdle;
 img_before = 0;
 
 for(i=0; i<800; i+=1) {

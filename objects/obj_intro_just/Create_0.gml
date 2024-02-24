@@ -15,6 +15,6 @@ with(world) {
 		audio_stop_channel(0);
         filePlaying = 0;
         curMusic = global.title;
-        Instance = audio_play_sound(curMusic, 10, true);
+        Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
     }
 }

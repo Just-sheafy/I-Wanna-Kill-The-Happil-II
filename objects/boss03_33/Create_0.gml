@@ -1,4 +1,4 @@
-audio_play_sound(snd03_16, 0, false);
+audio_play_sound(snd03_16, 0, false, world.sound_vol);
 vspeed = -18;
 gravity = 0.3;
 image_speed = 0;

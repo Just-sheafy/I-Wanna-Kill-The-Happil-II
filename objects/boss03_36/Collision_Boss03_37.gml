@@ -1,7 +1,7 @@
 var i, zx;
 
 if a == 0 {
-    audio_play_sound(snd03_18, 0, false);
+    audio_play_sound(snd03_18, 0, false, world.sound_vol);
     a = 1;
     sprite_index = sprBoss03_31;
     hspeed = -hspeed/3;
@@ -13,7 +13,7 @@ if a == 0 {
     }
 }
 if a == 2 {
-    audio_play_sound(snd03_18, 0, false);
+    audio_play_sound(snd03_18, 0, false, world.sound_vol);
     a = 3;
     sprite_index = sprBoss03_31;
     hspeed = -hspeed/3;

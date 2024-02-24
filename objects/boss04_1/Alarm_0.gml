@@ -12,19 +12,22 @@ if (patt == 0) {
         patt = 8;
         zx = instance_create_depth(0, 0, 0, soundEx2);
         zx.Vol = 0; zx.ang = 0;
-        zx.M1 = audio_play_sound(global.Silent, 10, true);
+        zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
         zx.M2 = world.Instance;
         world.filePlaying = -1;
 		world.Instance = zx.M1;
+		
         with(Boss04_31) active = false;
         alarm[3] = 150;
         exit;
     }
     
+	if (!reverse_next) rush_next = true;
+	
     patt += 1;
     alarm[0] = 30;
 } else if (patt == 1) {
-    audio_play_sound(snd04_3, 0, false);
+    audio_play_sound(snd04_3, 0, false, world.sound_vol);
     
     xxx = xx - room_width/2;
     yyy = yy - room_height/2;
@@ -36,7 +39,7 @@ if (patt == 0) {
         with(Boss04_31) move = false;
         alarm[0] = 20;
     } else {
-		num_reverse += 1;
+		num_reverse = !num_reverse;
         patt = 8;
         // with(Boss04_31) active = false;
         alarm[1] = 50;
@@ -48,7 +51,7 @@ if (patt == 0) {
     patt += 1;
     alarm[0] = 60;
 } else if (patt == 3) {
-    audio_play_sound(snd04_4, 0, false);
+    audio_play_sound(snd04_4, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 90;
 } else if (patt == 4) {
@@ -86,7 +89,7 @@ if (patt == 0) {
         patt = 8;
         zx = instance_create_depth(0, 0, 0, soundEx2);
         zx.Vol = 0; zx.ang = 0;
-        zx.M1 = audio_play_sound(global.Silent, 10, true);
+        zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
         zx.M2 = world.Instance;
         world.filePlaying = -1;
 		world.Instance = zx.M1;
@@ -95,12 +98,13 @@ if (patt == 0) {
     }
     alarm[0] = 150;
 } else if (patt == 6) {
+	rush_next = false;
     reverse_next = !((rush == 0) or (rush == 1 and choose(0, 1)));
 	if (room != Stage04Bs) {
-		if (num_reverse == 0) {
+		if (!num_reverse) {
 			if (num1 > 0) { reverse_next = false; num1 -= 1; }
 			else { reverse_next = true; }
-		} else if (num_reverse == 1) {
+		} else if (num_reverse) {
 			if (num2 > 0) { reverse_next = false; num2 -= 1; }
 			else if (num2 == 0) { reverse_next = true; num2 -= 1; }
 		}
@@ -112,7 +116,7 @@ if (patt == 0) {
         patt = 8;
         zx = instance_create_depth(0, 0, 0, soundEx2);
         zx.Vol = 0; zx.ang = 0;
-        zx.M1 = audio_play_sound(global.Silent, 10, true);
+        zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
         zx.M2 = world.Instance;
         world.filePlaying = -1;
 		world.Instance = zx.M1;

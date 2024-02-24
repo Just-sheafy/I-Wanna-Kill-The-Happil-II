@@ -12,7 +12,7 @@ if ang == 1 {
     if !instance_exists(Boss01_12) {
         ang = 2;
         instance_create_depth(0, 0, -100, light);
-        audio_play_sound(snd01_1, 0, false);
+        audio_play_sound(snd01_1, 0, false, world.sound_vol);
         alarm[1] = 1;
         with(Boss01_11) {arck = 0;}
     }
@@ -21,7 +21,7 @@ if ang == 3 {
     if !instance_exists(Boss01_11) {
         ang = 4;
         instance_create_depth(0, 0, -100, light);
-        audio_play_sound(snd01_1, 0, false);
+        audio_play_sound(snd01_1, 0, false, world.sound_vol);
         alarm[1] = 1;
     }
 }

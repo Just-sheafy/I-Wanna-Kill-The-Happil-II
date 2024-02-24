@@ -28,7 +28,7 @@ if patt == 0 {
     vspeed = 0;
     instance_create_depth(-16, 128, -1, Boss01_4);
     instance_create_depth(816, 128, -1, Boss01_5);
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     patt += 1;
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
@@ -36,7 +36,7 @@ if patt == 0 {
 } else if patt == 2 {
     instance_create_depth(-16, 224, -1, Boss01_4);
     instance_create_depth(816, 224, -1, Boss01_5);
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     patt += 1;
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
@@ -44,7 +44,7 @@ if patt == 0 {
 } else if patt == 3 {
     instance_create_depth(-16, 320, -1, Boss01_4);
     instance_create_depth(816, 320, -1, Boss01_5);
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     patt += 1;
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
@@ -54,7 +54,7 @@ if patt == 0 {
     hspeed = -8;
     instance_create_depth(-16, 128, -1, Boss01_4);
     instance_create_depth(816, 128, -1, Boss01_5);
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     patt += 1;
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
@@ -67,7 +67,7 @@ if patt == 0 {
 } else if patt == 6 {
     instance_create_depth(-16, 224, -1, Boss01_4);
     instance_create_depth(816, 224, -1, Boss01_5);
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     patt += 1;
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
@@ -75,7 +75,7 @@ if patt == 0 {
 } else if patt == 7 {
     hspeed = -8;
     vspeed = 0;
-    audio_play_sound(snd01_1, 0, false);
+    audio_play_sound(snd01_1, 0, false, world.sound_vol);
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
     patt += 1;
@@ -83,7 +83,7 @@ if patt == 0 {
 } else if patt == 8 {
     instance_create_depth(-16, 320, -1, Boss01_4);
     instance_create_depth(816, 320, -1, Boss01_5);
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     patt += 1;
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
@@ -91,7 +91,7 @@ if patt == 0 {
 } else if patt == 9 {
     hspeed = 0;
     vspeed = -16;
-    audio_play_sound(snd01_1, 0, false);
+    audio_play_sound(snd01_1, 0, false, world.sound_vol);
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
     patt += 1;
@@ -125,7 +125,7 @@ if patt == 0 {
     if patt == 18 {alarm[0] += 60;}
 } else if patt == 18 {
     patt = 0;
-    audio_play_sound(snd01_3, 0, false);
+    audio_play_sound(snd01_3, 0, false, world.sound_vol);
     instance_create_depth(-159.2, 224, -2, Boss01_11);
     instance_create_depth(959.2, 224, -2, Boss01_12);
     hspeed = 8;

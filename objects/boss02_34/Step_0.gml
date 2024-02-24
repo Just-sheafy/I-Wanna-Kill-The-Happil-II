@@ -9,6 +9,6 @@ if hp <= 0 {
     var zx = instance_create_depth(0, 0, 0, view_an1);
     zx.asdf = 10;
     instance_create_depth(0, 0, -100, light);
-    audio_play_sound(snd02_14, 0, false);
+    audio_play_sound(snd02_14, 0, false, world.sound_vol);
     instance_destroy();
 }

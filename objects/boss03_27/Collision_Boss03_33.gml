@@ -1,6 +1,6 @@
 var i, zx;
 
-audio_play_sound(sndExplo, 0, false);
+audio_play_sound(sndExplo, 0, false, world.sound_vol);
 instance_destroy();
 instance_create_depth(x, y, -5, Explo2);
 for(i=0; i<30; i+=1) {

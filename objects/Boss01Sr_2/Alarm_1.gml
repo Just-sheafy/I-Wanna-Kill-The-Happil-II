@@ -3,7 +3,7 @@
 var temp;
 
 if (patt == 0) {
-	audio_play_sound(sndSr01_4, 0, false);
+	audio_play_sound(sndSr01_4, 0, false, world.sound_vol);
 	temp = instance_create_depth(x+93, y-66, depth-1, Boss01Sr_7);
 	temp.image_angle = 270;
 	temp.vspeed = -8;

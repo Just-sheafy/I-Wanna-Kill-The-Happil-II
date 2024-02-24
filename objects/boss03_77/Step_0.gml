@@ -33,7 +33,7 @@ if press {
 	        instance_create_depth(0, 0, -100, light);
 	        zx = instance_create_depth(0, 0, 0, view_an3);
 	        zx.asdf = 30;
-	        audio_play_sound(sndExplo, 0, false);
+	        audio_play_sound(sndExplo, 0, false, world.sound_vol);
 		} else {
 			alarm[4] = 0;
 			event_perform(ev_alarm, 4);
@@ -52,7 +52,7 @@ if b != 0 {
     zx.speed = 3;
 	zx.out_anim = true;
     b += 1;
-    if b > 9 {b = 1; audio_play_sound(snd03_3, 0, false);}
+    if b > 9 {b = 1; audio_play_sound(snd03_3, 0, false, world.sound_vol);}
 }
 if y > room_height + 600 and !broken {
     alarm[2] = 0;
@@ -73,5 +73,5 @@ if y > room_height + 600 and !broken {
 		vspeed = -random_range(8, 10); gravity = 0.3;
 		instant = false;
 	}
-    audio_play_sound(sndExplo2, 0, false);
+    audio_play_sound(sndExplo2, 0, false, world.sound_vol);
 }

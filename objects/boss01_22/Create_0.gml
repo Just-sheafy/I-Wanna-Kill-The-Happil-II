@@ -1,4 +1,4 @@
-audio_play_sound(snd01_1, 0, false);
+audio_play_sound(snd01_1, 0, false, world.sound_vol);
 image_xscale = 2;
 image_yscale = 2;
 vspeed = -10;

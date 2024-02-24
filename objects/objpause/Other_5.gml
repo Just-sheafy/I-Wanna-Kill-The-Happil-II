@@ -8,4 +8,4 @@ application_surface_enable(true);
 
 if (audio_is_paused(world.Instance))
 	audio_resume_sound(world.Instance);
-audio_play_sound(sndPaused, 0, false);
+audio_play_sound(sndPaused, 0, false, world.sound_vol);

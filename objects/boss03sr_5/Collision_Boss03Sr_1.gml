@@ -3,7 +3,7 @@ if visible and other.active and !instance_exists(Boss03Sr_11) {
 	
     visible = false;
 	instance_create_depth(x, y, -50, surf_ripple);
-    audio_play_sound(sndBlockChange, 0, false);
+    audio_play_sound(sndBlockChange, 0, false, world.sound_vol);
     for(i=0; i<8; i+=1) {
         zx = instance_create_layer(x, y, "Player", Boss03Sr_6);
         zx.speed = 16;
@@ -12,7 +12,7 @@ if visible and other.active and !instance_exists(Boss03Sr_11) {
     }
     instance_create_depth(0, 0, -100, light);
     with(Boss03Sr_11) {a = 0;}
-    audio_play_sound(sndSr03_4, 0, false);
+    audio_play_sound(sndSr03_4, 0, false, world.sound_vol);
     Boss03Sr_h.hp += 10;
     other.active = false;
     with(other) {

@@ -5,7 +5,7 @@ if image_index == 0 {
 	
     var zx = instance_create_depth(0, 0, -2, Hamjung03F4);
     zx.a = a;
-    audio_play_sound(sndPSwitch, 0, false);
+    audio_play_sound(sndPSwitch, 0, false, world.sound_vol);
     image_index = 1;
     alarm[0] = 50;
 }

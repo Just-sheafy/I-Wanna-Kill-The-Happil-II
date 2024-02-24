@@ -4,17 +4,17 @@ index = (index + 1) mod 32;
 
 if (vspeed >= maxFallSpeed) vspeed = maxFallSpeed;
 if (place_meeting(x, y+1, block)) {
-	if (sprite_index != sprPlayerIdle_guy and sprite_index != sprPlayerRunning_guy) alarm[11] = 20;
-    sprite_index = sprPlayerIdle_guy; image_speed = 1/5;
+	if (sprite_index != sprPlayerIdle and sprite_index != sprPlayerRunning) alarm[11] = 20;
+    sprite_index = sprPlayerIdle; image_speed = 1/5;
     vspeed = 0; gravity = 0;
     while(place_meeting(x, y, block)) y -= 1;
 	
 	if (instance_exists(player)) {
 		if (player.x > x+108) {
-			sprite_index = sprPlayerRunning_guy;
+			sprite_index = sprPlayerRunning;
 			image_xscale = 1; x += 1;
 		} else if (player.x < x-108) {
-			sprite_index = sprPlayerRunning_guy;
+			sprite_index = sprPlayerRunning;
 			image_xscale = -1; x -= 1;
 		}
 	}

@@ -14,4 +14,4 @@ if (shield_id.image_alpha > 0) {
     alarm[11] = 200;
 }
 
-audio_play_sound(sndBossHit, 0, false);
+audio_play_sound(sndBossHit, 0, false, world.sound_vol);

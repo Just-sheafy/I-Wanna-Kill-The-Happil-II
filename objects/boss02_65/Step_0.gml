@@ -5,5 +5,5 @@ if x-48*floor(x/48) == 16 {
     zx.alarm[0] = 0;
     zx.vspeed = -15;
     zx.gravity = 0.3;
-	audio_play_sound(snd02_3, 0, false);
+	audio_play_sound(snd02_3, 0, false, world.sound_vol);
 }

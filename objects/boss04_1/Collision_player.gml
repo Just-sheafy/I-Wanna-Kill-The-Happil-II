@@ -5,7 +5,7 @@ if (abs(zz) <= 10) {
 		if instance_exists(bullet) {with(bullet) instance_destroy();}
 		with(other) { var zx = instance_create_depth(x, y, -11, Boss04_35); zx.image_xscale = image_xscale;
 			zx.image_yscale = image_yscale; zx.Gravity = Gravity; instance_destroy(); }
-		audio_play_sound(snd03_24, 0, false);
+		audio_play_sound(snd03_24, 0, false, world.sound_vol);
 		
 		var xxx = xx - room_width/2;
 	    var yyy = yy - room_height/2;

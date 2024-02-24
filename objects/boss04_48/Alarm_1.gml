@@ -18,4 +18,4 @@ if (image_angle == 0) {
     hspeed = 5;
     gravity_direction = 180;
 }
-audio_play_sound(snd04_40, 0, false);
+audio_play_sound(snd04_40, 0, false, world.sound_vol);

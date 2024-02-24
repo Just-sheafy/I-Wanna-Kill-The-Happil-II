@@ -1,7 +1,7 @@
 var i, zx;
 
 if (patt == 0) {
-	audio_play_sound(snd03_27, 0, false);
+	audio_play_sound(snd03_27, 0, false, world.sound_vol);
 	sprite_index = sprBoss03_1;
 	image_angle = 90;
 	depth = 2;
@@ -23,7 +23,7 @@ if (patt == 0) {
 	if (patt == 1) {
 		zx = instance_create_depth(0, 0, 0, soundEx);
 	    zx.M1 = world.Instance;
-	    zx.M2 = audio_play_sound(global.dotkid, 0, true);
+	    zx.M2 = audio_play_sound(global.dotkid, 0, true, 0);
 	    zx.nope = 1;
 	    zx.arck = 0;
 	    with(world) {filePlaying = 14; curMusic = global.dotkid;}

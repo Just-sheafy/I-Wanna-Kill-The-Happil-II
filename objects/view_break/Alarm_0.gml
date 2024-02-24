@@ -1,1 +1,1 @@
-audio_play_sound(snd04_26, 0, false);
+audio_play_sound(snd04_26, 0, false, world.sound_vol);

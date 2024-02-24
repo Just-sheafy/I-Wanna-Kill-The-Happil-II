@@ -1,5 +1,5 @@
 image_speed = 8/50;
-audio_play_sound(sndSr03_1, 0, false);
+audio_play_sound(sndSr03_1, 0, false, world.sound_vol);
 if Boss03Sr_1.crazy {speed = 8;} else {speed = 4;}
 direction = choose(0, 90, 180, 270);
 if Boss03Sr_1.crazy {alarm[0] = 4;} else {alarm[0] = 8;}

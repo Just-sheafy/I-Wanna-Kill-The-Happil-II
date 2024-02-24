@@ -55,14 +55,14 @@ if (room == Stage02Bs4) {
 		patt = -6;
 		alarm[3] = 1;
 		
-        audio_play_sound(snd02_14, 0, false);
+        audio_play_sound(snd02_14, 0, false, world.sound_vol);
         instance_create_depth(0, 0, -100, light);
         zx = instance_create_depth(0, 0, 0, view_an2);
         zx.asdf = 16;
         
         zx = instance_create_depth(0, 0, 0, soundEx2);
         zx.M2 = world.Instance;
-        zx.M1 = audio_play_sound(global.stage02Bs1, 10, true);
+        zx.M1 = audio_play_sound(global.stage02Bs1, 10, true, world.music_vol);
         zx.Vol = 0;
         zx.ang = 0;
         audio_sound_set_track_position(zx.M1, 120.070);

@@ -125,7 +125,7 @@ if (!frozen) {
 		            vspd = (on_vineR) ? 15 : -15;
 		            hspd = -9 * (2*Gravity-1);
 		            sprite_index = sprPlayerJump;
-					audio_play_sound(sndJump, 0, false);
+					audio_play_sound(sndJump, 0, false, world.sound_vol);
 		        } else {
 		            vspd = (on_vineR) ? 3 : -3;
 		            sprite_index = sprPlayerFall;
@@ -137,7 +137,7 @@ if (!frozen) {
 		            hspd = (on_vineR) ? 15 : -15;
 		            vspd = -9 * (2*Gravity-1);
 		            sprite_index = sprPlayerJump;
-					audio_play_sound(sndJump, 0, false);
+					audio_play_sound(sndJump, 0, false, world.sound_vol);
 		        } else {
 		            hspd = (on_vineR) ? 3 : -3;
 		            sprite_index = sprPlayerFall;

@@ -9,5 +9,5 @@ if a == 1 and y > 492 {
     vspeed = 0;
     gravity = 0;
     a = 2;
-    audio_play_sound(snd03_17, 0, false);
+    audio_play_sound(snd03_17, 0, false, world.sound_vol);
 }

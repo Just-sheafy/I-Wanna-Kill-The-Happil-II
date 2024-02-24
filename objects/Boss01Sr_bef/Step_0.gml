@@ -13,7 +13,7 @@ if (practice) {
                 audio_stop_sound(Instance);
                 filePlaying = 3.95;
                 curMusic = global.stage01Sr2;
-                Instance = audio_play_sound(curMusic, 10, true);
+                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
             }
             break; 
         }
@@ -162,7 +162,7 @@ if (practice) {
 	                audio_stop_sound(Instance);
 	                filePlaying = 3.9;
 	                curMusic = global.stage01Sr1;
-	                Instance = audio_play_sound(curMusic, 10, true);
+	                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	            }
 	            break; 
 	        }
@@ -215,7 +215,7 @@ if (practice) {
 	                audio_stop_sound(Instance);
 	                filePlaying = 3.95;
 	                curMusic = global.stage01Sr2;
-	                Instance = audio_play_sound(curMusic, 10, true);
+	                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	            }
 	            break; 
 	        }

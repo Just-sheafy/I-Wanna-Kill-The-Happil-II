@@ -2,7 +2,7 @@ if (!canhit || !other.canhit) exit;
 
 var i, temp, l = ds_list_create();
 
-audio_play_sound(sndSr01_2, 0, false);
+audio_play_sound(sndSr01_2, 0, false, world.sound_vol);
 with(Boss01Sr_h) hp -= 10;
 if (Boss01Sr_h.hp == 10) {
 	with(playerHealth) {

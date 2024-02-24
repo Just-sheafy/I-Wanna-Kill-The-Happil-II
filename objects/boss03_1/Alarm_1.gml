@@ -3,7 +3,7 @@ with(world) {
         audio_stop_sound(Instance);
         filePlaying = 11;
         curMusic = global.stage03Bs1;
-        Instance = audio_play_sound(curMusic, 10, true);
+        Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
     }
     break;
 }

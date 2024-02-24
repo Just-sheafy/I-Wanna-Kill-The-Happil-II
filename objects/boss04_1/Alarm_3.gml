@@ -11,7 +11,7 @@ if (patt == 8) {
         temp.speed = point_distance(800+32, -32, 400+72, 304-72)/150;
         temp.direction = point_direction(800+32, -32, 400+72, 304-72);
         
-        audio_play_sound(sndCherry, 0, false);
+        audio_play_sound(sndCherry, 0, false, world.sound_vol);
         patt += 1;
         alarm[3] = 150;
     }
@@ -23,7 +23,7 @@ if (patt == 8) {
     }
     sprite_index = sprBoss04_32;
     audio_stop_sound(world.Instance);
-    world.Instance = audio_play_sound(global.stage04BsDefeat, 10, false);
+    world.Instance = audio_play_sound(global.stage04BsDefeat, 10, false, world.music_vol);
     world.filePlaying = 21.5;
 	world.curMusic = global.stage04BsDefeat;
     
@@ -96,7 +96,17 @@ if (patt == 8) {
 } else if (patt == 57) {
     temp = instance_create_depth(0, 0, -101, dark2);
     temp.image_alpha = 0.02;
-    temp.alpha_speed = 0.02;
+    temp.alpha_speed = 0.02
+	
+	if (next_avoidance == 1) {
+		with(player) {
+			if (Gravity) { flip_grav(false); y = room_height - y; }
+		}
+	} else {
+		with(player) {
+			if (!Gravity) { flip_grav(false); y = room_height - y; }
+		}
+	}
     
     patt += 1;
     alarm[3] = 50;
@@ -117,7 +127,7 @@ if (patt == 8) {
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 15;
     
-    audio_play_sound(snd04_3, 0, false);
+    audio_play_sound(snd04_3, 0, false, world.sound_vol);
     
     xxx = xx - room_width/2;
     yyy = yy - room_height/2;
@@ -128,7 +138,7 @@ if (patt == 8) {
     patt += 1;
     alarm[3] = 75;
 } else if (patt == 59) {
-    audio_play_sound(snd04_23, 0, false);
+    audio_play_sound(snd04_23, 0, false, world.sound_vol);
     instance_create_depth(400, 304, 8, Boss04_19);
     
     patt += 1;
@@ -163,6 +173,7 @@ if (patt == 8) {
         instance_destroy(); zx = instance_create_depth(x, y, depth, Boss02_60);
         zx.direction = point_direction(x, y, 400, 304); zx.speed = point_distance(x, y, 400, 304)/47;
     }
+	with(playerHealth) {world.hp_before = hp;}
     with(Boss04_18) not_check = true;
     with(view_an5) not_check = true;
     
@@ -176,7 +187,7 @@ if (patt == 8) {
     if (next_avoidance == 1) {
         zx = instance_create_depth(0, 0, 0, soundEx);
         zx.M1 = world.Instance;
-        zx.M2 = audio_play_sound(global.contrary, 10, false);
+        zx.M2 = audio_play_sound(global.contrary, 10, false, world.music_vol);
         zx.nope = 1;
         zx.arck = 0;
 		world.Instance = zx.M1;
@@ -184,7 +195,7 @@ if (patt == 8) {
     } else {
         zx = instance_create_depth(0, 0, 0, soundEx);
         zx.M1 = world.Instance;
-        zx.M2 = audio_play_sound(global.catastrophe, 10, false);
+        zx.M2 = audio_play_sound(global.catastrophe, 10, false, world.music_vol);
         zx.nope = 1;
         zx.arck = 0;
 		world.Instance = zx.M1;
@@ -198,7 +209,6 @@ if (patt == 8) {
     patt += 1;
     alarm[3] = 20;
 } else {
-	with(playerHealth) {world.hp_before = hp;}
 	world.var_temp = 3;
     if (next_avoidance == 1)
         room_goto(Stage04Bs2);
@@ -219,7 +229,7 @@ if (patt == 8) {
 	if (next_avoidance == 1) {
         zx = instance_create_depth(0, 0, 0, soundEx);
         zx.M1 = world.Instance;
-        zx.M2 = audio_play_sound(global.contrary, 10, false);
+        zx.M2 = audio_play_sound(global.contrary, 10, false, world.sound_vol);
         zx.nope = 1;
         zx.arck = 0;
 		world.Instance = zx.M1;
@@ -227,7 +237,7 @@ if (patt == 8) {
     } else {
         zx = instance_create_depth(0, 0, 0, soundEx);
         zx.M1 = world.Instance;
-        zx.M2 = audio_play_sound(global.catastrophe, 10, false);
+        zx.M2 = audio_play_sound(global.catastrophe, 10, false, world.sound_vol);
         zx.nope = 1;
         zx.arck = 0;
 		world.Instance = zx.M1;

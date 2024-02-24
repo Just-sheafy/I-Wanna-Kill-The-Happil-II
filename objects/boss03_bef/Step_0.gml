@@ -5,7 +5,7 @@ if instance_exists(SavePoint2) {
                 audio_stop_sound(Instance);
                 filePlaying = 10;
                 curMusic = global.stage03Wait;
-                Instance = audio_play_sound(curMusic, 10, false);
+                Instance = audio_play_sound(curMusic, 10, false, world.sound_vol);
             }
             break;
         }

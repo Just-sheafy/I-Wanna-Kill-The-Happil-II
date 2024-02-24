@@ -14,5 +14,5 @@ for(i=0; i<10; i+=1) {
 }
 instance_create_depth(x+c[0], y+c[1], -5, Explo3);
 c = 0;
-audio_play_sound(snd02_11, 0, false);
+audio_play_sound(snd02_11, 0, false, world.sound_vol);
 alarm[0] = 45;

@@ -1,11 +1,11 @@
 var zx;
 
 if (patt == 1) {
-	audio_play_sound(snd04_31, 0, false);
+	audio_play_sound(snd04_31, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 80;
 } else if (patt == 2) {
-	audio_play_sound(snd04_32, 0, false);
+	audio_play_sound(snd04_32, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 120;
 } else if (patt == 3) {
@@ -13,7 +13,7 @@ if (patt == 1) {
 	
     zx = instance_create_depth(0, 0, 0, soundEx2);
     zx.M2 = world.Instance;
-    zx.M1 = audio_play_sound(global.Difficulty, 10, true);
+    zx.M1 = audio_play_sound(global.Difficulty, 10, true, world.music_vol);
     zx.Vol = 0;
     zx.ang = 0;
     audio_sound_gain(zx.M1, world.music_vol, 0);

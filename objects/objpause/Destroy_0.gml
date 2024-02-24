@@ -18,4 +18,4 @@ for(i=0; i<8; i+=1) {
 	layer_hspeed(back_id, back_hspeed[i]);
 	layer_vspeed(back_id, back_vspeed[i]);
 }
-audio_play_sound(sndPaused, 0, false);
+audio_play_sound(sndPaused, 0, false, world.sound_vol);

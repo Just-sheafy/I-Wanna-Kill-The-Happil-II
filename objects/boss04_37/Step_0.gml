@@ -58,9 +58,9 @@ if (t >= 0 && t < 1) {
 		temp.patt = wave_time;
     }
     
-    if (sound_huge == 0) audio_play_sound(snd04_30, 0, false);
-    else if (sound_huge == 0.5) audio_play_sound(snd04_41, 0, false);
-    else if (sound_huge == 1) audio_play_sound(snd04_34, 0, false);
+    if (sound_huge == 0) audio_play_sound(snd04_30, 0, false, world.sound_vol);
+    else if (sound_huge == 0.5) audio_play_sound(snd04_41, 0, false, world.sound_vol);
+    else if (sound_huge == 1) audio_play_sound(snd04_34, 0, false, world.sound_vol);
     sound_huge = 0;
 	wave_time = 400;
 }

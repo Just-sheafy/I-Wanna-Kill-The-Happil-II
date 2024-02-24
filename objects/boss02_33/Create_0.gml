@@ -2,7 +2,7 @@ image_xscale = 4;
 image_yscale = 4;
 vspeed = 30;
 alarm[0] = 24;
-audio_play_sound(sndSpikeTrap, 0, false);
+audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
 image_speed = 0;
 a = 0;
 instance_create_depth(0, 0, -8, Boss02_h);

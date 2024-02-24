@@ -6,5 +6,5 @@ with(other) {
 	vspd = -8;
 	noGravity = true;
 	jump_left = 0;
-	audio_play_sound(sndBarrel, 0, false);
+	audio_play_sound(sndBarrel, 0, false, world.sound_vol);
 }

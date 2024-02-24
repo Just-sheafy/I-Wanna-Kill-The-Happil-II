@@ -44,7 +44,7 @@ if hp <= 0 {
         audio_stop_sound(Instance);
         filePlaying = -1;
         curMusic = global.Silent;
-        Instance = audio_play_sound(curMusic, 10, true);
+        Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
     }
     zx = instance_create_depth(x, y, depth, Boss_h);
     zx.sprite_index = sprite_index;

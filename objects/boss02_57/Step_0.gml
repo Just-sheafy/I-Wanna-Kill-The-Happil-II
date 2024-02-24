@@ -9,7 +9,7 @@ if ang == 1 {
             zx.speed = 6;
         }
         arck = 1;
-        audio_play_sound(sndShoot, 0, false);
+        audio_play_sound(sndShoot, 0, false, world.sound_vol);
     }
 }
 if y >= room_width+300 {instance_destroy(); with(Boss02_58) {ang = 0;}}

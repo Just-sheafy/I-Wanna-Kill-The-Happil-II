@@ -17,11 +17,11 @@ if (is_dead) {
 		if (patt-3*floor(patt/3) == 0)
 			y = oy + random_range(-1, 1);
 		if (patt-10*floor(patt/10) == 0)
-			audio_play_sound(sndSr01_5, 0, false);
+			audio_play_sound(sndSr01_5, 0, false, world.sound_vol);
 		patt += 1;
 	} else if (patt == 260) {
 		patt = -1;
-		audio_play_sound(sndSr01_4, 0, false);
+		audio_play_sound(sndSr01_4, 0, false, world.sound_vol);
 		instance_create_depth(0, 0, -15, dark6);
 	}
 	exit;
@@ -47,7 +47,7 @@ if (x <= 100) {
 	hspd = -abs(hspd);
 }
 if (y >= 384 && vspd > 0) {
-	audio_play_sound(sndSr01_1, 0, false);
+	audio_play_sound(sndSr01_1, 0, false, world.sound_vol);
 	if (instance_exists(player)) {
 		bounce += 1;
 		with(Boss01Sr_1) { if (AIM >= 8) lose(1); }
@@ -111,7 +111,7 @@ if (world.curMusic == global.stage01Sr2) {
                 audio_stop_sound(Instance);
                 filePlaying = 3.98;
                 curMusic = global.stage01Sr2Loop;
-                Instance = audio_play_sound(curMusic, 10, true);
+                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
             }
         }
 		

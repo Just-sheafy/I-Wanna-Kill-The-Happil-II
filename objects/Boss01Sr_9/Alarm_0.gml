@@ -3,7 +3,7 @@ if (patt == 0) {
 	patt += 1;
 	alarm[0] = 100;
 } else {
-	audio_play_sound(sndExplo2, 0, false);
+	audio_play_sound(sndExplo2, 0, false, world.sound_vol);
 	
 	var zx = instance_create_depth(0, 0, 0, view_an3);
 	zx.asdf = 20;

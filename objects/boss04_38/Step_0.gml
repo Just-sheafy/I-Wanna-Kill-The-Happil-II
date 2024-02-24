@@ -5,7 +5,7 @@ if (patt == 0) {
 } else if (patt == 1) {
     if (scale > -1) scale -= 0.1;
     else patt += 1;
-    if (scale == 0) audio_play_sound(snd04_33, 0, false);
+    if (scale == 0) audio_play_sound(snd04_33, 0, false, world.sound_vol);
 } else if (patt < 27) {
     patt += 1;
 } else {

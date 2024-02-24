@@ -8,5 +8,5 @@ for(i=0; i<400; i+=1) {
 }
 zx = instance_create_depth(0, 0, 0, view_an3);
 zx.asdf = 20;
-audio_play_sound(snd01_2, 0, false);
+audio_play_sound(snd01_2, 0, false, world.sound_vol);
 alarm[1] = 60;

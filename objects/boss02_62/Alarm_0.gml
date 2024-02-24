@@ -1,7 +1,7 @@
 var i, zx;
 
 if (patt == -1) {
-	audio_play_sound(snd02_23, 0, false);
+	audio_play_sound(snd02_23, 0, false, world.sound_vol);
 	patt += 1;
 	alarm[0] = 29;
 } else if patt < 60 {
@@ -20,13 +20,13 @@ if (patt == -1) {
     alarm[0] = 5;
     if patt == 60 {alarm[0] = 20; image_speed = 0; image_index = 0;}
 } else if patt == 60 {
-    audio_play_sound(snd02_25, 0, false);
+    audio_play_sound(snd02_25, 0, false, world.sound_vol);
     sprite_index = sprBoss02_60;
     image_speed = 0.2;
     patt += 1;
     alarm[0] = 60;
 } else if patt == 61 {
-    audio_play_sound(snd02_24, 0, false);
+    audio_play_sound(snd02_24, 0, false, world.sound_vol);
     image_speed = 0;
     image_index = 0;
     zx = instance_create_depth(0, 0, -7, dark1);
@@ -49,7 +49,7 @@ if (patt == -1) {
     patt += 1;
     alarm[0] = 100;
 } else if patt == 62 {
-    audio_play_sound(snd02_25, 0, false);
+    audio_play_sound(snd02_25, 0, false, world.sound_vol);
     sprite_index = sprBoss02_63;
     image_speed = 0.2;
     patt += 1;
@@ -68,7 +68,7 @@ if (patt == -1) {
     patt += 1;
     alarm[0] = 100;
 } else if patt == 66 {
-    audio_play_sound(snd02_25, 0, false);
+    audio_play_sound(snd02_25, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, -7, dark1);
     zx.a = 1;
     instance_create_depth(400, 304, -8, Boss02_64);
@@ -91,7 +91,7 @@ if (patt == -1) {
 } else if patt == 67 {
     zx = instance_create_depth(0, 0, 0, soundEx2);
     zx.M2 = world.Instance;
-    zx.M1 = audio_play_sound(global.stage02Bs3, 10, true);
+    zx.M1 = audio_play_sound(global.stage02Bs3, 10, true, 0);
     zx.Vol = 0;
     zx.ang = 0;
     audio_sound_gain(zx.M1, world.music_vol, 0);

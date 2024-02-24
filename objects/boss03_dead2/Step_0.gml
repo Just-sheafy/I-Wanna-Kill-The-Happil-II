@@ -6,6 +6,7 @@ if (patt > 0) {
 	    temp.direction = point_direction(832, 400, player.x, player.y);
 	    temp.speed = 8;
 	    with(player) instance_destroy();
+		with(playerHealth) {world.hp_before = hp;}
 		pat = 1;
 	}
 }

@@ -1,6 +1,6 @@
 vspeed = 30;
 friction = 0.6;
-audio_play_sound(snd03_1, 0, false);
+audio_play_sound(snd03_1, 0, false, world.sound_vol);
 alarm[0] = 50;
 nothit = true;
 canhit = true;

@@ -23,7 +23,7 @@ if (world.HEALTH_ok) {
 	else zx.hp = 2;
 	zx.hpm = 2;
 	if (zx.hp < zx.hpm) {
-		zx = instance_create_layer(400, 304, "Player", objHealthItem1);
+		zx = instance_create_layer(288, 544, "Player", objHealthItem1);
 		zx.time = 200;
 	}
 	world.hp_before = -1;

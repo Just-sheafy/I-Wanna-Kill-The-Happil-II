@@ -6,7 +6,7 @@ if (instance_exists(player) and !instance_exists(Boss04_2) and !instance_exists(
     patt = 8;
     zx = instance_create_depth(0, 0, 0, soundEx2);
     zx.Vol = 0; zx.ang = 0;
-    zx.M1 = audio_play_sound(global.Silent, 10, true);
+    zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
     zx.M2 = world.Instance;
     world.filePlaying = -1;
 	world.Instance = zx.M1;
@@ -16,7 +16,7 @@ if (instance_exists(player) and !instance_exists(Boss04_2) and !instance_exists(
 }
 
 if (patt == 8) {
-    audio_play_sound(snd04_23, 0, false);
+    audio_play_sound(snd04_23, 0, false, world.sound_vol);
     temp = instance_create_depth(0, 0, -100, Boss04_18);
     temp.alarm[0] = 150;
     temp = instance_create_depth(0, 0, 0, view_an1);
@@ -40,9 +40,8 @@ if (patt == 8) {
     if (instance_exists(player)) alarm[1] = 50;
 } else {
     with(player) {
-		var temp = jump_left;
         flip_grav();
-		jump_left = temp;
+		reset_jumps();
     }
     
     with(Boss04_4) instance_destroy();
@@ -183,7 +182,7 @@ if (patt == 8) {
         }
     }
     
-    audio_play_sound(sndBarrel, 0, false);
+    audio_play_sound(sndBarrel, 0, false, world.sound_vol);
     instance_create_depth(0, 0, -100, light);
     
     patt = 0;

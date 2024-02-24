@@ -8,7 +8,7 @@ patt += 1;
 
 if (patt == 94) {
 	with(player) {
-		audio_play_sound(sndBlockChange, 0, false);
+		audio_play_sound(sndBlockChange, 0, false, world.sound_vol);
 		max_hspd = 6;
 	}
 	
@@ -356,7 +356,7 @@ if (patt == 94) {
     }
 } else if (patt == 1115) {
 	with(player) {
-		audio_play_sound(sndBlockChange, 0, false);
+		audio_play_sound(sndBlockChange, 0, false, world.sound_vol);
 		max_hspd = 3;
 		jump_height = [10, 9];
 		grav_amount = 0.5;

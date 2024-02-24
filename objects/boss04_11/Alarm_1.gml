@@ -8,7 +8,7 @@ if (sprite_index == sprBoss04_11) {
     else
         zx.direction = point_direction(x, y, 0, 0);
     zx.speed = 6;
-    audio_play_sound(snd04_17, 0, false);
+    audio_play_sound(snd04_17, 0, false, world.sound_vol);
     
     alarm[2] = 20;
 }
@@ -19,5 +19,5 @@ if (sprite_index == sprBoss04_13) {
     else
         zx.direction = point_direction(x, y, 0, 0);
     zx.speed = 12;
-    audio_play_sound(snd03_30, 0, false);
+    audio_play_sound(snd03_30, 0, false, world.sound_vol);
 }

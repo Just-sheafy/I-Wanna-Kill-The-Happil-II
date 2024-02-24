@@ -10,7 +10,7 @@ zx.image_xscale = 2;
 zx.image_yscale = 2;
 zx.alarm[10] = 8;
 zx.visible = false;
-if b {audio_play_sound(sndExplo, 0, false);}
+if b {audio_play_sound(sndExplo, 0, false, world.sound_vol);}
 if a {
     zx = instance_create_depth(0, 0, 0, view_an1);
     zx.asdf = 10;

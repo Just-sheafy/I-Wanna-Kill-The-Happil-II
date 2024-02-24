@@ -12,7 +12,7 @@ for(i=0; i<4; i+=1) {
     zx.gravity_direction = zx.direction;
     zx.gravity = 0.15;
 }
-audio_play_sound(snd02_17, 0, false);
+audio_play_sound(snd02_17, 0, false, world.sound_vol);
 patt += 1;
 alarm[0] = 6;
 if patt == 50 {

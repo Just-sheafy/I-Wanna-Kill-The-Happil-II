@@ -4,7 +4,7 @@ if pat == 0 {
     sprite_index = sprBoss02_58;
     image_speed = 0.2;
     image_index = 0;
-    audio_play_sound(snd02_24, 0, false);
+    audio_play_sound(snd02_24, 0, false, world.sound_vol);
     if (instance_exists(player)) x = player.x;
 	else x = 0;
     y = 0;
@@ -14,7 +14,7 @@ if pat == 0 {
 } else if pat == 1 {
     vspeed = 0;
     image_index = 7;
-    audio_play_sound(snd02_26, 0, false);
+    audio_play_sound(snd02_26, 0, false, world.sound_vol);
     instance_create_depth(x, y, -4, Boss02_71);
     zx = instance_create_depth(0, 0, 0, view_an1);
     zx.asdf = 10;

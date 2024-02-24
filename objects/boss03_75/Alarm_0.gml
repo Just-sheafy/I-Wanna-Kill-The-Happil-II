@@ -5,7 +5,7 @@ if patt < 80 {
         zx.direction = 360/5*i+random(360/5);
         zx.speed = random_range(1, 3);
     }
-    audio_play_sound(snd03_32, 0, false);
+    audio_play_sound(snd03_32, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 5;
 }

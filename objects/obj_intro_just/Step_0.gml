@@ -19,7 +19,7 @@ if(t == 160)
 {
     scr_fade_screen(c_white, 1, 0, 10, true);   
     image_index = 2; 
-    audio_play_sound(sndLightning, 0, false);
+    audio_play_sound(sndLightning, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 30;    
 	zx.not_check = true;

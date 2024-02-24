@@ -25,7 +25,7 @@ if a == 0 {
 } else if a == 3 {
     zx = instance_create_depth(0, 0, 0, soundEx);
     zx.M1 = world.Instance;
-    zx.M2 = audio_play_sound(global.mental, 10, false);
+    zx.M2 = audio_play_sound(global.mental, 10, false, 0);
     zx.nope = 1;
     zx.arck = 0;
     with(world) {filePlaying = 12; curMusic = global.mental;}

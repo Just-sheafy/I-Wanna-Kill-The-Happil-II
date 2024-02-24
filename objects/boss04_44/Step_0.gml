@@ -4,7 +4,7 @@ if (t <= 20) {
     image_yscale = image_xscale;
 } else if (t > 40 and t <= 60) {
     if (t == 60) {
-		audio_play_sound(snd03_17, 0, false);
+		audio_play_sound(snd03_17, 0, false, world.sound_vol);
 		var zx = instance_create_depth(0, 0, 0, view_an1);
 		zx.asdf = 25;
 	}

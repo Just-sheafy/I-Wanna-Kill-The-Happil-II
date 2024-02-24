@@ -10,7 +10,7 @@ grav=0;
 patt=0;
 image_speed=0;
 alarm[0] = 1;
-Instance = audio_play_sound(sndStage, 0, false);
+Instance = audio_play_sound(sndStage, 0, false, world.sound_vol);
 
 if room == Stage01A {image_index=1;}
 if room == Stage01B {image_index=2;}

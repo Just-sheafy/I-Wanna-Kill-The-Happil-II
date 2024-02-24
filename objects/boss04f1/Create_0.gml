@@ -27,11 +27,11 @@ temp.time = 2311;
 temp.time_max = temp.time;
 
 if (world.var_temp == 0 && world.items[0] && world.BH_ok) {
-	temp = instance_create_depth(272, 24, 350, Boss04_52);
+	temp = instance_create_depth(272, 24, 250, Boss04_52);
 	temp.image_angle = -28;
 	temp.move = false;
 	
-	temp = instance_create_depth(400, 32, 350, Boss04_52);
+	temp = instance_create_depth(400, 32, 250, Boss04_52);
 	temp.image_index = 1;
 	temp.image_angle = 39;
 	temp.move = false;
@@ -43,7 +43,7 @@ if (world.HEALTH_ok) {
 	else zx.hp = 3;
 	zx.hpm = 3;
 	if (zx.hp < zx.hpm) {
-		zx = instance_create_layer(400, 304, "Player", objHealthItem1);
+		zx = instance_create_layer(400, 176, "Player", objHealthItem1);
 		zx.time = 250;
 	}
 	world.hp_before = -1;

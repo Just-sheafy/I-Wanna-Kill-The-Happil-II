@@ -1,7 +1,7 @@
 var i, zx;
 
 if patt == 0 {
-    audio_play_sound(snd03_5, 0, false);
+    audio_play_sound(snd03_5, 0, false, world.sound_vol);
     for(i=0; i<13; i+=1) {zx = instance_create_depth(64*i+16, 0, -2, Boss03_11); zx.depth = -1;}
     for(i=0; i<10; i+=1) {
         zx = instance_create_depth(0, 0, 0, view_an1);
@@ -10,7 +10,7 @@ if patt == 0 {
     patt += 1;
     alarm[1] = 15;
 } else if patt == 1 {
-    audio_play_sound(snd03_5, 0, false);
+    audio_play_sound(snd03_5, 0, false, world.sound_vol);
     for(i=0; i<12; i+=1) {zx = instance_create_depth(64*i+48, 0, -2, Boss03_11); zx.depth = -1;}
     for(i=0; i<10; i+=1) {
         zx = instance_create_depth(0, 0, 0, view_an1);
@@ -47,11 +47,11 @@ if patt == 0 {
             zx.gravity = 0.05;
         }
     }
-    audio_play_sound(snd03_3, 0, false);
+    audio_play_sound(snd03_3, 0, false, world.sound_vol);
     patt += 1;
     if patt != 11 {alarm[1] = 50;} else {alarm[5] = 0; alarm[1] = 100;}
 } else if patt == 11 {
-    audio_play_sound(snd03_5, 0, false);
+    audio_play_sound(snd03_5, 0, false, world.sound_vol);
     for(i=0; i<6; i+=1) {zx = instance_create_depth(0, 96*i+16, -2, Boss03_14); zx.depth = -1;}
     for(i=0; i<10; i+=1) {
         zx = instance_create_depth(0, 0, 0, view_an1);
@@ -60,7 +60,7 @@ if patt == 0 {
     patt += 1;
     alarm[1] = 30;
 } else if patt == 12 {
-    audio_play_sound(snd03_5, 0, false);
+    audio_play_sound(snd03_5, 0, false, world.sound_vol);
     for(i=0; i<6; i+=1) {zx = instance_create_depth(0, 96*i+48, -2, Boss03_14); zx.depth = -1;}
     for(i=0; i<10; i+=1) {
         zx = instance_create_depth(0, 0, 0, view_an1);
@@ -69,7 +69,7 @@ if patt == 0 {
     patt += 1;
     alarm[1] = 30;
 } else if patt == 13 {
-    audio_play_sound(snd03_5, 0, false);
+    audio_play_sound(snd03_5, 0, false, world.sound_vol);
     for(i=0; i<6; i+=1) {zx = instance_create_depth(0, 96*i+80, -2, Boss03_14); zx.depth = -1;}
     for(i=0; i<10; i+=1) {
         zx = instance_create_depth(0, 0, 0, view_an1);

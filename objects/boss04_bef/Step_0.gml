@@ -6,7 +6,7 @@ if instance_exists(SavePoint2) {
 	                audio_stop_sound(Instance);
 	                filePlaying = 18;
 	                curMusic = global.stage04Bs1;
-	                Instance = audio_play_sound(curMusic, 10, true);
+	                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	            }
 	            break;
 	        }
@@ -35,7 +35,7 @@ if instance_exists(SavePoint2) {
 			        audio_stop_sound(Instance);
 			        filePlaying = -1;
 			        curMusic = global.Silent;
-			        Instance = audio_play_sound(curMusic, 10, true);
+			        Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 			    }
 		    }
             

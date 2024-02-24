@@ -6,7 +6,7 @@ if patt == 0 {
 } else if patt == 1 {
     vspeed = 0;
     hspeed = 8;
-    audio_play_sound(snd01_1, 0, false);
+    audio_play_sound(snd01_1, 0, false, world.sound_vol);
     var a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
     patt += 1;

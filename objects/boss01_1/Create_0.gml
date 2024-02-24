@@ -3,7 +3,7 @@ vspeed = 16;
 alarm[0] = 14;
 patt = 0;
 ang = 0;
-audio_play_sound(sndWarning1, 0, false);
+audio_play_sound(sndWarning1, 0, false, world.sound_vol);
 instance_create_depth(0, 0, -8, Boss01_h);
 canhit = 1;
 nothit = 0;

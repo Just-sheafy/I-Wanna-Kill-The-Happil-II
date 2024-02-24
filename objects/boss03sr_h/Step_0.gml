@@ -34,8 +34,8 @@ if hp <= 0 {
     
     instance_create_depth(0, 0, -15, dark6);
     
-    audio_play_sound(sndDeath, 0, false);
-    Instance = audio_play_sound(sndSr03_3, 0, false);
+    audio_play_sound(sndDeath, 0, false, world.sound_vol);
+    Instance = audio_play_sound(sndSr03_3, 0, false, world.sound_vol);
 	audio_sound_pitch(Instance, 0.75);
     
     with(world) {audio_stop_sound(Instance);}

@@ -20,6 +20,7 @@ _yoffset = 5*sprite_get_height(sprite_index);
 
 patt = 0;
 rush = 0;
+rush_next = false;
 reverse_next = false;
 back_list = ds_list_create();
 ds_list_add(back_list, 0);
@@ -31,7 +32,7 @@ trans_patt = 0;
 next_avoidance = 0; // 1: global.contrary, 2: global.catastrophe
 dead = false;
 
-num_reverse = 0; // number of reverse
+num_reverse = false; // number of reverse
 num1 = choose(0, 1);
 num2 = 1-num1; // "Ganji"
 shell_count = 0; // counting on achievements..

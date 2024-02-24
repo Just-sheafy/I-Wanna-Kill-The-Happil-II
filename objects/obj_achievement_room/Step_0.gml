@@ -127,5 +127,5 @@ if (ret) {
     active = false;
 	audio_stop_channel(0);
     alarm[0] = 50;
-    audio_play_sound(sndTitle, 0, false);
+    audio_play_sound(sndTitle, 0, false, world.sound_vol);
 }

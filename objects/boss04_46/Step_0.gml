@@ -36,7 +36,7 @@ if (t < 50) {
 	    temp.radius_max = 200;
 	}
     
-    audio_play_sound(snd04_37, 0, false);
+    audio_play_sound(snd04_37, 0, false, world.sound_vol);
 } else if (t == 150) {
     temp = instance_create_depth(x+40, y-40, -4, Boss04_47);
     temp.image_angle = -90;
@@ -67,7 +67,7 @@ if (t < 50) {
 	    temp.radius_max = 200;
 	}
     
-    audio_play_sound(snd04_37, 0, false);
+    audio_play_sound(snd04_37, 0, false, world.sound_vol);
 } else if (t >= 220) {
     if (image_xscale > 0) {
         image_xscale -= 0.05;

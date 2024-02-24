@@ -16,7 +16,7 @@ if (pat == 0) {
     alpha_aim = 0;
     spd = 48;
     move_clockwise = !move_clockwise;
-    audio_play_sound(snd04_38, 0, false);
+    audio_play_sound(snd04_38, 0, false, world.sound_vol);
     pat += 1;
     alarm[0] = 30;
 } else if (pat == 2) {

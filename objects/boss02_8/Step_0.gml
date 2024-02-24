@@ -6,7 +6,7 @@ if ((gravity_direction == 270 and !place_meeting(x, y+vspeed, block)) or
     vspeed = 0;
 }
 if place_meeting(x+hspeed, y, block) {
-    if (room == Stage04Bs) audio_play_sound(snd04_24, 0, false);
+    if (room == Stage04Bs) audio_play_sound(snd04_24, 0, false, world.sound_vol);
     x -= hspeed; hspeed = -hspeed;
 }
 if (vspeed > 8) vspeed = 8;

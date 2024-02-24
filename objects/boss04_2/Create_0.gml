@@ -36,9 +36,15 @@ shield_id = instance_create_depth(x, y, depth+1, Boss04_17);
 shield_id.tracking_obj = id;
 
 boshy_appear = false;
+can_koopa = true;
 can_thwomp = true;
+time_delay = 0;
+num_thwomp = 0;
+NUM_thwomp = 6;
 
 if (room == Stage04Bs)
     alarm[2] = choose(80, 120);
-else
+else {
     alarm[1] = 80;
+	time_delay = 100;
+}

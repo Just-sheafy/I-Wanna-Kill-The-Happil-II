@@ -1,5 +1,5 @@
 alarm[11] = 2;
-audio_play_sound(snd03_35, 0, false);
+audio_play_sound(snd03_35, 0, false, world.sound_vol);
 alarm[0] = 3;
 a = 0;
 d = 0;

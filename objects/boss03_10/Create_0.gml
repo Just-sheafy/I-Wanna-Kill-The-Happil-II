@@ -1,6 +1,6 @@
 alarm[0] = 18;
 vspeed = 32;
-audio_play_sound(snd03_6, 0, false);
+audio_play_sound(snd03_6, 0, false, world.sound_vol);
 image_speed = 0.2;
 patt = 0;
 pat = 0;

@@ -5,4 +5,4 @@ for(i=0; i<5; i+=1) {
     zx.direction = 360/5*i+random(360/5);
     zx.speed = 6;
 }
-audio_play_sound(sndShoot, 0, false);
+audio_play_sound(sndShoot, 0, false, world.sound_vol);

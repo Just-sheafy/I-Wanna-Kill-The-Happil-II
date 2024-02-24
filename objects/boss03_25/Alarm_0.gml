@@ -8,13 +8,13 @@ if patt < 5 {
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 10;
     a = !a;
-    audio_play_sound(snd03_12, 0, false);
+    audio_play_sound(snd03_12, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 20;
 } else {
     if (instance_exists(player)) y = player.y;
 	else y = 304;
-    audio_play_sound(snd03_13, 0, false);
+    audio_play_sound(snd03_13, 0, false, world.sound_vol);
     visible = true;
     hspeed = 12;
     zx = instance_create_depth(x, y, -10, Boss03_n);

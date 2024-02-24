@@ -15,7 +15,7 @@ if e == 0 {
         zx.gravity = 0.2;
         zx.alarm[11] = 2;
     }
-    audio_play_sound(snd01_6, 0, false);
+    audio_play_sound(snd01_6, 0, false, world.sound_vol);
     e = 0;
     alarm[2] = 180;
 }

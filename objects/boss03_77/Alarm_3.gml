@@ -6,6 +6,6 @@ for(i=0; i<3; i+=1) {
 for(i=0; i<5; i+=1) {
     instance_create_depth(x + random_range(-241, 242), y + 500 - random(568), -5, Explo2);
 }
-audio_play_sound(sndExplo, 0, false);
+audio_play_sound(sndExplo, 0, false, world.sound_vol);
 
 alarm[3] = 7;

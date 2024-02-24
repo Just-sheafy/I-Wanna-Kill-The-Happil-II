@@ -3,7 +3,7 @@ var i, zx;
 if (patt == 0) {
     image_xscale *= 4;
     image_yscale *= 4;
-    audio_play_sound(snd04_21, 0, false);
+    audio_play_sound(snd04_21, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 35;
 } else if (patt == 1) {
@@ -18,7 +18,7 @@ if (patt == 0) {
     } else {
         y = room_height + 36; vspeed = -24;
     }
-    audio_play_sound(snd04_22, 0, false);
+    audio_play_sound(snd04_22, 0, false, world.sound_vol);
     
     if (!boshy_appear) {
         zx = instance_create_depth(x, y, -10, Boss04_n);
@@ -52,7 +52,7 @@ if (patt == 0) {
         }
     }
     
-    audio_play_sound(snd03_4, 0, false);
+    audio_play_sound(snd03_4, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 15;
     
@@ -61,7 +61,7 @@ if (patt == 0) {
 } else if (patt == 3) {
     if (image_yscale > 0) vspeed = -24;
     else vspeed = 24;
-    audio_play_sound(snd04_20, 0, false);
+    audio_play_sound(snd04_20, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 5;
     
@@ -75,7 +75,7 @@ if (patt == 0) {
     } else {
         y = room_height + 36; vspeed = -24;
     }
-    audio_play_sound(snd04_22, 0, false);
+    audio_play_sound(snd04_22, 0, false, world.sound_vol);
     
     patt += 1;
     alarm[0] = 24;
@@ -101,7 +101,7 @@ if (patt == 0) {
         }
     }
     
-    audio_play_sound(snd03_4, 0, false);
+    audio_play_sound(snd03_4, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 15;
     
@@ -110,7 +110,7 @@ if (patt == 0) {
 } else if (patt == 6) {
     if (image_yscale > 0) vspeed = -24;
     else vspeed = 24;
-    audio_play_sound(snd04_20, 0, false);
+    audio_play_sound(snd04_20, 0, false, world.sound_vol);
     
     patt += 1;
     alarm[0] = 50;
@@ -122,7 +122,7 @@ if (patt == 0) {
     } else {
         y = room_height + 36; vspeed = -24;
     }
-    audio_play_sound(snd04_22, 0, false);
+    audio_play_sound(snd04_22, 0, false, world.sound_vol);
     
     patt += 1;
     alarm[0] = 24;
@@ -148,7 +148,7 @@ if (patt == 0) {
         }
     }
     
-    audio_play_sound(snd03_4, 0, false);
+    audio_play_sound(snd03_4, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 15;
     
@@ -157,7 +157,7 @@ if (patt == 0) {
 } else if (patt == 9) {
     if (image_yscale > 0) vspeed = -24;
     else vspeed = 24;
-    audio_play_sound(snd04_20, 0, false);
+    audio_play_sound(snd04_20, 0, false, world.sound_vol);
     
     patt += 1;
     alarm[0] = 50;

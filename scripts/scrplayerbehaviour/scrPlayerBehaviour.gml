@@ -108,7 +108,7 @@ function kill_player(outside = false) {
 		
 		if (!world.kill) {
 			if (player.invinc) exit;
-			audio_play_sound(sndDeath, 0, false);
+			audio_play_sound(sndDeath, 0, false, world.sound_vol);
 			with(player) { invinc = true; invinc_time = 50; }
 			exit;
 		}
@@ -117,7 +117,7 @@ function kill_player(outside = false) {
 			if (player.invinc) exit;
 			if (playerHealth.hp < 10) playerHealth.hp -= 1;
 			if (playerHealth.hp > 0) {
-				audio_play_sound(sndDeath, 0, false);
+				audio_play_sound(sndDeath, 0, false, world.sound_vol);
 				with(player) { invinc = true; invinc_time = 50; }
 				with(playerHealth) { changed = true; t = 0; }
 				exit;
@@ -131,11 +131,11 @@ function kill_player(outside = false) {
 		with(soundEx2) {if (world.Instance != M1) audio_stop_sound(M1); if (world.Instance != M2) audio_stop_sound(M2);}
 		
 		if (instance_exists(objEndCredit) && objEndCredit.gameover) {
-			world.Kill = audio_play_sound(global.Sdeath3, 5, false); audio_play_sound(sndDeath, 0, false);
+			world.Kill = audio_play_sound(global.Sdeath3, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);
 		} else {
-			if instance_exists(DIE2B) {with(kill_character) {instance_destroy();} audio_play_sound(sndDeath, 0, false); instance_create_depth(0, 0, -20, Hamjung02Bs3);}
-			if instance_exists(DIE4) {world.Kill = audio_play_sound(global.Sdeath2, 5, false); audio_play_sound(sndDeath, 0, false);}
-			else {world.Kill = audio_play_sound(global.Sdeath, 5, false); audio_play_sound(sndDeath, 0, false);}
+			if instance_exists(DIE2B) {with(kill_character) {instance_destroy();} audio_play_sound(sndDeath, 0, false, world.sound_vol); instance_create_depth(0, 0, -20, Hamjung02Bs3);}
+			if instance_exists(DIE4) {world.Kill = audio_play_sound(global.Sdeath2, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);}
+			else {world.Kill = audio_play_sound(global.Sdeath, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);}
 			
 			instance_create_depth(camera_get_view_x(cam)+camera_get_view_width(cam)/2,
 				camera_get_view_y(cam)+camera_get_view_height(cam)/2, -1000, GAMEOVER);
@@ -193,7 +193,7 @@ function flip_grav(snd_enable = true) {
 		y += 4 * (2*Gravity - 1); vspd = 0;
 	}
 		
-	if (snd_enable) audio_play_sound(sndVJump, 0, false);
+	if (snd_enable) audio_play_sound(sndVJump, 0, false, world.sound_vol);
 	reset_jumps();
 }
 
@@ -216,6 +216,6 @@ function rotate_grav(snd_enable = true) {
 		}
 	}
 		
-	if (snd_enable) audio_play_sound(sndHJump, 0, false);
+	if (snd_enable) audio_play_sound(sndHJump, 0, false, world.sound_vol);
 	reset_jumps();
 }

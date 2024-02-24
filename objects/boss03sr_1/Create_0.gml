@@ -1,5 +1,5 @@
 image_speed = 8/50;
-audio_play_sound(sndSr03_1, 0, false);
+audio_play_sound(sndSr03_1, 0, false, world.sound_vol);
 instance_create_depth(0, 0, -8, Boss03Sr_h);
 speed = 4;
 direction = choose(0, 90, 180, 270);

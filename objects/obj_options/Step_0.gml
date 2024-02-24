@@ -61,7 +61,7 @@ if(mode == 0) //Selecting options
             
         }
         
-        audio_play_sound(sndSwitch, 0, false);
+        audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     }
     
     if(d)
@@ -84,7 +84,7 @@ if(mode == 0) //Selecting options
             top_select = select;
         }
         
-        audio_play_sound(sndSwitch, 0, false);
+        audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     }
 }
 
@@ -119,24 +119,24 @@ if ((select >= 2 && select <= 4) || select > 6) //Normal buttons, enabled or dis
     if (l)
     {
 		if (select != 10) {
-	        if (val[select]) audio_play_sound(sndSwitch, 0, false);
+	        if (val[select]) audio_play_sound(sndSwitch, 0, false, world.sound_vol);
 	        val[select] = false;
 			if (select == 3) display_reset(0, val[select]);
 			if (select == 9) btn_available[10] = false;
 		} else {
-			audio_play_sound(sndSwitch, 0, false);
+			audio_play_sound(sndSwitch, 0, false, world.sound_vol);
 			val[select] = (val[select] <= 0)? 2 : val[select]-1;
 		}
     }
     if (r)
     {
 		if (select != 10) {
-	        if (!val[select]) audio_play_sound(sndSwitch, 0, false);
+	        if (!val[select]) audio_play_sound(sndSwitch, 0, false, world.sound_vol);
 	        val[select] = true;
 			if (select == 3) display_reset(0, val[select]);
 			if (select == 9) btn_available[10] = true;
 		} else {
-			audio_play_sound(sndSwitch, 0, false);
+			audio_play_sound(sndSwitch, 0, false, world.sound_vol);
 			val[select] = (val[select] >= 2)? 0 : val[select]+1;
 		}
     }
@@ -148,7 +148,7 @@ if(select == 5) //Keyboard controls
     if(mode == 0 && press) //Change mode to keyboard key setting
     {
         mode = 1;
-        audio_play_sound(sndSwitch, 0, false);
+        audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     }
         
     else if(mode == 1)
@@ -159,38 +159,38 @@ if(select == 5) //Keyboard controls
             if (l && key_select > 0 && key_select < 7)
             {
                 key_select -= 1;
-                audio_play_sound(sndSwitch, 0, false);
+                audio_play_sound(sndSwitch, 0, false, world.sound_vol);
             }
             if (r && key_select >= 0 && key_select < 6)
             {
                 key_select += 1;
-                audio_play_sound(sndSwitch, 0, false);
+                audio_play_sound(sndSwitch, 0, false, world.sound_vol);
             }  
             
             //Vertical controls
             if(u && key_select == 5)
             {
                 key_select = 7;
-                audio_play_sound(sndSwitch, 0, false);
+                audio_play_sound(sndSwitch, 0, false, world.sound_vol);
             }
             if(d && key_select == 7)
             {
                 key_select = 5;
-                audio_play_sound(sndSwitch, 0, false);
+                audio_play_sound(sndSwitch, 0, false, world.sound_vol);
             }
                 
             //Set state to configurating a key
             if(press)
             {
                 key_config = true;
-                audio_play_sound(sndSwitch, 0, false);
+                audio_play_sound(sndSwitch, 0, false, world.sound_vol);
             }
             if(ret) //Return to previous state
             {
                 key_select = 0;
                 mode = 0;
                 ret = false;
-                audio_play_sound(sndSwitch, 0, false);
+                audio_play_sound(sndSwitch, 0, false, world.sound_vol);
             }        
         } 
         else //Configurating chosen key
@@ -214,9 +214,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.gameRestart = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;
                         case 1: // Shoot
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.jumpKey and
@@ -227,9 +227,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.shootKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;                        
                         case 2: // Jump
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.shootKey and
@@ -240,9 +240,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.jumpKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;                        
                         case 3: // Skip
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.shootKey and
@@ -253,9 +253,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.skipKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;
                         case 4: // Left
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.shootKey and
@@ -266,9 +266,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.leftKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;                        
                         case 5: // Down
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.shootKey and
@@ -279,9 +279,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.downKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;                        
                         case 6: // Right
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.shootKey and
@@ -292,9 +292,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.rightKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;                        
                         case 7: // Up
                             if (keyboard_lastkey != world.gameRestart and keyboard_lastkey != world.shootKey and
@@ -305,9 +305,9 @@ if(select == 5) //Keyboard controls
 								keyboard_lastkey != vk_escape and keyboard_lastkey != ord("P"))
                             {
                                 world.upKey = keyboard_lastkey;
-                                audio_play_sound(sndChark, 0, false);
+                                audio_play_sound(sndChark, 0, false, world.sound_vol);
                             }
-                            else audio_play_sound(sndBoo, 0, false);
+                            else audio_play_sound(sndBoo, 0, false, world.sound_vol);
                             break;                
                     }
                 }
@@ -326,7 +326,7 @@ if (ret) {
     active = false;
 	audio_stop_channel(0);
     alarm[0] = 50;
-    audio_play_sound(sndTitle, 0, false);
+    audio_play_sound(sndTitle, 0, false, world.sound_vol);
     
     world.music_vol = val[0]; //Music volume
     world.sound_vol = val[1]; //Sound volume

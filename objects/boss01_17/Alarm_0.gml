@@ -29,15 +29,11 @@ if patt == 0 {
 } else if patt == 4 {
     hspeed = 0;
     vspeed = -8;
-    audio_play_sound(snd01_1, 0, false);
+    audio_play_sound(snd01_1, 0, false, world.sound_vol);
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
-    patt += 0.5;
-    alarm[0] = 12;
-} else if patt == 4.5 {
-	instance_create_depth(-96, 0, -2, Boss01_41);
-	patt += 0.5;
-	alarm[0] = 4;
+    patt += 1;
+    alarm[0] = 16;
 } else if patt == 5 {
     vspeed = 0;
     hspeed = 8;
@@ -50,6 +46,7 @@ if patt == 0 {
     patt += 1;
     alarm[0] = 52;
 } else if patt == 7 {
+	instance_create_depth(-96, 0, -2, Boss01_41);
     with(Boss01_19) {friction = 0; speed = 6; gravity_direction = direction; gravity = 0.1;}
     patt += 1;
     alarm[0] = 30;
@@ -60,7 +57,7 @@ if patt == 0 {
     a = instance_create_depth(x, y-64, -1, Boss01_18);
     a.vspeed = -12;
     a.gravity = 0.3;
-    audio_play_sound(snd01_11, 0, false);
+    audio_play_sound(snd01_11, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 60;
 } else if patt <= 10 {
@@ -68,7 +65,7 @@ if patt == 0 {
     if (instance_exists(player)) zx.direction = point_direction(x, y-64, player.x, player.y);
 	else zx.direction = point_direction(x, y-64, 0, 0);
     zx.speed = 16;
-	audio_play_sound(sndSpikeTrap, 0, false);
+	audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
     a = instance_create_depth(0, 0, 0, view_an1);
     a.asdf = 10;
     patt += 1;

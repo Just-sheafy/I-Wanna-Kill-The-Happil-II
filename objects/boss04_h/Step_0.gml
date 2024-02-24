@@ -37,5 +37,5 @@ if hp <= 0 {
         if (patt == 0) instance_destroy();
     }
     with(Boss04_24) instance_destroy();
-    audio_play_sound(snd04_27, 0, false);
+    audio_play_sound(snd04_27, 0, false, world.sound_vol);
 }

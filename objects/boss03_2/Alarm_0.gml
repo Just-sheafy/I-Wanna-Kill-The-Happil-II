@@ -7,7 +7,7 @@ if patt <= 2 {
         zx.direction = 360/8*i+random(360/8);
         zx.speed = random_range(3, 5);
     }
-	audio_play_sound(snd03_3, 0, false);
+	audio_play_sound(snd03_3, 0, false, world.sound_vol);
     instance_create_depth(64*patt+32, 0, -4, Boss03_9);
     zx = instance_create_depth(768-64*patt, 0, -4, Boss03_9);
 	zx.snd_enable = false;
@@ -20,7 +20,7 @@ if patt <= 2 {
         zx.direction = 360/8*i+random(360/8);
         zx.speed = random_range(3, 5);
     }
-	audio_play_sound(snd03_3, 0, false);
+	audio_play_sound(snd03_3, 0, false, world.sound_vol);
     if patt == 6 {
         zx = instance_create_depth(x, y, 0, Boss01_23);
         zx.sid = id;
@@ -43,7 +43,7 @@ if patt <= 2 {
         zx.gravity = 0.2;
         zx.alarm[11] = 2;
     }
-	audio_play_sound(snd01_6, 0, false);
+	audio_play_sound(snd01_6, 0, false, world.sound_vol);
     patt += 0.5;
     alarm[0] = 58;
 } else if patt == 9 {
@@ -60,7 +60,7 @@ if patt <= 2 {
         zx.direction = 360/8*i+random(360/8);
         zx.speed = random_range(3, 5);
     }
-	audio_play_sound(snd03_3, 0, false);
+	audio_play_sound(snd03_3, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 30;
     if patt == 12 {
@@ -77,11 +77,11 @@ if patt <= 2 {
             zx.gravity = 0.2;
             zx.alarm[11] = 3;
         }
-		audio_play_sound(snd01_6, 0, false);
+		audio_play_sound(snd01_6, 0, false, world.sound_vol);
     }
     if patt == 18 {alarm[0] += 140;}
 } else if patt == 18 {
-	audio_play_sound(snd03_8, 0, false);
+	audio_play_sound(snd03_8, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 60;
 } else if patt == 19 {
@@ -186,6 +186,6 @@ if patt <= 2 {
         zx.direction = 360/8*i+random(360/8);
         zx.speed = random_range(3, 5);
     }
-	audio_play_sound(snd03_3, 0, false);
+	audio_play_sound(snd03_3, 0, false, world.sound_vol);
     alarm[0] = 30;
 }

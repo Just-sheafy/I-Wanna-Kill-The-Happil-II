@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprPlayerFall_guy",
-    "path": "sprites/sprPlayerFall_guy/sprPlayerFall_guy.yy",
+    "name": "sprPlayerFall",
+    "path": "sprites/sprPlayerFall/sprPlayerFall.yy",
   },
   "spriteMaskId": null,
   "visible": true,

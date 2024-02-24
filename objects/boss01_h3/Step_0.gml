@@ -11,7 +11,7 @@ if hp <= 0 {
     instance_destroy();
     with(Boss01_h4) {instance_destroy();}
     with(Boss01_11) {instance_destroy();}
-    audio_play_sound(sndDeath, 0, false);
+    audio_play_sound(sndDeath, 0, false, world.sound_vol);
     var zx = instance_create_depth(x, y, depth, Boss_h);
     zx.sprite_index = sprite_index;
 }

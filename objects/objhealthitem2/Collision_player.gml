@@ -7,5 +7,5 @@ if (!is_eaten) {
 		}
 	}
 	is_eaten = true;
-	audio_play_sound(sndHealthItem2, 0, false);
+	audio_play_sound(sndHealthItem2, 0, false, world.sound_vol);
 }

@@ -1,7 +1,7 @@
 var zx;
 
 if patt < 8 {
-    audio_play_sound(sndBlockChange, 0, false);
+    audio_play_sound(sndBlockChange, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 2;
     if patt == 8 {alarm[0] += 15;}

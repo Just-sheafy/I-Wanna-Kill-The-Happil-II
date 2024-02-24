@@ -11,7 +11,7 @@ if patt == 0 {
 for(i = 0; i < 72; i += 1) {
     if achieve[i] != world.achieve[i] and !visible {
         achieve[i] = world.achieve[i];
-        audio_play_sound(sndAchieve, 0, false);
+        audio_play_sound(sndAchieve, 0, false, world.sound_vol);
         patt = 0;
         visible = true;
         index = i;

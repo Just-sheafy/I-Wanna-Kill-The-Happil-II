@@ -6,4 +6,4 @@ if x > 400 {a.image_yscale = -1;}
 a.speed = 6;
 alarm[0] = 200;
 
-if (x < room_width/2) audio_play_sound(snd02_6, 0, false);
+if (x < room_width/2) audio_play_sound(snd02_6, 0, false, world.sound_vol);

@@ -7,4 +7,4 @@ for(i=0; i<15; i+=1) {
     zx.speed = random_range(4, 8);
     if a {zx.as = choose(-0.5, 0.5);}
 }
-audio_play_sound(snd02_11, 0, false);
+audio_play_sound(snd02_11, 0, false, world.sound_vol);

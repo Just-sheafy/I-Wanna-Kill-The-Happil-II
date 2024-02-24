@@ -68,7 +68,7 @@ if (number_hit >= 0) {
 	        zx.image_index = 68;
 			var zx = instance_create_depth(0, 0, 0, soundEx2);
 		    zx.M2 = world.Instance;
-		    zx.M1 = audio_play_sound(global.stage04Bs4, 10, true);
+		    zx.M1 = audio_play_sound(global.stage04Bs4, 10, true, world.music_vol);
 		    zx.Vol = 0;
 		    zx.ang = 0;
 		    audio_sound_gain(zx.M1, world.music_vol, 0);

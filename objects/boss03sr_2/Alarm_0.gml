@@ -33,6 +33,6 @@ image_index = 0;
 speed = 0;
 hp = -1;
 alarm[0] = 150 - Boss03Sr_1.crazy * 50;
-audio_play_sound(sndSr03_1, 0, false);
+audio_play_sound(sndSr03_1, 0, false, world.sound_vol);
 
 }

@@ -11,4 +11,4 @@ a = 0;
 var zx = instance_create_depth(x, y, -10, Boss03_n);
 zx.image_index = 10;
 zx.sid = id;
-audio_play_sound(snd03_25, 0, false);
+audio_play_sound(snd03_25, 0, false, world.sound_vol);

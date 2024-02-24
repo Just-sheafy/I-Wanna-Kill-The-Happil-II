@@ -48,7 +48,7 @@ if (a == -1) {
 	a += 1;
 	alarm[3] = 20;
 } else {
-	audio_play_sound(sndBlockChange, 0, false);
+	audio_play_sound(sndBlockChange, 0, false, world.sound_vol);
 	if (world.var_temp == 2) {
 	    with(player) {x = 400; y = 304;}
 		with(playerHealth) {world.hp_before = hp;}

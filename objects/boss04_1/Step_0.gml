@@ -11,7 +11,7 @@ if (alarm[0] > 120 and instance_exists(player) and !instance_exists(Boss04_2) an
         patt = 8;
         var zx = instance_create_depth(0, 0, 0, soundEx2);
         zx.Vol = 0; zx.ang = 0;
-        zx.M1 = audio_play_sound(global.Silent, 10, true);
+        zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
         zx.M2 = world.Instance;
         world.filePlaying = -1;
 		world.Instance = zx.M1;

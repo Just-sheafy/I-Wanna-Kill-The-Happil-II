@@ -1,5 +1,5 @@
 if a1 == 1 {
-    audio_play_sound(sndSr03_2, 0, false);
+    audio_play_sound(sndSr03_2, 0, false, world.sound_vol);
     a1 += 1;
     alarm[1] = 75;
 } else if a1 <= a1_1+1 {

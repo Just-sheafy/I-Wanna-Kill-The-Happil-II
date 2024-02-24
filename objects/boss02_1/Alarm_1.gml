@@ -13,7 +13,7 @@ if patt == 0 {
     patt += 1;
     alarm[1] = 60;
 } else if patt == 1 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     patt += 1;
@@ -29,7 +29,7 @@ if patt == 0 {
     patt += 1;
     alarm[1] = 15;
 } else if patt == 5 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 2;
@@ -44,11 +44,11 @@ if patt == 0 {
     instance_create_depth(x, y, -2, Boss02_25);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 8;
-    audio_play_sound(snd02_2, 0, false);
+    audio_play_sound(snd02_2, 0, false, world.sound_vol);
     patt += 1;
     alarm[1] = 15;
 } else if patt == 13 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 2;
@@ -62,7 +62,7 @@ if patt == 0 {
 }
 ////////////////////////////////////////////////////////////////////
 else if patt == 16 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     patt += 1;
@@ -78,7 +78,7 @@ else if patt == 16 {
     patt += 1;
     alarm[1] = 15;
 } else if patt == 23 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 3;
@@ -93,11 +93,11 @@ else if patt == 16 {
     instance_create_depth(x, y, -2, Boss02_25);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 8;
-    audio_play_sound(snd02_2, 0, false);
+    audio_play_sound(snd02_2, 0, false, world.sound_vol);
     patt += 1;
     alarm[1] = 15;
 } else if patt == 32 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 2;
@@ -111,7 +111,7 @@ else if patt == 16 {
 }
 ////////////////////////////////////////////////////////////////////
 else if patt == 35 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     patt += 1;
@@ -127,7 +127,7 @@ else if patt == 35 {
     patt += 1;
     alarm[1] = 15;
 } else if patt == 38 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 1;
@@ -142,11 +142,11 @@ else if patt == 35 {
     instance_create_depth(x, y, -2, Boss02_25);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 8;
-    audio_play_sound(snd02_2, 0, false);
+    audio_play_sound(snd02_2, 0, false, world.sound_vol);
     patt += 1;
     alarm[1] = 15;
 } else if patt == 45 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 2;
@@ -160,7 +160,7 @@ else if patt == 35 {
 }
 ////////////////////////////////////////////////////////////////////
 else if patt == 48 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}
     patt += 1;
@@ -176,7 +176,7 @@ else if patt == 48 {
     patt += 1;
     alarm[1] = 15;
 } else if patt == 51 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 1;
@@ -191,11 +191,11 @@ else if patt == 48 {
     instance_create_depth(x, y, -2, Boss02_25);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 8;
-    audio_play_sound(snd02_2, 0, false);
+    audio_play_sound(snd02_2, 0, false, world.sound_vol);
     patt += 1;
     alarm[1] = 15;
 } else if patt == 58 {
-    Instance = audio_play_sound(snd02_1, 0, true);
+    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     patt += 2;
@@ -216,14 +216,14 @@ else if patt == 61 {
 		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), noone);
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_black);
 	}
-    audio_play_sound(snd02_14, 0, false);
+    audio_play_sound(snd02_14, 0, false, world.sound_vol);
     instance_create_depth(0, 0, -100, light);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 16;
     patt += 1;
     alarm[1] = 30;
 } else if patt <= 63 {
-    audio_play_sound(snd02_14, 0, false);
+    audio_play_sound(snd02_14, 0, false, world.sound_vol);
     instance_create_depth(0, 0, -100, light);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 16;
@@ -231,10 +231,10 @@ else if patt == 61 {
     alarm[1] = 30;
 } else if patt == 64 {
     with(Boss02_3) {sprite_index = sprBoss02_57; image_speed = 0.3;}
-    Instance = audio_play_sound(snd02_22, 0, true);
+    Instance = audio_play_sound(snd02_22, 0, true, 0);
     zx = instance_create_depth(0, 0, 0, soundEx);
     zx.M1 = world.Instance;
-    zx.M2 = audio_play_sound(global.stage02Bs2, 10, true);
+    zx.M2 = audio_play_sound(global.stage02Bs2, 10, true, 0);
     zx.nope = 1;
     zx.arck = 0;
     with(player) {

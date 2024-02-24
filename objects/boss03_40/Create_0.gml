@@ -10,4 +10,4 @@ zx.a = -1;
 alarm[0] = 45;
 alarm[11] = 3;
 
-audio_play_sound(snd03_34, 0, false);
+audio_play_sound(snd03_34, 0, false, world.sound_vol);

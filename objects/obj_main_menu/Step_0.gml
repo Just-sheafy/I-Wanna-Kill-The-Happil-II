@@ -23,7 +23,7 @@ if (ret and !frozen) {
     select = 3;
     btn_scale_t[select] = 0;
 	audio_stop_channel(0);
-    audio_play_sound(sndTitle, 0, false);
+    audio_play_sound(sndTitle, 0, false, world.sound_vol);
     alarm[0] = 50;
     scr_fade_screen(c_black, 0, 1, 10, false);
     frozen = true;
@@ -44,7 +44,7 @@ if (!frozen) {
         }
         
         btn_scale_t[select] = 0;
-        audio_play_sound(sndSwitch, 0, false);
+        audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     }
     
     if(d)
@@ -56,13 +56,13 @@ if (!frozen) {
         }
         
         btn_scale_t[select] = 0;
-        audio_play_sound(sndSwitch, 0, false);
+        audio_play_sound(sndSwitch, 0, false, world.sound_vol);
     }
     
     if(press)
     {
 		audio_stop_channel(0);
-        audio_play_sound(sndTitle, 0, false);
+        audio_play_sound(sndTitle, 0, false, world.sound_vol);
         alarm[0] = 50;
         scr_fade_screen(c_black, 0, 1, 10, false);
         frozen = true;

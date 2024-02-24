@@ -1,25 +1,25 @@
 var zx;
 
 if (patt == 0) {
-	audio_play_sound(sndSr01_defeat, 0, false);
+	audio_play_sound(sndSr01_defeat, 0, false, world.sound_vol);
 	instance_create_depth(0, 0, -100, light);
 	
 	patt += 1;
 	alarm[5] = 60;
 } else if (patt == 1) {
-	audio_play_sound(sndSr01_defeat, 0, false);
+	audio_play_sound(sndSr01_defeat, 0, false, world.sound_vol);
 	instance_create_depth(0, 0, -100, light);
 	
 	patt += 1;
 	alarm[5] = 15;
 } else if (patt == 2) {
-	audio_play_sound(sndSr01_defeat, 0, false);
+	audio_play_sound(sndSr01_defeat, 0, false, world.sound_vol);
 	instance_create_depth(0, 0, -100, light);
 	
 	patt += 1;
 	alarm[5] = 85;
 } else if (patt == 3) {
-	audio_play_sound(sndSr01_6, 0, false);
+	audio_play_sound(sndSr01_6, 0, false, world.sound_vol);
 	temp = instance_create_depth(x+93, y-66, depth-1, Boss01Sr_7);
 	temp.image_angle = 90;
 	temp.vspeed = 8;

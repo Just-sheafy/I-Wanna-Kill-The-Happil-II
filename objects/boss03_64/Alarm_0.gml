@@ -10,16 +10,18 @@ if patt < 8 {
         zx.oy = -81;
         image_index = 1;
     }
-    for(i=0; i<irandom_range(4, 6); i+=1) {
-        instance_create_depth(handx, handy, -2, Boss03_66);
-    }
-    audio_play_sound(snd02_11, 0, false);
+	if (patt < 6) {
+	    for(i=0; i<irandom_range(4, 6); i+=1) {
+	        instance_create_depth(handx, handy, -2, Boss03_66);
+	    }
+		audio_play_sound(snd02_11, 0, false, world.sound_vol);
+	}
     if patt == 4 and instance_exists(player) {
         ox = player.x;
     }
     if patt == 5 {
         instance_create_depth(ox, 608, -3, Boss03_67);
-		audio_play_sound(snd01_6, 0, false);
+		audio_play_sound(snd01_6, 0, false, world.sound_vol);
         zx = instance_create_depth(0, 0, 0, view_an3);
         zx.asdf = 20;
     }
@@ -28,13 +30,10 @@ if patt < 8 {
     if patt == 8 {
         instance_create_depth(0, 0, -100, light);
         instance_create_depth(400, 160, -2, Boss03_68);
+        image_index = 0;
         alarm[0] = 80;
     }
 } else if patt < 13 {
-    if patt == 8 {
-        image_index = 0;
-        instance_create_depth(0, 0, -100, light);
-    }
     if patt - floor(patt / 2) * 2 == 0 {
         instance_create_depth(272, 0, -2, Boss03_70);
         instance_create_depth(400, 0, -2, Boss03_70);
@@ -45,7 +44,7 @@ if patt < 8 {
     }
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 20;
-    audio_play_sound(snd03_28, 0, false);
+    audio_play_sound(snd03_28, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 40;
     if patt == 13 {alarm[0] = 80;}
@@ -59,7 +58,7 @@ if patt < 8 {
     instance_create_depth(400, 80, -2, Boss03_75);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 30;
-    audio_play_sound(snd03_31, 0, false);
+    audio_play_sound(snd03_31, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 180;
 } else if patt == 15 {
@@ -68,7 +67,7 @@ if patt < 8 {
     alarm[0] = 25;
 } else if patt == 16 {
     instance_create_depth(ox, 608, -3, Boss03_67);
-    audio_play_sound(snd01_6, 0, false);
+    audio_play_sound(snd01_6, 0, false, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 20;
     patt += 1;

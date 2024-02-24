@@ -147,14 +147,14 @@ if (patt == 0 and sid != -1 and instance_exists(sid)) {
 	    knife_id.image_angle = sid.image_angle + 45;
 	    knife_id.angle = 45;
 	    knife_id.angle_before = 45;
-	    audio_play_sound(snd04_3, 0, false);
+	    audio_play_sound(snd04_3, 0, false, world.sound_vol);
 	} else if (_type == 1) {
 		knife_id = instance_create_depth(x + lengthdir_x(108, sid.image_angle+90), y + lengthdir_y(108, sid.image_angle+90), -1, Boss04_46);
         knife_id.sid = sid;
         knife_id.ox = 0;
         knife_id.oy = -188;
         knife_id.image_angle = sid.image_angle;
-	    audio_play_sound(snd04_3, 0, false);
+	    audio_play_sound(snd04_3, 0, false, world.sound_vol);
 		
 		sid.alarm[0] = 225;
 		if (!black_appear) {
@@ -182,7 +182,7 @@ if (patt == 0 and sid != -1 and instance_exists(sid)) {
 			knife_id.alarm[0] = 300;
 			zx.asdf -= 50;
 		}
-	    audio_play_sound(snd04_23, 0, false);
+	    audio_play_sound(snd04_23, 0, false, world.sound_vol);
         
         for(i=0; i<num; i+=1) {
             bl[i].move_to = false;
@@ -213,8 +213,8 @@ if (patt == 0 and sid != -1 and instance_exists(sid)) {
             knife_id.hspeed = 6;
             knife_id.gravity_direction = 180;
         }
-        audio_play_sound(snd04_3, 0, false);
-        audio_play_sound(snd04_39, 0, false);
+        audio_play_sound(snd04_3, 0, false, world.sound_vol);
+        audio_play_sound(snd04_39, 0, false, world.sound_vol);
 		
 		if (instance_exists(player)) {
 			temp = instance_create_depth(room_width/2, room_height/2, -50, surf_ripple);

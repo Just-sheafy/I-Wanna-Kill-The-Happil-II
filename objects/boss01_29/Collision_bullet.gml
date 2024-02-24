@@ -5,7 +5,7 @@ if !instance_exists(Boss01_34) {with(Boss01_h11) {hp -= 1;}} else {
 	if (Boss01_34.b == 1) { with(Boss01_h11) {hp -= 1;} }
 	else { with(Boss01_h11) {hp = min(hpm, hp+3);} }
 }
-audio_play_sound(sndBossHit, 0, false);
+audio_play_sound(sndBossHit, 0, false, world.sound_vol);
 if !world.items[2] or !world.WASP_ok {
     canhit = 0;
     alarm[11] = 8;

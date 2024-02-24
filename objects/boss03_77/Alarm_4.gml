@@ -1,7 +1,7 @@
 var i, zx;
 
 if patt == 0 {
-	audio_play_sound(snd03_23, 0, false);
+	audio_play_sound(snd03_23, 0, false, world.sound_vol);
     if instance_exists(player) {
         for(i=0; i<24; i+=1) {
             zx = instance_create_depth(player.x + lengthdir_x(600, 15*i + 180), player.y + lengthdir_y(600, 15*i + 180), -1, Boss03_80);

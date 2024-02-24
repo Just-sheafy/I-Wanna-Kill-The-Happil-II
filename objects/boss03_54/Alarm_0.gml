@@ -1,6 +1,6 @@
 var i, zx;
 
-audio_play_sound(snd02_11, 0, false);
+audio_play_sound(snd02_11, 0, false, world.sound_vol);
 for(i=0; i<4; i+=1) {
     zx = instance_create_depth(x, y, -3, Boss03_56);
     zx.direction = 360/4*i+random(360/4);

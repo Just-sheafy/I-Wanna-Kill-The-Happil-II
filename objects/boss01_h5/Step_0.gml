@@ -13,7 +13,7 @@ if hp <= 0 {
     with(Boss01_11) {alarm[0] += 25; alarm[1] += 25; alarm[2] += 25;}
     with(Boss01_12) {instance_destroy();}
     with(fruit) {disappear = true;}
-    audio_play_sound(sndDeath, 0, false);
+    audio_play_sound(sndDeath, 0, false, world.sound_vol);
     var zx = instance_create_depth(x, y, depth, Boss_h);
     zx.sprite_index = sprite_index;
 }

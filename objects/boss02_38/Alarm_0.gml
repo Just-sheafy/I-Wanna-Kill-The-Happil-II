@@ -11,4 +11,4 @@ if (num != 0) {
 }
 
 alarm[0] = 120;
-audio_play_sound(snd02_16, 0, false);
+audio_play_sound(snd02_16, 0, false, world.sound_vol);

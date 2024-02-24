@@ -1,7 +1,7 @@
 if a && instance_exists(player) && x-player.x < 32 {
     var zx;
 	
-	audio_play_sound(sndBreak, 0, false);
+	audio_play_sound(sndBreak, 0, false, world.sound_vol);
     a = false;
     zx = instance_create_depth(x, y, depth-1, Hamjung03B2);
     zx.sid = id;

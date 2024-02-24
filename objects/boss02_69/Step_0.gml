@@ -170,6 +170,8 @@ if (patt == 25) {
     instance_create_depth(player.x, 668, -2, Boss02F2);
 } else if (patt == 950) {
     instance_create_depth(0, 0, 0, Boss02F4);
+} else if (patt == 1600) {
+	with(Boss02F4) alarm[1] = 0;
 } else if (patt == 1700) {
     instance_create_depth(player.x, -60, -2, Boss02F2);
 } else if (patt == 1750) {
