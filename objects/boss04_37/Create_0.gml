@@ -20,6 +20,10 @@ canhit = true;
 nothit = false;
 
 name = "FOOT";
+__NAME_1 = "";
+__NAME_2 = "";
+name_patt = 0;
+shake = 0;
 alarm[10] = 3;
 
 surf = surface_create(sprite_get_width(sprBoss04_h5), sprite_get_height(sprBoss04_h5));

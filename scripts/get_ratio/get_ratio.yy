@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "get_ratio",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "UtilityFunctions",
-    "path": "folders/Scripts/UtilityFunctions.yy",
+  "$GMScript":"",
+  "%Name":"get_ratio",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_ratio",
+  "parent":{
+    "name":"UtilityFunctions",
+    "path":"folders/Scripts/UtilityFunctions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,4 +1,4 @@
-if (gravity != 0) {
+if (gravity != 0 and !noBlock) {
     if (gravity_direction == 270 and place_meeting(x,y+5,block)) {
         if (vspeed > 1) {vspeed *= -1/2; y += vspeed;}
         else {hspeed = 0; vspeed = 0; gravity = 0;}

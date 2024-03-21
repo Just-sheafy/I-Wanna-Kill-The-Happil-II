@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "saveControls",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Save",
-    "path": "folders/Scripts/Save.yy",
+  "$GMScript":"",
+  "%Name":"saveControls",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"saveControls",
+  "parent":{
+    "name":"Save",
+    "path":"folders/Scripts/Save.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

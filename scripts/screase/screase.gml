@@ -40,3 +40,22 @@ function scr_ease_in_out_quint(argument0) {
 function scr_ease_out_quart(argument0) {
 	return 1 - power(1 - argument0, 4);
 }
+
+function scr_ease_cos(argument0, argument1) {
+	// scr_ease_cos(time, step);
+	// input: 0~2+2*step, number
+	
+	var time, step, temp;
+	
+	time = argument0;
+	step = argument1;
+	if (time <= 0) return 1;
+	else if (time <= 1) {
+	    temp = 1-2*time;
+	    return -(power(temp, 3)-3*temp)/2;
+	} else if (time <= 1+step) return -1;
+	else if (time <= 2+step) {
+	    temp = -1+2*(time-1-step);
+	    return -(power(temp, 3)-3*temp)/2;
+	} else return 1;
+}

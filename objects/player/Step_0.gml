@@ -38,51 +38,53 @@ if (GravityH) {
 	on_vineL = (place_meeting(x + 1, y, vineL) && !on_block);
 }
 
-if (dir != 0) {
-	if (!on_vineR && !on_vineL) {
-		xscale = dir;
-	}
+if (!is_riding) {
+	if (dir != 0) {
+		if (!on_vineR && !on_vineL) {
+			xscale = dir;
+		}
 	
-	if ((dir == 1 && !on_vineR) || (dir == -1 && !on_vineL)) {
-		if (GravityH) vspd = -max_hspd * dir;
-		else hspd = max_hspd * dir;
-		image_speed = 0.5;
-		sprite_index = sprPlayerRunning;
+		if ((dir == 1 && !on_vineR) || (dir == -1 && !on_vineL)) {
+			if (GravityH) vspd = -max_hspd * dir;
+			else hspd = max_hspd * dir;
+			image_speed = 0.5;
+			sprite_index = sprPlayerRunning;
+		}
+	} else {
+		if (GravityH) vspd = 0;
+		else hspd = 0;
+		image_speed = 0.2;
+		sprite_index = sprPlayerIdle;
 	}
-} else {
-	if (GravityH) vspd = 0;
-	else hspd = 0;
-	image_speed = 0.2;
-	sprite_index = sprPlayerIdle;
-}
 
-if (GravityH) {
-	if (!on_platform) {
-		if (hspd * (2*Gravity-1) < -0.05) {
-		    sprite_index = sprPlayerJump;
-		} else if (hspd * (2*Gravity-1) > 0.05) {
-		    sprite_index = sprPlayerFall;
+	if (GravityH) {
+		if (!on_platform) {
+			if (hspd * (2*Gravity-1) < -0.05) {
+			    sprite_index = sprPlayerJump;
+			} else if (hspd * (2*Gravity-1) > 0.05) {
+			    sprite_index = sprPlayerFall;
+			}
+		} else if (!place_meeting(x + 4 * (2 * Gravity - 1), y, platform_parent)) {
+			on_platform = false;
 		}
-	} else if (!place_meeting(x + 4 * (2 * Gravity - 1), y, platform_parent)) {
-		on_platform = false;
-	}
 	
-	if (hspd * (2*Gravity-1) > max_vspd) {
-		hspd = max_vspd * sign(hspd);
-	}
-} else {
-	if (!on_platform) {
-		if (vspd * (2*Gravity-1) < -0.05) {
-		    sprite_index = sprPlayerJump;
-		} else if (vspd * (2*Gravity-1) > 0.05) {
-		    sprite_index = sprPlayerFall;
+		if (hspd * (2*Gravity-1) > max_vspd) {
+			hspd = max_vspd * sign(hspd);
 		}
-	} else if (!place_meeting(x, y + 4 * (2 * Gravity - 1), platform_parent)) {
-		on_platform = false;
-	}
+	} else {
+		if (!on_platform) {
+			if (vspd * (2*Gravity-1) < -0.05) {
+			    sprite_index = sprPlayerJump;
+			} else if (vspd * (2*Gravity-1) > 0.05) {
+			    sprite_index = sprPlayerFall;
+			}
+		} else if (!place_meeting(x, y + 4 * (2 * Gravity - 1), platform_parent)) {
+			on_platform = false;
+		}
 	
-	if (vspd * (2*Gravity-1) > max_vspd) {
-		vspd = max_vspd * sign(vspd);
+		if (vspd * (2*Gravity-1) > max_vspd) {
+			vspd = max_vspd * sign(vspd);
+		}
 	}
 }
 

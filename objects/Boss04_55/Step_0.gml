@@ -17,7 +17,10 @@ if (is_riding) {
     if (!frozen && instance_exists(player)) {
         x += 6*h;
         y += 6*v;
-        if (h != 0) image_xscale = h;
+        if (h != 0) {
+			image_xscale = h;
+			player.xscale = h;
+		}
 		
 		var dir_x = sign(x - xsafe);
 	    var dir_y = sign(y - ysafe);
@@ -49,4 +52,9 @@ if (is_riding) {
 	} else y += 1;
 }
 
-if (y >= room_height + 64) instance_destroy();
+if (y >= room_height + 64) {
+	if (is_riding) {
+		with(player) { is_riding = true; hspd = 0; vspd = 0; grav = 0; }
+	}
+	instance_destroy();
+}

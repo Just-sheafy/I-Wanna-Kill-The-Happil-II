@@ -4,3 +4,4 @@ oy = y;
 d = 0;
 is_eaten = false;
 time = 0;
+troll = false;

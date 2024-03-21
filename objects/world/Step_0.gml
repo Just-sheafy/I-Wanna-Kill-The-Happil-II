@@ -193,7 +193,7 @@ if (!instance_exists(objPause)) {
         }
     }
 }
-room_caption="I Wanna Kill The Happil II";
+room_caption="I Wanna Kill The Happil II: " + string(instance_count);
 
 if instance_exists(player) {
     if !achieve[0] and deaths[0] >= 100 {achieve[0] = 1;}

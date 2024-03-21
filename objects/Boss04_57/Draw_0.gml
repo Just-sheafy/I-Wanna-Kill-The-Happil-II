@@ -1,7 +1,66 @@
-var len, __attack, __col, __col2;
+var i, j, ii, jj, __w, __h, xxx, yyy;
+var len, __attack, __c, __c2;
 
-if (!surface_exists(surf)) {
-	surf = surface_create(room_width, room_height);
+__w = surface_get_width(surf);
+__h = surface_get_height(surf);
+
+if (mode == 5 or mode == 6) {
+	draw_surface_ext(surf, xx-_xoffset, yy-_yoffset, 1, 1, 0, c_white, 1);
+} else {
+	draw_set_color(c_white);
+	draw_primitive_begin_texture(pr_trianglelist, surface_get_texture(surf));
+
+	for(i=0; i<=7; i+=1) {
+	    for(j=0; j<=7; j+=1) {
+	        ii = i; jj = j;
+	        xxx = xx - CX + (ii-4)*__w/8;
+	        yyy = yy - CY + (jj-4)*__h/8;
+	        draw_vertex_texture(CX + xxx*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125),
+	            CY + yyy*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125), ii/8, jj/8);
+        
+	        ii = i+1; jj = j;
+	        xxx = xx - CX + (ii-4)*__w/8;
+	        yyy = yy - CY + (jj-4)*__h/8;
+	        draw_vertex_texture(CX + xxx*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125),
+	            CY + yyy*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125), ii/8, jj/8);
+        
+	        ii = i; jj = j+1;
+	        xxx = xx - CX + (ii-4)*__w/8;
+	        yyy = yy - CY + (jj-4)*__h/8;
+	        draw_vertex_texture(CX + xxx*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125),
+	            CY + yyy*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125), ii/8, jj/8);
+	    }
+	}
+
+	for(i=0; i<=7; i+=1) {
+	    for(j=0; j<=7; j+=1) {        
+	        ii = i+1; jj = j+1;
+	        xxx = xx - CX + (ii-4)*__w/8;
+	        yyy = yy - CY + (jj-4)*__h/8;
+	        draw_vertex_texture(CX + xxx*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125),
+	            CY + yyy*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125), ii/8, jj/8);
+        
+	        ii = i; jj = j+1;
+	        xxx = xx - CX + (ii-4)*__w/8;
+	        yyy = yy - CY + (jj-4)*__h/8;
+	        draw_vertex_texture(CX + xxx*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125),
+	            CY + yyy*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125), ii/8, jj/8);
+        
+	        ii = i+1; jj = j;
+	        xxx = xx - CX + (ii-4)*__w/8;
+	        yyy = yy - CY + (jj-4)*__h/8;
+	        draw_vertex_texture(CX + xxx*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125),
+	            CY + yyy*125/(zz+sqrt(xxx*xxx+yyy*yyy)/5+125), ii/8, jj/8);
+	    }
+	}
+
+	draw_primitive_end();
+}
+
+
+/*
+if (!surface_exists(surf_room)) {
+	surf_room = surface_create(room_width, room_height);
 }
 if (!surface_exists(mask_surf)) {
 	mask_surf = surface_create(w, h);
@@ -14,17 +73,17 @@ if (!surface_exists(mask_surf)) {
 	surface_reset_target();
 }
 
-surface_set_target(surf);
+surface_set_target(surf_room);
 
 draw_clear_alpha(c_black, 0);
 
 // shader
 if (world.shader_supported && shader_is_compiled(shdTornado)) {
 	shader_set(shdTornado);
-	shader_set_uniform_f(_time, t);
-	shader_set_uniform_f_array(_resolution, resol);
-	shader_set_uniform_f_array(_col, col);
-	shader_set_uniform_f(_rot, rot);
+	shader_set_uniform_f(__time, _t);
+	shader_set_uniform_f_array(__resolution, _resol);
+	shader_set_uniform_f_array(__col, _col);
+	shader_set_uniform_f(__rot, _rot);
 	
 	draw_set_color(c_white);
 	draw_rectangle(0, 0, room_width, room_height, false);
@@ -50,10 +109,12 @@ draw_sprite_ext(sprBoss04_62, 2, 0, 0, room_width/w, room_height/h, 0, c_white, 
 
 surface_reset_target();
 
-draw_surface_ext(surf, x-sprite_get_xoffset(sprBoss04_15)*scale, y-sprite_get_yoffset(sprBoss04_15)*scale,
+draw_surface_ext(surf_room, x-sprite_get_xoffset(sprBoss04_15)*scale, y-sprite_get_yoffset(sprBoss04_15)*scale,
 	sprite_get_width(sprBoss04_15)*scale/room_width, sprite_get_height(sprBoss04_15)*scale/room_height, 0, c_white, 1);
+*/
 
 
+/*
 // info
 draw_set_font(creditFont);
 draw_set_halign(fa_left);
@@ -71,14 +132,14 @@ if (world.items[3]) {
 	draw_text_transformed_color(x+(-len/2+34)*scale/4, y+208*scale/4, key_restricted, scale/4, scale/4, 0,
 		c_grey, c_grey, c_black, c_black, alpha);
 	
-	if (attack < 8) { __col = c_grey; __col2 = c_black; }
-	else { __col = c_red; __col2 = c_maroon; }
+	if (attack < 8) { __c = c_grey; __c2 = c_black; }
+	else { __c = c_red; __c2 = c_maroon; }
 	draw_sprite_ext(sprBoss04_56, (attack <= 2)? 0 : ((attack >= 8)? 2 : 1),
 		x+(-len/2+42+string_width(string(key_restricted))+__attack/2)*scale/4, y+208*scale/4,
 		attack_scale*(0.6+0.24*(attack <= 2))*scale/4, attack_scale*(0.6+0.24*(attack <= 2))*scale/4, 0, c_white, alpha);
 	draw_text_transformed_color(x+(-len/2+42+string_width(string(key_restricted))+__attack+4)*scale/4,
 		y+208*scale/4, attack, scale/4, scale/4, 0,
-		__col, __col, __col2, __col2, alpha);
+		__c, __c, __c2, __c2, alpha);
 	
 	draw_sprite_ext(sprBoss04_57, 0,
 		x+(-len/2+42+string_width(string(key_restricted))+__attack+12+string_width(string(attack))+16)*scale/4,

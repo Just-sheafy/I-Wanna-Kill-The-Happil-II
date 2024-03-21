@@ -4,3 +4,5 @@ image_speed = 0.5;
 
 disappear = false;
 patt = 400;
+
+surf = surface_create(61, 25);

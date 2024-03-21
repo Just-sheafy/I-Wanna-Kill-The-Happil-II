@@ -1,3 +1,5 @@
+var zx, temp;
+
 if (t >= 0 && (number_hit >= 0 || instance_exists(player))) t += t_spd;
 t_bound = max(t_bound, t-500);
 
@@ -51,20 +53,26 @@ if (number_hit >= 0) {
 		if (number_hit >= 8 && t < 5830) {
 			number_hit = -1;
 			t_spd = 2;
-			depth = 80;
-			instance_create_depth(0, 0, 150, Boss04_56);
+			depth = 150;
+			instance_create_depth(0, 0, 180, Boss04_56);
 			instance_create_depth(400, 304, 0, Boss04_57);
+			temp = instance_create_layer(-32, -32, "Player", objHealthItem2);
+			temp.troll = true;
+			temp.time = 500;
+			temp = instance_create_depth(room_width/2, room_height/2, -80, Boss04_51);
+			temp.image_alpha = 0;
+			
 			if (!world.items[1]) instance_create_layer(0, 0, "Player", MouseC);
 			with(player) { visible = true; image_alpha = 0; }
 			with(Boss04_55) { visible = true; image_alpha = 0; frozen = false; }
 			
 			if (world.HEALTH_ok) {
-				var zx = instance_create_depth(0, 0, -49, playerHealth);
+				zx = instance_create_depth(0, 0, -49, playerHealth);
 				zx.hp = 8;
 				zx.hpm = 8;
 			}
 			
-	        var zx = instance_create_depth(800, 0, -2000, StageGet);
+	        zx = instance_create_depth(800, 0, -2000, StageGet);
 	        zx.image_index = 68;
 			var zx = instance_create_depth(0, 0, 0, soundEx2);
 		    zx.M2 = world.Instance;
@@ -77,28 +85,29 @@ if (number_hit >= 0) {
 			world.credit_played = true;
 		}
 		
-		if (number_hit >= 0) {
-			if (t < 4591) ALPHA_fade = min(1, ALPHA_fade + 0.02);
-			else if (t <= 4641) ALPHA_fade = (4641-t)/50;
-			else ALPHA_fade = 0;
-		} else ALPHA_fade = max(0, ALPHA_fade - 0.02);
-	}
-} else if (!gameover) {
-	ALPHA = max(0.25, ALPHA-0.02);
-	if (number_hit > -2) {
-		number_hit -= 0.05;
-		if (layer_exists("Background2"))
-			layer_background_alpha(layer_background_get_id(layer_get_id("Background2")), 4*ALPHA-3);
-		if (layer_exists("Background3"))
-			layer_background_alpha(layer_background_get_id(layer_get_id("Background3")), 4*ALPHA-3);
-		with(player) image_alpha = min(1, image_alpha+0.1);
-		with(Boss04_55) image_alpha = min(1, image_alpha+0.1);
-	}
-	if (t >= 5830) {
-		gameover = true;
-		with(player) kill_player(true);
+		if (t < 4591) ALPHA_fade = min(1, ALPHA_fade + 0.02);
+		else if (t <= 4641) ALPHA_fade = (4641-t)/50;
+		else ALPHA_fade = 0;
 	}
 } else {
-	depth = -100;
-	ALPHA = min(1, ALPHA + 0.04);
+	ALPHA_fade = max(0, ALPHA_fade - 0.02);
+	if (!gameover) {
+		ALPHA = max(0.25, ALPHA-0.02);
+		if (number_hit > -2) {
+			number_hit -= 0.05;
+			if (layer_exists("Background2"))
+				layer_background_alpha(layer_background_get_id(layer_get_id("Background2")), 4*ALPHA-3);
+			if (layer_exists("Background3"))
+				layer_background_alpha(layer_background_get_id(layer_get_id("Background3")), 4*ALPHA-3);
+			with(player) image_alpha = min(1, image_alpha+0.1);
+			with(Boss04_55) image_alpha = min(1, image_alpha+0.1);
+		}
+		if (t >= 5830) {
+			gameover = true;
+			with(player) kill_player(true);
+		}
+	} else {
+		depth = -100;
+		ALPHA = min(1, ALPHA + 0.04);
+	}
 }

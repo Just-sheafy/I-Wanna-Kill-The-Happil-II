@@ -1,4 +1,4 @@
-if (!world.HEALTH_ok) { instance_destroy(); exit; }
+if (!world.HEALTH_ok and !troll) { instance_destroy(); exit; }
 
 if (time > 0) time -= 1;
 else is_eaten = true;

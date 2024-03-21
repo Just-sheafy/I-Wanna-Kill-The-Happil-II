@@ -1,3 +1,5 @@
+var temp;
+
 t = -10;
 t_spd = 1;
 t_bound = 250;
@@ -18,15 +20,21 @@ world.credit_played = true;
 if (world.credit_played) {
 	instance_create_depth(400, 384, -1, Boss04_55);
 	instance_create_depth(400, 364, -2, player);
-	instance_create_depth(0, 0, 150, Boss04_56);
+	instance_create_depth(0, 0, 180, Boss04_56);
 	instance_create_depth(400, 304, 0, Boss04_57);
+	temp = instance_create_layer(-32, -32, "Player", objHealthItem2);
+	temp.image_xscale = 1;
+	temp.image_yscale = 1;
+	temp.troll = true;
+	temp.time = 500;
+	instance_create_depth(room_width/2, room_height/2, -80, Boss04_51);
 	instance_create_depth(0, 0, -100, dark1);
 	
 	t = t_bound;
 	t_spd = 2;
 	ALPHA = 0.25;
 	number_hit = -2;
-	depth = 80;
+	depth = 150;
 	if (!world.items[1]) instance_create_layer(0, 0, "Player", MouseC);
 			
 	if (world.HEALTH_ok) {

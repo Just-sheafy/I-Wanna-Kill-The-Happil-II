@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "musicFunctions",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "System",
-    "path": "folders/Scripts/System.yy",
+  "$GMScript":"",
+  "%Name":"musicFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"musicFunctions",
+  "parent":{
+    "name":"System",
+    "path":"folders/Scripts/System.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

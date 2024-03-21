@@ -115,7 +115,11 @@ function kill_player(outside = false) {
 		
 		if (instance_exists(playerHealth) && !outside) {
 			if (player.invinc) exit;
-			if (playerHealth.hp < 10) playerHealth.hp -= 1;
+			if (playerHealth.hp < 10) {
+				if (instance_exists(Boss04_57)) {
+					playerHealth.hp -= Boss04_57.attack;
+				} else playerHealth.hp -= 1;
+			}
 			if (playerHealth.hp > 0) {
 				audio_play_sound(sndDeath, 0, false, world.sound_vol);
 				with(player) { invinc = true; invinc_time = 50; }

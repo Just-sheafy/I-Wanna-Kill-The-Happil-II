@@ -6,3 +6,5 @@ oy = 0;
 angle = 0;
 ax = 0;
 ay = 0;
+
+surf = -1;

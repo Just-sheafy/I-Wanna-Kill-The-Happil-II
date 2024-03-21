@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_noise_weighted",
+  "name":"shd_noise_weighted",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

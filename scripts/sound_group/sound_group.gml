@@ -244,6 +244,8 @@ function sound_group() {
 	ds_list_add(list_sounds[1], snd04_43);
 	ds_list_add(list_sounds[1], snd04_44);
 	ds_list_add(list_sounds[1], snd04_45);
+	ds_list_add(list_sounds[1], snd04_46);
+	ds_list_add(list_sounds[1], snd04_47);
 
 	ds_list_add(list_sounds[1], sndSr01_1);
 	ds_list_add(list_sounds[1], sndSr01_2);
