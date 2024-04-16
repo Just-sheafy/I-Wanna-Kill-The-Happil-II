@@ -33,13 +33,13 @@ base_before = -1;
 attack = true;
 
 move_clockwise = false;
-move_fast = false;
-move_faster = false;
+move_fast = true;
+move_faster = true;
 move_next = 0;
 jumping = false;
 NUM = 8;
 patt = NUM-1;
-alarm[0] = 100;
+alarm[0] = 25;
 
 for(i=0; i<9; i+=1) {
     temp = instance_create_depth(32, i*64+48, 5, Boss04_40);

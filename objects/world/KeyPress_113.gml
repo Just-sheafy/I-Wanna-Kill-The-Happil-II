@@ -5,6 +5,10 @@ if instance_exists(objPause) {exit;}
 
 var i;
 
+if (room == Stage04Bs7) {
+	audio_play_sound(sndWrong, 0, false, sound_vol);
+	exit;
+}
 if room == initRoom or room == beforeRoom or room == startRoom or room == loadRoom or room == beginning {exit;}
 room_goto(startRoom);
 with(player) {instance_destroy();}

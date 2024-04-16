@@ -132,6 +132,7 @@ surf_temp = -1;
 spr_temp = -1;
 
 secretBoss1Skip = 0;
+Boss4HP = 44;
 
 room_before = -1;
 for(i=0; i<8; i+=1) {

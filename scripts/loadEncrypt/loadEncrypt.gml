@@ -45,7 +45,7 @@ function loadEncrypt() {
 	    musicFunctions();
 	}*/
 	
-	var ID, num, num2, prevent, filename, _map;
+	var ID, num, num2, prevent, filename, _map, moved = false;
 	var prevent_ftn, num_ftn;
 	
 	prevent_ftn = function(__map, __text, __ID, __num2, __prevent) {
@@ -74,8 +74,12 @@ function loadEncrypt() {
 	    if (_map[? "room0"] != undefined and _map[? "room1"] != undefined and
 	        _map[? "room2"] != undefined) {
 	        num = _map[? "room2"]*(123*456)+_map[? "room1"]*123+_map[? "room0"];
-	        if (room_exists(num)) room = num;
-			else room = Stage01A;
+	        if (room_exists(num)) {
+				if (num == int64(Stage04Bs5) and world.Boss4HP <= 0) {
+					room = Stage04Bs6;
+					moved = true;
+				} else room = num;
+			} else room = Stage01A;
 			prevent = prevent_ftn(_map, "room0", ID, num2, prevent);
 			num2 = num_ftn(ID, num2);
 			prevent = prevent_ftn(_map, "room1", ID, num2, prevent);
@@ -108,6 +112,10 @@ function loadEncrypt() {
 	        player.GravityH = _map[? "GravityH"];
 			prevent = prevent_ftn(_map, "GravityH", ID, num2, prevent);
 			num2 = num_ftn(ID, num2);
+		}
+		
+		if (moved) {
+			with(player) instance_destroy();
 		}
     
 	    if (_map[? "difficulty"] != undefined) {

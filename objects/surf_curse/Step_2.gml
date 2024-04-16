@@ -8,7 +8,7 @@ h = camera_get_view_height(cam);
 
 if (!surface_exists(surface)) {
 	surface = surface_create(camera_get_view_width(cam), camera_get_view_height(cam));
-	view_surface_id[0] = surface;
+	// view_surface_id[0] = surface;
 }
 
 surface_set_target(surface);

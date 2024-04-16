@@ -1,13 +1,13 @@
 var w, h, cam = view_camera[0];
 
-if (!enable) {instance_destroy(); exit;}
-if (!surface_exists(surface)) {
-	surface = surface_create(camera_get_view_width(cam), camera_get_view_height(cam));
-	view_surface_id[0] = surface;
-}
+if (!enable) {exit;}
 
 w = camera_get_view_width(cam);
 h = camera_get_view_height(cam);
+
+if (!surface_exists(surface)) {
+	surface = surface_create(w, h);
+}
 
 surface_set_target(surface);
 gpu_set_blendmode_ext(bm_one,bm_zero);

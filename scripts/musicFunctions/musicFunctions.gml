@@ -4,6 +4,14 @@ function musicFunctions() {
 	/////////////
 
 	switch(room) {
+	    case Stage04Bs8:
+	        if filePlaying != -1 and curMusic != global.Silent {
+				audio_stop_channel(0);
+	            filePlaying = -1;
+	            curMusic = global.Silent;
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
+	        }
+	        break;
 	    case Stage01Bs:
 	    case Stage02Bs:
 	    case Stage03Bs:
@@ -283,6 +291,8 @@ function musicFunctions() {
 					    filePlaying = 24;
 					    curMusic = global.stage04Bs4;
 					    Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
+					} else {
+						audio_sound_set_track_position(Instance, 0);
 					}
 				}
 			} else {
@@ -293,6 +303,17 @@ function musicFunctions() {
 		            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 		        }
 			}
+	        break;
+	    case Stage04Bs7:
+	        if filePlaying != 25 and curMusic != global.stage04Bs5 {
+				audio_stop_channel(0);
+	            filePlaying = 25;
+	            curMusic = global.stage04Bs5;
+				audio_sound_loop_start(curMusic, 3.4);
+				audio_sound_loop_end(curMusic, 42.6);
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
+				audio_sound_loop_end(Instance, 42.6);
+	        }
 	        break;
 	    //LIST OTHER ROOMS HERE
     

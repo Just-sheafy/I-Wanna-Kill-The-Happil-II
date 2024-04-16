@@ -1,5 +1,8 @@
 var i, j, ir, jr;
 
+draw_self();
+
+/*
 if (!surface_exists(surf)) surf = surface_create(128, 128);
 
 surface_set_target(surf);

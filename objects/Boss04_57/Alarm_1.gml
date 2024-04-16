@@ -27,6 +27,8 @@ if (patt == 0) {
 			CX = xx/2 + clamp(player.x, 64, room_width-64) * 1/2;
 			CY = yy/2 + clamp(player.y, 64, room_height-64) * 1/2;
 		} else {
+			if (rush >= 3) rush -= 1;
+			
 			dir = point_direction(room_width/2, room_height/2, 0, 0);
 			xx = room_width/2 + lengthdir_x(room_height*3, dir+180);
 			yy = room_height/2 + lengthdir_y(room_height*3, dir+180);
@@ -60,19 +62,21 @@ if (patt == 0) {
 		CY = room_height/2;
 		
 		patt = 0;
-		alarm[2] = 50;
+		if (instance_exists(player)) alarm[2] = 50;
 	}
 } else if (patt == 2) {
     audio_play_sound(snd04_4, 0, false, world.sound_vol);
     patt += 1;
 	if (rush <= 1) {
 		alarm[1] = 90;
-		dir = choose(0, 45);
-		for(i=0; i<4; i+=1) {
-			temp = instance_create_depth(room_width/2, room_height/2, 125, Boss04_67);
-			temp.image_alpha = 0;
-			temp.theta = 90*i+dir;
-			if (i == 0) temp.snd_valid = true;
+		if (instance_exists(player)) {
+			dir = choose(0, 45);
+			for(i=0; i<4; i+=1) {
+				temp = instance_create_depth(room_width/2, room_height/2, 125, Boss04_67);
+				temp.image_alpha = 0;
+				temp.theta = 90*i+dir;
+				if (i == 0) temp.snd_valid = true;
+			}
 		}
 	} else alarm[1] = 60;
 } else if (patt == 3) {
@@ -111,15 +115,15 @@ if (patt == 0) {
 		hp_var.xx2 = 677;
 		if (instance_exists(player)) {
 			if (player.x <= 400) {
-				hp_var.yy1 = -236;
-				hp_var.yy2 = -66;
+				hp_var.yy1 = -266;
+				hp_var.yy2 = -96;
 			} else {
-				hp_var.yy1 = -66;
-				hp_var.yy2 = -236;
+				hp_var.yy1 = -96;
+				hp_var.yy2 = -266;
 			}
 		} else {
-			hp_var.yy1 = -236;
-			hp_var.yy2 = -66;
+			hp_var.yy1 = -266;
+			hp_var.yy2 = -96;
 		}
 		hp_var.zz1 = 120/3;
 		hp_var.zz2 = 120/3;

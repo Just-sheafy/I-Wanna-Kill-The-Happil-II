@@ -9,13 +9,7 @@ ox = 0;
 oy = 0;
 twist = 1;
 
-surf = surface_create(camera_get_view_width(cam), camera_get_view_height(cam));
-
-surface_set_target(surf);
-draw_clear_alpha(c_black, 0);
-surface_reset_target();
-
-// view_surface_id[0] = surf;
+surf = -1;
 
 radius = 200;
 not_check = false;

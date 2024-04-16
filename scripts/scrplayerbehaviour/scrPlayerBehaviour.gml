@@ -120,7 +120,7 @@ function kill_player(outside = false) {
 					playerHealth.hp -= Boss04_57.attack;
 				} else playerHealth.hp -= 1;
 			}
-			if (playerHealth.hp > 0) {
+			if (playerHealth.hp > 0 or playerHealth.hpm >= 10) {
 				audio_play_sound(sndDeath, 0, false, world.sound_vol);
 				with(player) { invinc = true; invinc_time = 50; }
 				with(playerHealth) { changed = true; t = 0; }
@@ -130,17 +130,20 @@ function kill_player(outside = false) {
 			}
 		}
 		
-		with(world) {music_speed = 0;}
+		if (room != Stage04Bs7) with(world) {music_speed = 0;}
 		with(soundEx) {if (world.Instance != M1) audio_stop_sound(M1); if (world.Instance != M2) audio_stop_sound(M2);}
 		with(soundEx2) {if (world.Instance != M1) audio_stop_sound(M1); if (world.Instance != M2) audio_stop_sound(M2);}
 		
 		if (instance_exists(objEndCredit) && objEndCredit.gameover) {
 			world.Kill = audio_play_sound(global.Sdeath3, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);
 		} else {
-			if instance_exists(DIE2B) {with(kill_character) {instance_destroy();} audio_play_sound(sndDeath, 0, false, world.sound_vol); instance_create_depth(0, 0, -20, Hamjung02Bs3);}
-			if instance_exists(DIE4) {world.Kill = audio_play_sound(global.Sdeath2, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);}
-			else {world.Kill = audio_play_sound(global.Sdeath, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);}
+			if (room != Stage04Bs7) {
+				if instance_exists(DIE2B) {with(kill_character) {instance_destroy();} instance_create_depth(0, 0, -20, Hamjung02Bs3);}
+				if instance_exists(DIE4) {world.Kill = audio_play_sound(global.Sdeath2, 5, false, world.music_vol);}
+				else {world.Kill = audio_play_sound(global.Sdeath, 5, false, world.music_vol);}
+			}
 			
+			audio_play_sound(sndDeath, 0, false, world.sound_vol);
 			instance_create_depth(camera_get_view_x(cam)+camera_get_view_width(cam)/2,
 				camera_get_view_y(cam)+camera_get_view_height(cam)/2, -1000, GAMEOVER);
 		}

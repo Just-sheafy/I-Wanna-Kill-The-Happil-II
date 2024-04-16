@@ -18,6 +18,7 @@ alpha = 0;
 a = 0;
 canhit = true;
 nothit = false;
+dead = false;
 
 name = "FOOT";
 __NAME_1 = "";
@@ -26,4 +27,4 @@ name_patt = 0;
 shake = 0;
 alarm[10] = 3;
 
-surf = surface_create(sprite_get_width(sprBoss04_h5), sprite_get_height(sprBoss04_h5));
+surf = -1;

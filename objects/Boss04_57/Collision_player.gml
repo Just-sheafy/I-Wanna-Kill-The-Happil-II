@@ -22,6 +22,6 @@ if (mode == 4 and abs(zz) <= 10) {
 		world.deaths[0]++;
 		with(world) {saveDeaths();}
 	}
-} else if (mode == 5 or mode == 6) {
+} else if (mode == 5 or mode == 6 or mode == 7 or mode == 8) {
 	with(other) kill_player();
 }

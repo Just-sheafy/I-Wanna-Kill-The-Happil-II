@@ -17,11 +17,12 @@ t = 14; // create gravity changer
 t2 = 14;
 t_spd = 2; // time speed
 
-hp0 = 44;
+hp0 = world.Boss4HP;
 hpm0 = 44;
-hp1 = 44;
+hp1 = world.Boss4HP;
 hpm1 = 44;
 bat = false;
+dead = false;
 
 foot_0 = instance_create_depth(320, 496, 0, Boss04_37);
 foot_0.index = 0;
@@ -37,7 +38,7 @@ blackhole = false;
 blackhole_angle = 0;
 blackhole_alpha = 0;
 attack = true;
-surf = surface_create(sprite_get_width(sprite_index), sprite_get_height(sprite_index));
+surf = -1;
 
 move_clockwise = false;
 move_fast = false;
@@ -82,7 +83,8 @@ if (world.HEALTH_ok) {
 	var zx = instance_create_depth(0, 0, -49, playerHealth);
 	if (world.hp_before != -1) zx.hp = min(5, world.hp_before);
 	else zx.hp = 5;
-	zx.hpm = 5;
+	zx.hpm = max(5 - (4 - world.Boss4HP/11), 1);
+	zx.hp = min(zx.hp, zx.hpm);
 	if (zx.hp < zx.hpm) {
 		zx = instance_create_depth(640, 304, -3, objHealthItem2);
 		zx.time = 450;
@@ -108,3 +110,5 @@ else {
 		with(temp) event_user(0);
 	} else instance_create_depth(0, 0, -100, dark1);
 }
+
+alarm[11] = 1;

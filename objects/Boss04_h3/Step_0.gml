@@ -1,8 +1,10 @@
+var temp;
+
 a = 0;
 if hp > shp {
-    shp += min(ceil((hp - shp) / 10), 2);
+    shp += min(ceil((hp - shp) / 5), 1);
 } else if hp < shp {
-    shp += max(floor((hp - shp) / 10), -2);
+    shp += max(floor((hp - shp) / 5), -1);
     a = 1;
 }
 
@@ -50,9 +52,72 @@ if (mode == 0) {
 }
 
 if hp <= 0 {
-    instance_destroy();
-    instance_create_depth(0, 0, -100, light);
-    var zx = instance_create_depth(x, y, depth, Boss_h);
-    zx.sprite_index = sprite_index;
-	zx.c = false;
+	instance_destroy();
+    temp = instance_create_depth(0, 0, -100, light);
+	temp.error = true;
+	with(world) {audio_stop_channel(1); audio_stop_sound(Instance); Instance = -1;}
+	audio_play_sound(sndBossHit, 0, false, world.sound_vol);
+	
+	instance_create_depth(400, 304, 2, Boss04_81);
+	
+	with(Boss04_56) {
+		t_spd = 1;
+		t2_spd = 1;
+		number = 2;
+		
+		col[0] = 0.52;
+		col[1] = 0.2;
+		col[2] = 0.1;
+		col2[0] = 0.0;
+		col2[1] = 0.2;
+		col2[2] = 0.9;
+		col3[0] = 0.2;
+		col3[1] = 0.9;
+		col3[2] = 0.45;
+	}
+	
+	with(Boss04_55) instance_destroy();
+	with(player) {
+		frozen = true; is_riding = true;
+		x = 400; y = 364; xscale = 1;
+		hspd = 0; vspd = 0; grav = 0;
+	}
+	with(MouseC) instance_destroy();
+	temp = instance_create_depth(400, 384, -1, Boss04_55);
+	temp.is_riding = true;
+	temp.frozen = true;
+	
+	with(Boss04_57) instance_destroy();
+	with(objHealthItem2) instance_destroy();
+	with(objEndCredit) { dead = true; error = true; }
+	
+	with(Boss04_58) instance_destroy();
+	with(Boss04_65) instance_destroy();
+	with(Boss03_22) instance_destroy();
+	with(Boss04_66) instance_destroy();
+	with(Boss04_67) instance_destroy();
+	with(Boss04_21) instance_destroy();
+	with(Boss03_6) instance_destroy();
+	with(Boss03_7) instance_destroy();
+	
+	with(surf_mobius) instance_destroy();
+	with(Boss04_68) instance_destroy();
+	with(Boss04_69) instance_destroy();
+	with(Boss04_70) instance_destroy();
+	with(Boss04_71) instance_destroy();
+	with(Boss04_72) instance_destroy();
+	with(Boss04_73) instance_destroy();
+	
+	with(Boss04_74) instance_destroy();
+	with(Boss04_75) instance_destroy();
+	with(Boss04_76) instance_destroy();
+	with(Boss04_77) instance_destroy();
+	with(Boss04_78) instance_destroy();
+	
+	with(Boss04_40) instance_destroy();
+	with(Boss04_41) instance_destroy();
+	with(Boss04_62) instance_destroy();
+	with(Boss04_63) instance_destroy();
+	with(Boss04_64) instance_destroy();
+	with(Boss04_79) instance_destroy();
 }

@@ -1,5 +1,9 @@
 var temp;
 
+if (dead) {
+	with(other) {instance_destroy();} exit;
+}
+
 temp = (index == 0 && Boss04_36.hp0 <= Boss04_36.hp1-5) ||
 	(index == 1 && Boss04_36.hp1 <= Boss04_36.hp0-5) ||
 	(index == 0 && Boss04_36.hp0 <= 0) ||

@@ -13,6 +13,7 @@ radius = 150;
 twist = 1;
 but_recover = true;
 not_recover = false;
+dead = false;
 
 // for assault effect
 assault = false;
@@ -30,13 +31,4 @@ function pos3Dy(xxx, yyy, z, expon) {
 	return room_height/2 + yyy*125/(z+power(xxx*xxx+yyy*yyy, expon)/5+125);
 }
 
-
-if (!world.screen_effect_enable) { surface = -1; exit; }
-
-var cam = view_camera[0];
-
-surface = surface_create(camera_get_view_width(cam), camera_get_view_height(cam));
-
-surface_set_target(surface);
-draw_clear_alpha(c_black, 0);
-surface_reset_target();
+surface = -1;

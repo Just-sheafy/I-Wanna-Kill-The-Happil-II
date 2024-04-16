@@ -1,4 +1,4 @@
-var val, xx0, yy0, xx1, yy1, temp, dir, angle_diff;
+var zx, val, xx0, yy0, xx1, yy1, temp, dir, angle_diff;
 
 with(player) max_hspd = 4;
 
@@ -215,3 +215,31 @@ if ((world.curMusic == global.stage04Bs3 and val >= 91.6)
 		}
 	}
 } else move_faster = false;
+
+if (!dead and hp0 <= 0 and hp1 <= 0) {
+	temp = instance_create_depth(0, 0, -100, light);
+	temp.error = true;
+	dead = true;
+	blackhole = false;
+	with(Boss04_37) dead = true;
+	
+	// terminalize
+	with(surf_lens) dead = true;
+	with(surf_ripple) instance_destroy();
+	with(view_an1) instance_destroy();
+    zx = instance_create_depth(0, 0, 0, soundEx2);
+    zx.M2 = world.Instance;
+    zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
+    zx.Vol = 0;
+    zx.ang = 0;
+	zx.time_max = 120;
+    audio_sound_gain(zx.M1, world.music_vol, 0);
+    with(world) {filePlaying = -1; curMusic = global.Silent; Instance = soundEx2.M1;}
+	
+	with(Boss04_38) instance_destroy();
+	with(Boss04_43) instance_destroy();
+	with(Boss04_45) instance_destroy();
+	with(Boss04_49) instance_destroy();
+	alarm[0] = 0;
+	alarm[9] = 50;
+}

@@ -7,10 +7,12 @@ if !world.items[2] or !world.WASP_ok {
 
 with(Boss04_h3) {
 	if (armor == 0) {
-		hp -= 20;
-		armor += Boss04_57.defence;
+		hp -= 10;
 		audio_play_sound(sndBossHit, 0, false, world.sound_vol);
-		audio_play_sound(sndArmorEquip, 0, false, world.sound_vol);
+		if (hp > 0) {
+			armor += Boss04_57.defence;
+			audio_play_sound(sndArmorEquip, 0, false, world.sound_vol);
+		}
 	} else {
 		b = 10;
 		armor -= 1;

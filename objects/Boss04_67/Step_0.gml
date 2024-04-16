@@ -40,4 +40,53 @@ if (image_index == 0) {
 			y += Boss04_55.y - Boss04_55.yprevious;
 		}
 	}
+} else if (image_index == 3) {
+	if (mode == 0) {
+		mode_num = min(mode_num+1, 74);
+		if (x < 400) x = 400-535*(1-sin(degtorad(mode_num*90/74)));
+		else if (x > 400) x = 400+535*(1-sin(degtorad(mode_num*90/74)));
+	} else {
+		if (instance_exists(player)) {
+			if (-sin(degtorad(theta))*(player.x-room_width/2)-cos(degtorad(theta))*(player.y-room_height/2) >= 0)
+				orient = 0;
+			else orient = 1;
+		}
+		
+		if (mode == 1) { with(Boss04_76) { alpha = min(alpha+0.025, 1); } }
+		else if (mode <= 5) {
+			mode_num = min(mode_num + 1, 400);
+			theta_prev = theta;
+			theta = 90 + ((mode >= 4)? 180:0) + ((mode == 2 or mode == 4)? 1:-1) * 90*(sin(degtorad((mode_num-200)*90/200))+1);
+			
+			var epsilon = 0.05;
+			if (abs(cos(degtorad(theta))) <= epsilon) image_yscale = 608/68/abs(sin(degtorad(theta)));
+			else if (abs(sin(degtorad(theta))) <= epsilon) image_yscale = 800/68/abs(cos(degtorad(theta)));
+			else image_yscale = min(608/68/abs(sin(degtorad(theta))), 800/68/abs(cos(degtorad(theta))));
+			image_angle = theta-90;
+			
+			if (mode <= 3) { with(Boss04_76) { alpha = min(alpha+0.025, 1); } }
+			else { with(Boss04_76) { alpha = max(alpha-0.01, 0); } }
+			with(Boss04_76) { dir = Boss04_67.theta; }
+			with(Boss04_77) angle += Boss04_67.theta-Boss04_67.theta_prev;
+		} else {
+			mode_num = min(mode_num+1, 200);
+			y = 304+800*(1-cos(degtorad(mode_num*90/200)));
+		}
+		
+		if (orient == 1) {
+			with(Boss04_77) {
+				x = room_width/2 + (xx-room_width/2)*sin(degtorad(Boss04_67.theta))
+					- (yy-room_height/2)*cos(degtorad(Boss04_67.theta));
+				y = room_height/2 + (xx-room_width/2)*cos(degtorad(Boss04_67.theta))
+					+ (yy-room_height/2)*sin(degtorad(Boss04_67.theta));
+			}
+		} else {
+			with(Boss04_77) {
+				x = room_width/2 + xx*sin(degtorad(Boss04_67.theta))
+					- (yy-room_height/2)*cos(degtorad(Boss04_67.theta));
+				y = room_height/2 + xx*cos(degtorad(Boss04_67.theta))
+					+ (yy-room_height/2)*sin(degtorad(Boss04_67.theta));
+			}
+		}
+	}
 }

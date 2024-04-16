@@ -1,7 +1,7 @@
 event_inherited();
 
-hp = 200;
-hpm = 200;
+hp = 120;
+hpm = 120;
 shp = 0;
 image_alpha = 0;
 a = 0;
@@ -20,7 +20,7 @@ nothit_temp = false;
 
 
 // 3D effect
-surf = surface_create(309, 64);
+surf = -1;
 kill_block = instance_create_depth(x, y, 0, Boss04_66);
 ox = 36;
 oy = 32;

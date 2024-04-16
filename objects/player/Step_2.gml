@@ -53,8 +53,28 @@ if (killer != noone) {
 #endregion
 
 #region Touches screen border
-if (world.kill && outside_room()) {
-	kill_player(true);
+if (outside_room()) {
+	if (room != Stage04Bs6 and room != Stage04Bs7) {
+		if (world.kill) kill_player(true);
+	} else {
+		audio_stop_sound(snd04_59); audio_stop_sound(snd04_60); audio_stop_sound(snd04_61);
+		audio_play_sound(choose(snd04_59, snd04_60, snd04_61), 0, false, world.sound_vol);
+		
+		kill_player();
+		reset_jumps();
+		if (room == Stage04Bs7) shoot_time = 40;
+		
+		is_riding = false;
+		with(Boss04_55) is_riding = false;
+		with(Boss04_86) { image_speed = 1; hspeed = 1; alarm[0] = 25; }
+		if (y >= room_height) {
+			vspd = -16;
+			y -= 16;
+		} else if (y <= 0) {
+			vspd = 16;
+			y += 16;
+		}
+	}
 }
 #endregion
 

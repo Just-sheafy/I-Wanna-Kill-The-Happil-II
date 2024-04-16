@@ -1,22 +1,50 @@
-var r, theta;
+var r, theta, temp;
 
-if (patt == 0) {
-	mode = 1;
-    mode_time = 0;
-    hp_var.mode = 1;
+if (patt == 0) {	
+	with(Boss04_56) {
+		t_spd = 1;
+		t2_spd = 1;
+		number = 2;
+		
+		col[0] = 0.52;
+		col[1] = 0.2;
+		col[2] = 0.1;
+		col2[0] = 0.0;
+		col2[1] = 0.2;
+		col2[2] = 0.9;
+		col3[0] = 0.2;
+		col3[1] = 0.9;
+		col3[2] = 0.45;
+	}
+	
+	if (instance_exists(player)) {
+		mode = 1;
+	    mode_time = 0;
+	    hp_var.mode = 1;
+		
+		temp = instance_create_layer(-32, -32, "Player", objHealthItem2);
+		temp.image_xscale = 1;
+		temp.image_yscale = 1;
+		temp.troll = true;
+		temp.time = 500;
+		
+	    r = random_range(250, 350);
+		theta = random(360);
+		
+	    _r = sprite_get_height(sprite_index)*image_xscale*2/3;
+	    _theta = theta;
+		
+	    xx_to = room_width / 2 + lengthdir_x(r, theta);
+	    yy_to = room_height / 2 - lengthdir_y(r, theta);
+	    zz_to = 225;
+	}
     
-    r = random_range(250, 350);
-	theta = random(360);
-    
-    _r = sprite_get_height(sprite_index)*image_xscale*2/3;
-    _theta = theta;
-    
-    xx_to = room_width / 2 + lengthdir_x(r, theta);
-    yy_to = room_height / 2 - lengthdir_y(r, theta);
-    zz_to = 225;
+	scale = 4;
+	zz = 100;
+	image_angle = 0;
     
 	patt += 1;
-    alarm[0] = 30;
+    if (instance_exists(player)) alarm[0] = 30;
 } else if (patt == 1) {
     mode = 2;
     mode_time = 0;
@@ -68,7 +96,7 @@ if (patt == 0) {
 	    zz_to = 225;
 		
 	    patt += 1;
-	    alarm[0] = floor(60/acc);
+	    if (instance_exists(player)) alarm[0] = floor(60/acc);
 	} else {
         with(hp_var) {
             var dir;
@@ -90,7 +118,7 @@ if (patt == 0) {
 	    yy_to = room_height / 2;
 	    zz_to = 240;
 		
-		alarm[1] = 30;
+		if (instance_exists(player)) alarm[1] = 30;
 	}
     
     xx_from = xx;
@@ -151,7 +179,7 @@ if (patt == 0) {
 	    yy_to = room_height / 2 - lengthdir_y(r, theta);
 	    zz_to = 225;
 		
-        alarm[0] = floor(65/acc);
+        if (instance_exists(player)) alarm[0] = floor(65/acc);
     } else {
         acc = 2;
 	    r = random_range(250, 350);
@@ -167,6 +195,6 @@ if (patt == 0) {
 	    yy_to = room_height / 2 - lengthdir_y(r, theta);
 	    zz_to = 225;
 		
-        alarm[0] = floor(60/acc);
+        if (instance_exists(player)) alarm[0] = floor(60/acc);
     }
 }

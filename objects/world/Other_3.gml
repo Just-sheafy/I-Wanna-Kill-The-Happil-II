@@ -89,4 +89,5 @@ audio_destroy_stream_check(global.stage02Sr3);
 audio_destroy_stream_check(global.stage03Sr1);
 audio_destroy_stream_check(global.stage03Sr2);
 
+audio_destroy_stream_check(global.sndDogma);
 audio_destroy_stream_check(global.sndEmperor);

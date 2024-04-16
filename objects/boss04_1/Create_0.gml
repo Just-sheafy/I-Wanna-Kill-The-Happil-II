@@ -14,7 +14,7 @@ image_speed = 0;
 alpha = 0;
 light_obj = -1;
 
-surf = surface_create(10*sprite_get_width(sprite_index), 10*sprite_get_height(sprite_index));
+surf = -1;
 _xoffset = 5*sprite_get_width(sprite_index);
 _yoffset = 5*sprite_get_height(sprite_index);
 

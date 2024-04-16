@@ -43,11 +43,22 @@ mode_time_v = 0;
 acc = 1;
 
 rush = 0;
+dir_before = 0;
 
-/*
-patt = 1;
-rush = 5;
-*/
+// For natural camera walking
+xx1_from = CX-128;
+yy1_from = CY;
+xx1_to = xx1_from;
+yy1_to = yy1_from;
+t1 = 0;
+t1_max = 150;
+
+xx2_from = CX+128;
+yy2_from = CY;
+xx2_to = xx2_from;
+yy2_to = yy2_from;
+t2 = 0;
+t2_max = 150;
 
 // For special effect
 back_effect = -1;
@@ -95,44 +106,17 @@ _rot = 1;
 // Setting
 alarm[0] = 50;
 
-/*
-temp = instance_create_layer(32, 576, "Player", Boss04_41);
-temp.image_index = 8;
-temp = instance_create_layer(768, 576, "Player", Boss04_41);
-temp.image_index = 9;
-temp = instance_create_layer(768, 32, "Player", Boss04_41);
-temp.image_index = 10;
-temp = instance_create_layer(32, 32, "Player", Boss04_41);
-temp.image_index = 11;
-with(Boss04_41) visible = false;
-temp = instance_create_layer(464, 304, "Player", Boss04_62);
-temp.back_effect = id;
-instance_create_layer(160, 256, "Player", Boss04_64);
-*/
-
 
 // Surface
 w = sprite_get_width(sprBoss04_62);
 h = sprite_get_height(sprBoss04_62);
 
-surf = surface_create(6*sprite_get_width(sprite_index), 6*sprite_get_height(sprite_index));
+surf = -1;
 _xoffset = 3*sprite_get_width(sprite_index);
 _yoffset = 3*sprite_get_height(sprite_index);
 
 surf_room = -1;
 mask_surf = -1;
 
-/*
-surf_room = surface_create(room_width, room_height);
-mask_surf = surface_create(w, h);
-
-surface_set_target(surf_room);
-draw_clear(c_black);
-surface_reset_target();
-
-surface_set_target(mask_surf);
-draw_clear(c_black);
-gpu_set_blendmode(bm_subtract);
-draw_sprite(sprBoss04_62, 0, 0, 0);
-gpu_set_blendmode(bm_normal);
-surface_reset_target();
+surf_room = -1;
+mask_surf = -1;

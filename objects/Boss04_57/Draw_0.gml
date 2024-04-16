@@ -1,10 +1,13 @@
 var i, j, ii, jj, __w, __h, xxx, yyy;
 var len, __attack, __c, __c2;
 
+if (!surface_exists(surf))
+	surf = surface_create(6*sprite_get_width(sprite_index), 6*sprite_get_height(sprite_index));
+
 __w = surface_get_width(surf);
 __h = surface_get_height(surf);
 
-if (mode == 5 or mode == 6) {
+if (mode == 5 or mode == 6 or mode == 7 or mode == 8) {
 	draw_surface_ext(surf, xx-_xoffset, yy-_yoffset, 1, 1, 0, c_white, 1);
 } else {
 	draw_set_color(c_white);
@@ -56,62 +59,6 @@ if (mode == 5 or mode == 6) {
 
 	draw_primitive_end();
 }
-
-
-/*
-if (!surface_exists(surf_room)) {
-	surf_room = surface_create(room_width, room_height);
-}
-if (!surface_exists(mask_surf)) {
-	mask_surf = surface_create(w, h);
-	
-	surface_set_target(mask_surf);
-	draw_clear(c_black);
-	gpu_set_blendmode(bm_subtract);
-	draw_sprite(sprBoss04_62, 0, 0, 0);
-	gpu_set_blendmode(bm_normal);
-	surface_reset_target();
-}
-
-surface_set_target(surf_room);
-
-draw_clear_alpha(c_black, 0);
-
-// shader
-if (world.shader_supported && shader_is_compiled(shdTornado)) {
-	shader_set(shdTornado);
-	shader_set_uniform_f(__time, _t);
-	shader_set_uniform_f_array(__resolution, _resol);
-	shader_set_uniform_f_array(__col, _col);
-	shader_set_uniform_f(__rot, _rot);
-	
-	draw_set_color(c_white);
-	draw_rectangle(0, 0, room_width, room_height, false);
-
-	shader_reset();
-}
-
-// draw screen
-with(Boss04_40) event_perform(ev_draw, ev_draw_normal);
-with(Boss04_41) event_perform(ev_draw, ev_draw_normal);
-with(Boss04_39) event_perform(ev_draw, ev_draw_normal);
-with(Boss04_62) draw_self();
-with(Boss04_63) draw_self();
-with(Boss04_64) event_perform(ev_draw, ev_draw_normal);
-
-// masking
-gpu_set_blendmode(bm_subtract);
-draw_surface_ext(mask_surf, 0, 0, room_width/w, room_height/h, 0, c_white, 1);
-gpu_set_blendmode(bm_normal);
-
-draw_sprite_ext(sprBoss04_62, 1, 0, 0, room_width/w, room_height/h, 0, c_white, 1);
-draw_sprite_ext(sprBoss04_62, 2, 0, 0, room_width/w, room_height/h, 0, c_white, 1);
-
-surface_reset_target();
-
-draw_surface_ext(surf_room, x-sprite_get_xoffset(sprBoss04_15)*scale, y-sprite_get_yoffset(sprBoss04_15)*scale,
-	sprite_get_width(sprBoss04_15)*scale/room_width, sprite_get_height(sprBoss04_15)*scale/room_height, 0, c_white, 1);
-*/
 
 
 /*

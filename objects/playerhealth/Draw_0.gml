@@ -1,7 +1,7 @@
 var i, col1, col2, xx, yy, num, _scale, cam = view_camera[0];
 
 if (type == 0) { // health bar
-	if (hp >= hpm) {
+	if (hpm < 10 and hp >= hpm) {
 		col1 = c_lime; col2 = c_green;
 	} else if (hp > 1) {
 		col1 = c_white; col2 = c_ltgray;
@@ -25,13 +25,13 @@ if (type == 0) { // health bar
 
 	draw_sprite(sprPlayerHealth2, 0, xx+16, yy+608-16);
 	draw_set_text(c_white, pauseFont24, fa_left, fa_middle);
-	if (hp > 1) scr_draw_text_outline_grad(xx+32, yy+608-16, "X" + string(hp), (hp >= hpm)? c_lime : c_white, (hp >= hpm)? c_green : c_ltgray, c_black);
+	if (hp > 1) scr_draw_text_outline_grad(xx+32, yy+608-16, "X" + string(hp), (hpm < 10 and hp >= hpm)? c_lime : c_white, (hpm < 10 and hp >= hpm)? c_green : c_ltgray, c_black);
 	else scr_draw_text_outline_grad(xx+32, yy+608-16, "X" + string(hp), c_red, c_maroon, c_black);
 	if (hp == 1) {
 		draw_sprite_ext(sprPlayerHealth2, 0, xx+16, yy+608-16, scale2, scale2, 0, c_white, alpha2);
 	}
 } else if (type == 2) { // yoshi crafted world
-	if (hp >= hpm) num = 2;
+	if (hpm < 10 and hp >= hpm) num = 2;
 	else if (hp > 1) num = 1;
 	else num = 0;
 	for(i=0; i<ceil(shp); i+=1) {
@@ -40,8 +40,16 @@ if (type == 0) { // health bar
 			_scale = 3/4;
 			if (i == ceil(shp)-1 && shp != floor(shp)) _scale = (shp-floor(shp))*3/4;
 		}
-		draw_sprite_ext(sprPlayerHealth3, num, x+32*sin(degtorad(30*i)), y-32*cos(degtorad(30*i)),
+		if (i < 12) {
+			draw_sprite_ext(sprPlayerHealth3, num, x+32*sin(degtorad(30*i)), y-32*cos(degtorad(30*i)),
 			_scale, _scale, -30*i, c_white, alpha);
+		} else if (i < 12 + 18) {
+			draw_sprite_ext(sprPlayerHealth3, num, x+56*sin(degtorad(20*(i-12))), y-56*cos(degtorad(20*(i-12))),
+			_scale, _scale, -20*(i-12), c_white, alpha);
+		} else {
+			draw_sprite_ext(sprPlayerHealth3, num, x+80*sin(degtorad(15*(i-30))), y-80*cos(degtorad(15*(i-30))),
+			_scale, _scale, -15*(i-30), c_white, alpha);
+		}
 	}
 	
 	if (alpha > 0 and hp == 1) {

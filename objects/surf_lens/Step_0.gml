@@ -1,4 +1,4 @@
-if (instance_exists(player) || not_recover) {
+if (!dead and (instance_exists(player) || not_recover)) {
 	if (!but_recover) twist = max(-1, twist-0.01);
 	else twist = min(1, twist+0.02);
 	
@@ -10,8 +10,9 @@ if (instance_exists(player) || not_recover) {
 		}
 	}
 } else {
-	t = max(0, t-1);
+	t = max(0, t-1*(dead? 11:1));
 	twist = min(1, twist+0.02);
+	if (dead and t <= 0) instance_destroy();
 }
 d_exp += 0.1;
 d_z += 0.2;

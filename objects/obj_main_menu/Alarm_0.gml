@@ -8,12 +8,13 @@ switch(select)
 			
 			if (!resource_loaded) {
 				resource_loaded = true;
-				sprite_prefetch(sprBoss01_24);
+				sprite_prefetch(sprHamjung03Bs1);
 				sprite_prefetch(sprBoss04_40);
 				sprite_prefetch(back01Bs6);
 				sprite_prefetch(back04Bs1);
-				sprite_prefetch(sprBoss03_58);
-				sprite_prefetch(sprBoss02_2);
+				sprite_prefetch(back04E1);
+				sprite_prefetch(back04Bs10);
+				sprite_prefetch(sprBoss02Sr_1);
 				sprite_prefetch(sprBoss04_15);
 				sprite_prefetch(sprBoss04_23);
 			}

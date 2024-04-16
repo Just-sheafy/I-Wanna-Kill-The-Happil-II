@@ -133,4 +133,4 @@ surf_height = 304 + 48;
 surf_x = 32;
 surf_y = 304 - 48;
 
-surf = surface_create(surf_width, surf_height); //Create surface
+surf = -1; //Create surface

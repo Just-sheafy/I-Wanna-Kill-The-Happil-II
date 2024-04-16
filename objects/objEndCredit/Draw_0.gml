@@ -1,4 +1,4 @@
-var CX, CY, i, w1, w2, w3, yy, _col, alpha, str, str_temp;
+var CX, CY, i, j, w1, w2, w3, yy, _col, alpha, str, str_temp;
 
 CX = room_width / 2;
 CY = room_height / 2;
@@ -37,17 +37,33 @@ if (t >= 5520) draw_sprite_ext(spr_credit_gameover, -1, CX,
 	room_height+95-389*min(1, (t-5520)/310), 1, 1, 0, c_white, ALPHA);
 
 for(i=0; i<ds_list_size(end_text); i+=1) {
-	str = ds_list_find_value(end_text, i);
-	if (str == "") continue;
 	yy = room_height + i*40 + ((i < 39)? 590 - t*2 : 590 - min(t, 1090)*0.48 - t*1.52);
 	if (yy <= -32 || yy >= room_height+32) continue;
+	
+	str = ds_list_find_value(end_text, i);
+	if (str == "") continue;
+	
+	if (error) {
+		j = irandom_range(1, string_length(str));
+		str_temp = string_char_at(str, j);
+		if (str_temp != " ") {
+			str_temp = string_delete(str, j, 1);
+			str_temp = string_insert(str_temp, choose("FATAL", "ERROR"), j);
+		}
+	}
 	
 	if (yy <= 128) alpha = yy / 128;
 	else if (yy >= room_height - 128) alpha = (room_height - yy) / 128;
 	else alpha = 1;
 	alpha *= ALPHA;
 	
-	if (ds_list_find_value(col, i) == "WHITE") {
+	if (error) {
+		if (ds_list_find_value(col, i) == "LIGHTWHITE") {
+			draw_text_color(CX, yy, str_temp, c_aqua, c_red, c_red, c_aqua, alpha);
+		} else {
+			draw_text_temp(CX, yy, str_temp, c_aqua, c_red, c_red, c_aqua, 2, alpha);
+		}
+	} else if (ds_list_find_value(col, i) == "WHITE") {
 		draw_text_temp(CX, yy, str, c_white, c_white, c_white, c_white, 2, alpha);
 	} else if (ds_list_find_value(col, i) == "LIGHTWHITE") {
 		draw_text_color(CX, yy, str, c_white, c_white, c_white, c_white, alpha);

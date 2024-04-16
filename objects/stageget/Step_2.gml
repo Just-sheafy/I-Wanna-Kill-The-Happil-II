@@ -1,7 +1,5 @@
 var cam = view_camera[0];
 
-if (!world.SI_ok or room == Stage02Bs3 or room == Stage02Bs4 or room == Stage04Bs4) {exit;}
-
 if patt==0 {
     ox-=6;
     if ox<=-320 {patt=1; ox=-320;}

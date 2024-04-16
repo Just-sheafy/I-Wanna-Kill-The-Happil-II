@@ -1,6 +1,6 @@
 var cam = view_camera[0];
 
-if (!world.SI_ok or room == Stage02Bs3 or room == Stage02Bs4 or room == Stage04Bs4) {visible = false; exit;}
+if (!world.SI_ok or room == Stage02Bs3 or room == Stage02Bs4 or room == Stage04Bs4 or room == Stage04Bs8) {visible = false; exit;}
 x=camera_get_view_x(cam)+camera_get_view_width(cam);
 y=camera_get_view_y(cam);
 ox=0;
@@ -11,6 +11,10 @@ patt=0;
 image_speed=0;
 alarm[0] = 1;
 Instance = audio_play_sound(sndStage, 0, false, world.sound_vol);
+
+text = "";
+index = 1;
+time = 0;
 
 if room == Stage01A {image_index=1;}
 if room == Stage01B {image_index=2;}
@@ -82,4 +86,5 @@ if room == Stage04Bs2 {image_index=65;}
 if room == Stage04Bs3 {image_index=66;}
 if room == Stage04Bs5 {image_index=67;}
 if room == Stage04Bs6 {image_index=68;}
+if room == Stage04Bs7 {image_index=69;}
 if room == Stage04Hd {image_index=70;}

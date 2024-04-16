@@ -8,6 +8,8 @@ depth = -100;
 ALPHA = 1;
 ALPHA_fade = 0;
 gameover = false;
+error = false;
+dead = false;
 
 end_text = ds_list_create();
 col = ds_list_create();
@@ -16,17 +18,12 @@ if (layer_exists("Background2"))
 if (layer_exists("Background3"))
 	layer_background_visible(layer_background_get_id(layer_get_id("Background3")), false);
 
-world.credit_played = true;
+// world.credit_played = true;
 if (world.credit_played) {
 	instance_create_depth(400, 384, -1, Boss04_55);
 	instance_create_depth(400, 364, -2, player);
 	instance_create_depth(0, 0, 180, Boss04_56);
 	instance_create_depth(400, 304, 0, Boss04_57);
-	temp = instance_create_layer(-32, -32, "Player", objHealthItem2);
-	temp.image_xscale = 1;
-	temp.image_yscale = 1;
-	temp.troll = true;
-	temp.time = 500;
 	instance_create_depth(room_width/2, room_height/2, -80, Boss04_51);
 	instance_create_depth(0, 0, -100, dark1);
 	
@@ -39,10 +36,13 @@ if (world.credit_played) {
 			
 	if (world.HEALTH_ok) {
 		var zx = instance_create_depth(0, 0, -49, playerHealth);
-		zx.hp = 8;
+		if (world.hp_before != -1) zx.hp = min(8, world.hp_before);
+		else zx.hp = 8;
 		zx.hpm = 8;
+		world.hp_before = -1;
 	}
 	
+	if (world.SI_ok) audio_play_sound(sndStage, 0, false, world.sound_vol);
 	var zx = instance_create_depth(800, 0, -2000, StageGet);
 	zx.image_index = 68;
 } else {

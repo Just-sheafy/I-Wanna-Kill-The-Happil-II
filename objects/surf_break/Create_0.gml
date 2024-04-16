@@ -3,10 +3,10 @@ if (!world.screen_effect_enable) {
 	enable = false; exit;
 }
 
-var i, cam = view_camera[0];
+var i;
 
 for(i=0; i<sprite_get_number(sprBreakGlass); i+=1) {
-    surf[i] = surface_create(camera_get_view_width(cam)/4, camera_get_view_height(cam)/4);
+    surf[i] = -1;
     xx[i] = 0; yy[i] = 0; hs[i] = random_range(-0.5, 0.5); vs[i] = random_range(-0.5, 0.5);
     angle[i] = 0; angles[i] = random_range(-1.5, 1.5);
 }

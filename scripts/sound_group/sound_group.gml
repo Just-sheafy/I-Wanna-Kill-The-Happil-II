@@ -89,6 +89,7 @@ function sound_group() {
 	ds_list_add(list_sounds[1], sndClear);
 	ds_list_add(list_sounds[1], sndDeath);
 	ds_list_add(list_sounds[1], sndDJump);
+	ds_list_add(list_sounds[0], global.sndDogma);
 	ds_list_add(list_sounds[0], global.sndEmperor);
 	ds_list_add(list_sounds[1], sndEnemyHit);
 	ds_list_add(list_sounds[1], sndExplo);
@@ -99,6 +100,7 @@ function sound_group() {
 	ds_list_add(list_sounds[1], sndItem);
 	ds_list_add(list_sounds[1], sndJump);
 	ds_list_add(list_sounds[1], sndLightning);
+	ds_list_add(list_sounds[1], sndPaused);
 	ds_list_add(list_sounds[1], sndPSwitch);
 	ds_list_add(list_sounds[1], sndShoot);
 	ds_list_add(list_sounds[1], sndSpikeTrap);
@@ -114,7 +116,7 @@ function sound_group() {
 	ds_list_add(list_sounds[1], sndWarning6);
 	ds_list_add(list_sounds[1], sndWarning7);
 	ds_list_add(list_sounds[1], sndWarp);
-	ds_list_add(list_sounds[1], sndPaused);
+	ds_list_add(list_sounds[1], sndWrong);
 
 	ds_list_add(list_sounds[1], snd01_1);
 	ds_list_add(list_sounds[1], snd01_2);
@@ -246,6 +248,23 @@ function sound_group() {
 	ds_list_add(list_sounds[1], snd04_45);
 	ds_list_add(list_sounds[1], snd04_46);
 	ds_list_add(list_sounds[1], snd04_47);
+	ds_list_add(list_sounds[1], snd04_48);
+	ds_list_add(list_sounds[1], snd04_49);
+	ds_list_add(list_sounds[1], snd04_50);
+	ds_list_add(list_sounds[1], snd04_51);
+	ds_list_add(list_sounds[1], snd04_52);
+	ds_list_add(list_sounds[1], snd04_53);
+	ds_list_add(list_sounds[1], snd04_54);
+	ds_list_add(list_sounds[1], snd04_55);
+	ds_list_add(list_sounds[1], snd04_56);
+	ds_list_add(list_sounds[1], snd04_57);
+	ds_list_add(list_sounds[1], snd04_58);
+	ds_list_add(list_sounds[1], snd04_59);
+	ds_list_add(list_sounds[1], snd04_60);
+	ds_list_add(list_sounds[1], snd04_61);
+	ds_list_add(list_sounds[1], snd04_62);
+	ds_list_add(list_sounds[1], snd04_63);
+	ds_list_add(list_sounds[1], snd04_64);
 
 	ds_list_add(list_sounds[1], sndSr01_1);
 	ds_list_add(list_sounds[1], sndSr01_2);

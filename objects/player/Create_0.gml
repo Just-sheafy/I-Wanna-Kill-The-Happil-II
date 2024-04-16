@@ -17,6 +17,7 @@ frozen = false;
 
 invinc = false;
 invinc_time = 0;
+shoot_time = 0;
 
 reset_jumps();
 

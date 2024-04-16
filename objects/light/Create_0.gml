@@ -6,4 +6,6 @@ alarm[0]=5;
 x = camera_get_view_x(cam);
 y = camera_get_view_y(cam);
 
+error = false;
+
 depth = -100;

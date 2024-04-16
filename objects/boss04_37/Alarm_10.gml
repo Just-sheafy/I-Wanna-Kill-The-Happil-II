@@ -4,24 +4,17 @@ if (name_patt == 0) {
 	shp = (index == 0)? Boss04_36.hp0 : Boss04_36.hp1;
 	hpm = (index == 0)? Boss04_36.hpm0 : Boss04_36.hpm1;
 	
-	num = irandom_range(floor(200*(1-shp/hpm)), 500);
+	num = irandom_range(floor(350*(1-shp/hpm)), 500);
 
-	if (num <= 498) {
+	if (num <= 499) {
 		name = "FOOT";
 		alarm[10] = 3;
-	} else if (num == 499) {
-		name = "";
-		__NAME_1 = "FFFFFFFFFFFFFFFF";
-		__NAME_2 = "FFFFFFFFFFFFFFFF";
-		name_patt = 1;
-		shake = 8;
-		alarm[10] = 1;
 	} else {
 		name = "";
-		num = choose(0, 1, 2, 3, 4);
+		num = irandom_range(0, 7);
 		if (num == 0) {
-			__NAME_1 = "YOURWILLWILL";
-			__NAME_2 = "BEANILLUSION";
+			__NAME_1 = "HOPEISJUST";
+			__NAME_2 = "ANILLUSION";
 		} else if (num == 1) {
 			__NAME_1 = "GIVEITUP";
 			__NAME_2 = " ";
@@ -34,6 +27,15 @@ if (name_patt == 0) {
 		} else if (num == 4) {
 			__NAME_1 = "THEENDISNEVERTHE";
 			__NAME_2 = "ENDISNEVERTHEEND";
+		} else if (num == 5) {
+			__NAME_1 = "ALLTHATYOUKNOW";
+			__NAME_2 = "WILLFADE";
+		} else if (num == 6) {
+			__NAME_1 = "ALLWILLBE";
+			__NAME_2 = "LAIDBARE";
+		} else if (num == 7) {
+			__NAME_1 = "MADNESSWILL";
+			__NAME_2 = "CONSUMEYOU";
 		}
 		name_patt = 1;
 		shake = 8;

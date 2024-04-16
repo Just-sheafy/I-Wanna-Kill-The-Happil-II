@@ -112,6 +112,7 @@ global.stage03Sr2 = audio_create_stream("BGM2/Stage03Secret2.ogg");
 
 // ETC
 
+global.sndDogma = audio_create_stream("sound/SFX/sndDogma.ogg");
 global.sndEmperor = audio_create_stream("sound/SFX/sndEmperor.wav");
 
 // CREATE WORLD

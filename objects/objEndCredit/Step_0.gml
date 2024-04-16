@@ -1,6 +1,6 @@
 var zx, temp;
 
-if (t >= 0 && (number_hit >= 0 || instance_exists(player))) t += t_spd;
+if (!dead and (t >= 0 && (number_hit >= 0 || instance_exists(player)))) t += t_spd;
 t_bound = max(t_bound, t-500);
 
 if (t >= 5089 && t <= 5239) {
@@ -56,11 +56,6 @@ if (number_hit >= 0) {
 			depth = 150;
 			instance_create_depth(0, 0, 180, Boss04_56);
 			instance_create_depth(400, 304, 0, Boss04_57);
-			temp = instance_create_layer(-32, -32, "Player", objHealthItem2);
-			temp.troll = true;
-			temp.time = 500;
-			temp = instance_create_depth(room_width/2, room_height/2, -80, Boss04_51);
-			temp.image_alpha = 0;
 			
 			if (!world.items[1]) instance_create_layer(0, 0, "Player", MouseC);
 			with(player) { visible = true; image_alpha = 0; }
@@ -68,8 +63,10 @@ if (number_hit >= 0) {
 			
 			if (world.HEALTH_ok) {
 				zx = instance_create_depth(0, 0, -49, playerHealth);
-				zx.hp = 8;
+				if (world.hp_before != -1) zx.hp = min(8, world.hp_before);
+				else zx.hp = 8;
 				zx.hpm = 8;
+				world.hp_before = -1;
 			}
 			
 	        zx = instance_create_depth(800, 0, -2000, StageGet);

@@ -15,3 +15,12 @@ y_origin += (oy-y_origin)/10;
 
 x = x_origin;
 y = y_origin;
+
+time += 1;
+if (time >= 50) vol = min(vol+0.02, 1);
+if (audio_is_playing(Instance)) {
+	audio_sound_gain(Instance, vol*world.sound_vol, 0);
+	if (!instance_exists(player) and !instance_exists(Boss02_60)) {
+		audio_stop_sound(Instance);
+	}
+}

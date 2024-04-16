@@ -39,7 +39,7 @@ if (t >= 0 && t < 1) {
 		if (sound_huge > 0) temp.radius_max = 400;
 	}
 	
-	if (sound_huge > 0) {
+	if (!dead and sound_huge > 0) {
         temp = instance_create_depth(xx, yy, 4, Boss04_39);
         temp.image_angle = angle;
         if (angle == 0) temp.hspeed = 8;

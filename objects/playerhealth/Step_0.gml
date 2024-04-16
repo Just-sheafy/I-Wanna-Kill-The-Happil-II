@@ -1,11 +1,3 @@
-if (abs(hp-shp) <= 0.02) shp = hp;
-if hp > shp {
-    shp += max((hp - shp) / 10, 0.02);
-} else if hp < shp {
-    shp += min((hp - shp) / 10, -0.02);
-}
-if (hp > hpm) hp = hpm;
-
 if (changed) {
 	t += 1;
 	if (t <= 100*(1+(hp <= 1))) {
@@ -17,6 +9,14 @@ if (changed) {
 		}
 	}
 }
+
+if (abs(hp-shp) <= 0.02) shp = hp;
+if hp > shp {
+    shp += max((hp - shp) / 10, 0.02);
+} else if hp < shp {
+    shp += min((hp - shp) / 10, -0.02);
+}
+if (hpm < 10 and hp > hpm) hp = hpm;
 
 if (hp == 1 and (type == 1 or changed)) {
 	t_danger += 1;

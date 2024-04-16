@@ -216,7 +216,7 @@ function blockSprite() {
 	else if room == Stage04J {
 	    sprite_index = block04J;
 	}
-	else if room == Stage04Bs or room == Stage04Bs4 {
+	else if room == Stage04Bs or room == Stage04Bs4 or room == Stage04Bs8 {
 	    sprite_index = block04Bs1;
 	    if (x < 384) image_index = 0;
 	    else if (x > 384) image_index = 1;

@@ -78,7 +78,7 @@ if (instance_exists(player) and !instance_exists(objPause)) {
         room != Stage02Bs and room != Stage02Bs2 and room != Stage02Bs3 and room != Stage02Bs4 and
         room != Stage03Bs and room != Stage03Bs2 and room != Stage03Bs3 and room != Stage03Bs4 and room != Stage03Bs5 and
         room != Stage04Bs and room != Stage04Bs2 and room != Stage04Bs3 and room != Stage04Bs4 and room != Stage04Bs5 and
-		room != Stage04Bs6 and room != Stage01Sr and room != Stage02Sr and room != Stage03Sr) and
+		room != Stage04Bs6 and room != Stage04Bs7 and room != Stage01Sr and room != Stage02Sr and room != Stage03Sr) and
         mouse_check_button_pressed(mb_right)) {
         temp = instance_create_depth(mouse_x, mouse_y, -2, playerMove);
         temp.Gravity = player.Gravity;
@@ -103,7 +103,9 @@ if music_speed != 1 {
 
 if (!instance_exists(objPause)) {
     if keyboard_check_pressed(gameRestart) {
-        if (room != initRoom and room != beforeRoom and room != startRoom and room != loadRoom and room != beginning) {
+		if (room == Stage04Bs7) {
+			audio_play_sound(sndWrong, 0, false, sound_vol);
+		} else if (room != initRoom and room != beforeRoom and room != startRoom and room != loadRoom and room != beginning) {
             if (!instance_exists(player)) re_nodie = true;
 			hp_before = -1;
             
@@ -193,7 +195,7 @@ if (!instance_exists(objPause)) {
         }
     }
 }
-room_caption="I Wanna Kill The Happil II: " + string(instance_count);
+room_caption="I Wanna Kill The Happil II";
 
 if instance_exists(player) {
     if !achieve[0] and deaths[0] >= 100 {achieve[0] = 1;}

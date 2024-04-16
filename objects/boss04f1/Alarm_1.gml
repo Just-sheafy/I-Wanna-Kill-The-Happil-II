@@ -60,6 +60,7 @@ if (a == -1) {
 	    room_goto(Stage04Bs4);
 	} else {
 		world.var_temp = 0;
+		world.Boss4HP = 44;
 		with(player) {flip_grav(false); x = 177; y = 279;}
 		with(playerHealth) {world.hp_before = hp;}
 	    room_goto(Stage04Bs5);

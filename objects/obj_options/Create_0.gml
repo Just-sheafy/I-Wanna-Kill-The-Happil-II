@@ -123,7 +123,7 @@ surf_y = 160;
 
 offset_y = 0; //Menu Y position (for scrolling effect)
 
-surf = surface_create(surf_width, surf_height); //Create surface
+surf = -1; //Create surface
 
 ////OTHER////
 

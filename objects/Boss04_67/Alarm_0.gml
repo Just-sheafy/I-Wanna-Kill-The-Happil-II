@@ -26,6 +26,6 @@ if (patt == 0) {
 } else if (patt == 1) {
 	patt = 0;
 	pat += 1;
-	if (pat >= 4) instance_destroy();
+	if (!instance_exists(player) or pat >= 4) instance_destroy();
 	else alarm[0] = 60;
 }

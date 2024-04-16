@@ -100,12 +100,15 @@ if (!frozen) {
 	}
 	
 	if (!instance_exists(playerDotKid)) {
-	    if world.items[2] and world.WASP_ok {
-	        if wasp_time < 8 - 6*(room == Stage03Sr) and wasp_time > 0 {wasp_time += 1;} else {wasp_time = 0;}
-	        if keyboard_check(world.shootKey) and wasp_time == 0 {player_shoot(); wasp_time += 1;}
-	    } else {
-	        if (keyboard_check_pressed(world.shootKey)) player_shoot();
-	    }
+		shoot_time = max(shoot_time-1, 0);
+		if (shoot_time <= 0) {
+		    if world.items[2] and world.WASP_ok {
+		        if wasp_time < 8 - 6*(room == Stage03Sr) and wasp_time > 0 {wasp_time += 1;} else {wasp_time = 0;}
+		        if keyboard_check(world.shootKey) and wasp_time == 0 {player_shoot(); wasp_time += 1;}
+		    } else {
+		        if (keyboard_check_pressed(world.shootKey)) player_shoot();
+		    }
+		}
 	} else {
 		if keyboard_check(world.shootKey) {if !instance_exists(bow2) {instance_create_depth(x, y, -3, bow2);}}
             else {with(bow2) {instance_destroy();}}
