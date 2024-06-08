@@ -19,7 +19,7 @@ if (key_time <= 0) {
 	num += keyboard_check(world.skipKey);
 	num += keyboard_check(world.gameRestart);
 	
-	if (num >= key_restricted) {
+	if (!global.console && num >= key_restricted) {
 		key_time = 200;
 		audio_play_sound(snd04_44, 0, false, world.sound_vol);
 		audio_play_sound(snd04_45, 0, false, world.sound_vol);

@@ -1,23 +1,22 @@
-var i;
+var i, _inst;
 
-active = false;
 total = 16;
 for(i=0; i<total; i++) {
 	trigger_id[i] = -1;
-	hspd[i] = 0;
-	vspd[i] = 0;
+	trigger_num[i] = 0;
 }
+
+_inst = instance_place(x, y, kill_character);
+if (_inst != noone) trigger_id[0] = _inst;
 
 function trigger_activate() {
 	var i;
 	
-	if (active) {
-		for(i=0; i<total; i+=1) {
-			if (trigger_id[i] != -1 && instance_exists(trigger_id[i])) {
-				trigger_id[i].hspeed = hspd[i];
-				trigger_id[i].vspeed = vspd[i];
-			}
+	for(i=0; i<total; i+=1) {
+		if (trigger_id[i] != -1 && instance_exists(trigger_id[i])) {
+			trigger_id[i].trigger = trigger_num[i];
+			with(trigger_id[i]) ftn_trigger(trigger);
 		}
-		instance_destroy();
 	}
+	instance_destroy();
 }

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_keytostring",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_keytostring",
+  "parent":{
+    "name":"UtilityFunctions",
+    "path":"folders/Scripts/UtilityFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

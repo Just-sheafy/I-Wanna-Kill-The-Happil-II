@@ -58,7 +58,6 @@ function sound_group() {
 	ds_list_add(list_sounds[0], global.stage01SrBef);
 	ds_list_add(list_sounds[0], global.stage01Sr1);
 	ds_list_add(list_sounds[0], global.stage01Sr2);
-	ds_list_add(list_sounds[0], global.stage01Sr2Loop);
 	ds_list_add(list_sounds[0], global.stage01Sr3);
 	ds_list_add(list_sounds[0], global.stage01Sr4);
 	ds_list_add(list_sounds[0], global.stage02Sr1);

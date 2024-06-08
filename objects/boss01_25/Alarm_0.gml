@@ -4,4 +4,4 @@ zx.alarm[0] = 240-120*b;
 zx = instance_create_depth(x, y, -8, Boss01_D2);
 zx.alarm[1] = 240-120*b;
 zx.image_index = 1;
-room_speed = 25;
+room_speed = global.ROOM_SPEED / 2;

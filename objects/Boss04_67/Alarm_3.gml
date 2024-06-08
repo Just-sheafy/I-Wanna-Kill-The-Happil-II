@@ -24,7 +24,7 @@ if (patt == 0) {
 		mode_num = 0;
 	}
 	
-	if (patt <= 120) {
+	if (patt <= 70) {
 		temp = instance_create_depth(0, -200, -3, Boss04_77);
 		temp.image_xscale = random_range(0.8, 1.5);
 		temp.image_yscale = temp.image_xscale;
@@ -36,17 +36,39 @@ if (patt == 0) {
 		temp.vs = lengthdir_y(dis, dir);
 		temp.angle = random(360);
 		temp.as = random_range(-2, 2);
+	} else if (patt <= 120) {
+		if (patt - 2*floor(patt/2) == 0) {
+			temp = instance_create_depth(0, -200, -3, Boss04_77);
+			temp.xx = random(400);
+			temp.yy = -200;
+			dis = random_range(4, 6);
+			dir = random_range(250, 290);
+		} else {
+			temp = instance_create_depth(0, room_height+200, -3, Boss04_77);
+			temp.orient = 0;
+			temp.xx = random(400);
+			temp.yy = room_height+200;
+			dis = random_range(4, 6);
+			dir = random_range(70, 110);
+		}
+		temp.image_xscale = random_range(0.8, 1.5);
+		temp.image_yscale = temp.image_xscale;
+		temp.hs = lengthdir_x(dis, dir);
+		temp.vs = lengthdir_y(dis, dir);
+		temp.angle = random(360);
+		temp.as = random_range(-2, 2);
 	}
 	
 	patt += 1;
 	alarm[3] = 8;
 } else if (patt == 126) {
-	with(Boss04_76) instance_destroy();
+	with(Boss04_76) kill = false;
 	mode = 6;
 	mode_num = 0;
 	
 	patt += 1;
 	alarm[3] = 300;
 } else {
+	with(Boss04_76) instance_destroy();
 	instance_destroy();
 }

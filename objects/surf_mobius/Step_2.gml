@@ -1,7 +1,5 @@
 var w, h, cam = view_camera[0];
 
-if (!enable) {exit;}
-
 w = camera_get_view_width(cam);
 h = camera_get_view_height(cam);
 

@@ -2,15 +2,15 @@
   "$GMObject":"",
   "%Name":"spike_parent",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"spike_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"spikes",
-    "path":"folders/Objects/Killers/spikes.yy",
+    "name":"Triggers",
+    "path":"folders/Objects/Triggers.yy",
   },
   "parentObjectId":{
     "name":"kill_character",

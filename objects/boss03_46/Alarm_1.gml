@@ -1,6 +1,22 @@
 var i, zx;
 
 if patt == 0 {
+	if (global.practice == 5) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
     audio_play_sound(snd03_5, 0, false, world.sound_vol);
     for(i=0; i<13; i+=1) {zx = instance_create_depth(64*i+16, 0, -2, Boss03_11); zx.depth = -1;}
     for(i=0; i<10; i+=1) {
@@ -90,7 +106,7 @@ if patt == 0 {
     alarm[1] = 2;
 } else {
     patt = 0;
-    alarm[2] = 100;
-    alarm[3] = 150;
-    alarm[4] = 150;
+    alarm[2] = 100 - 50*(global.practice == 7);
+    alarm[3] = 150 - 50*(global.practice == 7);
+    alarm[4] = 150 - 50*(global.practice == 7);
 }

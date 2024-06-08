@@ -28,7 +28,7 @@ if hp <= 0 {
     }
 	if (layer_exists("Background"))
 		layer_hspeed(layer_get_id("Background"), 0);
-    room_speed = 50;
+    room_speed = global.ROOM_SPEED;
     var zx = instance_create_depth(x, y, depth, Boss_h);
     zx.sprite_index = sprite_index;
 }

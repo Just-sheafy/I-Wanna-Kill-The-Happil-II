@@ -6,7 +6,7 @@ rat = 0;
 qwer = 16;
 Instance = -1;
 depth = 2;
-alarm[2] = 50;
+alarm[2] = 100;
 instance_create_depth(x, y, 2, Boss02_2);
 instance_create_depth(x, y, 1, Boss02_3);
 with(Boss02_2) {sprite_index = sprBoss02_4; crazy = 1;}
@@ -43,6 +43,10 @@ if (world.HEALTH_ok) {
 		}
 		world.hp_before = -1;
 	}
+}
+
+if (global.practice >= 0) {
+	global.practice -= 200;
 }
 
 if (room == Stage02Bs4) {

@@ -1,6 +1,22 @@
 var i, temp, dir;
 
 if (patt == 0) {
+	if (global.practice == 9) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
 	mode_time = 50;
 	instance_create_depth((xx == 0)? 800:0, yy, 0, Boss04_68);
 	
@@ -69,6 +85,22 @@ if (patt == 0) {
 	patt += 1;
 	alarm[2] = 50;
 } else if (patt == 25) {
+	if (instance_exists(player) && global.practice == 10) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
 	with(Boss04_68) instance_destroy();
 	
 	patt = 0;

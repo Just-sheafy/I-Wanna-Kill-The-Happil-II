@@ -1,6 +1,22 @@
 var i, zx;
 
 if (patt == 0) {
+	if (global.practice == 7) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
 	audio_play_sound(snd03_27, 0, false, world.sound_vol);
 	sprite_index = sprBoss03_1;
 	image_angle = 90;

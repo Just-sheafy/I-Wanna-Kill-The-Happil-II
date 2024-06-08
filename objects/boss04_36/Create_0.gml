@@ -1,4 +1,4 @@
-var i, temp;
+var i, temp, tempHP;
 
 image_speed = 0;
 depth = -1;
@@ -17,9 +17,19 @@ t = 14; // create gravity changer
 t2 = 14;
 t_spd = 2; // time speed
 
-hp0 = world.Boss4HP;
+tempHP = world.Boss4HP;
+if (global.practice >= 0) global.practice -= 400;
+if (global.practice == 7) {
+	// Phase 2 first part
+	tempHP = 44;
+} else if (global.practice == 8) {
+	// Phase 2 second part
+	tempHP = 22;
+}
+
+hp0 = tempHP;
 hpm0 = 44;
-hp1 = world.Boss4HP;
+hp1 = tempHP;
 hpm1 = 44;
 bat = false;
 dead = false;
@@ -83,7 +93,7 @@ if (world.HEALTH_ok) {
 	var zx = instance_create_depth(0, 0, -49, playerHealth);
 	if (world.hp_before != -1) zx.hp = min(5, world.hp_before);
 	else zx.hp = 5;
-	zx.hpm = max(5 - (4 - world.Boss4HP/11), 1);
+	zx.hpm = max(5 - (4 - tempHP/11), 1);
 	zx.hp = min(zx.hp, zx.hpm);
 	if (zx.hp < zx.hpm) {
 		zx = instance_create_depth(640, 304, -3, objHealthItem2);
@@ -109,6 +119,11 @@ else {
             
 		with(temp) event_user(0);
 	} else instance_create_depth(0, 0, -100, dark1);
+}
+
+if (global.practice >= 0) {
+	with(StageGet) instance_destroy();
+	with(dark1) instance_destroy();
 }
 
 alarm[11] = 1;

@@ -1,10 +1,29 @@
-if (!canhit || !other.canhit) exit;
+if (!nothit && (!canhit || !other.canhit)) exit;
 
 var i, temp, l = ds_list_create();
 
-audio_play_sound(sndSr01_2, 0, false, world.sound_vol);
+if (!nothit) audio_play_sound(sndSr01_2, 0, false, world.sound_vol);
 with(Boss01Sr_h) hp -= 10;
-if (Boss01Sr_h.hp == 10) {
+
+if ((global.practice == 1 && Boss01Sr_h.hp <= 30)
+	|| (global.practice == 2 && Boss01Sr_h.hp <= 10)
+	|| (global.practice == 3 && Boss01Sr_h.hp <= 0)) {
+	with(player) { instance_destroy(); }
+	with(world) {
+		warn = 0;
+		hp_before = -1;
+		var_temp = 0;
+		audio_stop_channel(1);
+		audio_stop_channel(2);
+		music_speed = 1;
+		music_sp = 1;
+		audio_resume_sound(Instance);
+	}
+	room_goto(Stage01Sr);
+	exit;
+}
+
+if (!nothit && Boss01Sr_h.hp == 10) {
 	with(playerHealth) {
 		if (hp < hpm) {
 			var zx = instance_create_layer(400, 304, "Player", objHealthItem2);
@@ -21,13 +40,15 @@ with(Boss01Sr_1) {
 }
 if (Boss01Sr_1.AIM == 8) bounce_num = 2;
 
-with(other) {
-	if (!dis) {
-		var temp = instance_create_depth(x, y, -50, surf_ripple);
-		temp.radius_max = 400;
-		dis = true;
-		speed = 0;
-		gravity = 0;
+if (!nothit) {
+	with(other) {
+		if (!dis) {
+			var temp = instance_create_depth(x, y, -50, surf_ripple);
+			temp.radius_max = 400;
+			dis = true;
+			speed = 0;
+			gravity = 0;
+		}
 	}
 }
 
@@ -101,5 +122,7 @@ if (ds_list_size(l) > 0) {
 
 ds_list_destroy(l);
 
-canhit = false;
-alarm[11] = 50;
+if (!nothit) {
+	canhit = false;
+	alarm[11] = 50;
+}

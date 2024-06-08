@@ -6,6 +6,7 @@ if (sprite_exists(spr__ppp)) sprite_delete(spr__ppp);
 instance_activate_all();
 application_surface_enable(true);
 
+world.pause_time = 25;
 if (audio_is_paused(world.Instance))
 	audio_resume_sound(world.Instance);
 

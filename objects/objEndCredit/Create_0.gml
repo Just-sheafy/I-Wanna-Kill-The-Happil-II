@@ -18,8 +18,9 @@ if (layer_exists("Background2"))
 if (layer_exists("Background3"))
 	layer_background_visible(layer_background_get_id(layer_get_id("Background3")), false);
 
-// world.credit_played = true;
-if (world.credit_played) {
+if (global.practice >= 0) global.practice -= 400;
+
+if (global.practice < 0 && world.credit_played) {
 	instance_create_depth(400, 384, -1, Boss04_55);
 	instance_create_depth(400, 364, -2, player);
 	instance_create_depth(0, 0, 180, Boss04_56);
@@ -46,7 +47,7 @@ if (world.credit_played) {
 	var zx = instance_create_depth(800, 0, -2000, StageGet);
 	zx.image_index = 68;
 } else {
-	alarm[0] = 10;
+	alarm[0] = 10 - 9*(global.practice >= 0);
 	alarm[1] = 50;
 	alarm[2] = 190;
 }

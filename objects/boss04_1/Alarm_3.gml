@@ -1,6 +1,22 @@
 var zx, temp, xxx, yyy;
 
 if (patt == 8) {
+	if (global.practice == 6) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
     with(Boss04_31) active = false;
     if (instance_exists(player)) {
         temp = instance_create_depth(-32, -32, depth-1, Boss04_29);

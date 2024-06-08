@@ -10,8 +10,8 @@
     "path":"folders/Objects/Killers/spikes.yy",
   },
   "parentObjectId":{
-    "name":"kill_character",
-    "path":"objects/kill_character/kill_character.yy",
+    "name":"spike_parent",
+    "path":"objects/spike_parent/spike_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

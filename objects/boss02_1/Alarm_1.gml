@@ -1,9 +1,27 @@
 var i, zx;
 
 if patt == 0 {
-    instance_create_depth(0, 0, -100, light);
-    zx = instance_create_depth(0, 0, 0, view_an2);
-    zx.asdf = 16;
+    if (global.practice == 2) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
+	if (global.practice <= 0) {
+	    instance_create_depth(0, 0, -100, light);
+	    zx = instance_create_depth(0, 0, 0, view_an2);
+	    zx.asdf = 16;
+	}
     block.image_index = 2;
 	if (layer_exists("Background")) {
 		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back02Bs4);
@@ -209,6 +227,22 @@ else if patt == 48 {
 }
 ////////////////////////////////////////////////////////////////////
 else if patt == 61 {
+    if (global.practice == 3) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
     with(Boss02_22) {instance_destroy();}
     with(Boss02_23) {instance_destroy();}
     block.image_index = 0;

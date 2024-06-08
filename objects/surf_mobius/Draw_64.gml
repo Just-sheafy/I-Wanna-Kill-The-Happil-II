@@ -1,6 +1,15 @@
 var i, j, NUM, NUM2, arg, xx, xx2, xxx, xxx2, yy, yy2;
 
-if (enable) {
+if (world.shader_supported && shader_is_compiled(shdMobius)) {
+	shader_set(shdMobius);
+	shader_set_uniform_f(_time, t);
+	shader_set_uniform_f(_time_init, t_init);
+	shader_set_uniform_f_array(_resolution, resol);
+	shader_set_uniform_f(_width, WIDTH);
+	
+	if (surface_exists(surface)) draw_surface(surface, 0, 0);
+	shader_reset();
+} else {
 	NUM = 25;
 	NUM2 = 6;
 
@@ -25,8 +34,8 @@ if (enable) {
 	}
 
 	draw_primitive_end();
-	
-	// exceptional
-	if (world.items[0] and world.BH_ok) { with(Boss04_h3) event_perform(ev_draw, ev_draw_normal); }
-	with(Boss04_51) draw_self();
 }
+
+// exceptional
+if (world.items[0] and world.BH_ok) { with(Boss04_h3) event_perform(ev_draw, ev_draw_normal); }
+with(Boss04_51) draw_self();

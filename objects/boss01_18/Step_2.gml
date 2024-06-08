@@ -1,4 +1,4 @@
-if (room_speed < 50) {
+if (room_speed < global.ROOM_SPEED) {
     vspeed += gravity;
     y += vspeed;
 	image_angle += 8;

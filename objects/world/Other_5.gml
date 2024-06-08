@@ -1,0 +1,1 @@
+if (global.practice < 100) global.practice = -1;

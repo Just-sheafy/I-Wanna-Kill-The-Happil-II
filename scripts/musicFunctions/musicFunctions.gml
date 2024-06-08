@@ -2,7 +2,8 @@
 function musicFunctions() {
 	//  Music  //
 	/////////////
-
+	var temp;
+	
 	switch(room) {
 	    case Stage04Bs8:
 	        if filePlaying != -1 and curMusic != global.Silent {
@@ -101,7 +102,9 @@ function musicFunctions() {
 	            filePlaying = 3.5;
 	            curMusic = global.stage01Bs2;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-	        }
+	        } else if (global.practice >= 0) {
+				audio_sound_set_track_position(Instance, 0);
+			}
 	        break;
 	    case Stage02A:
 	    case Stage02B:
@@ -135,15 +138,21 @@ function musicFunctions() {
 	            filePlaying = 7;
 	            curMusic = global.stage02Bs2;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-	        }
+	        } else if (global.practice >= 0) {
+				audio_sound_set_track_position(Instance, 0);
+			}
 	        break;
 	    case Stage02Bs3:
 	        if filePlaying != 7.5 and curMusic != global.stage02Bs3 {
 				audio_stop_channel(0);
 	            filePlaying = 7.5;
 	            curMusic = global.stage02Bs3;
+				audio_sound_loop_start(curMusic, 5.33);
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-	        }
+				audio_sound_set_track_position(Instance, 3.33);
+	        } else if (global.practice >= 0) {
+				audio_sound_set_track_position(Instance, 3.33);
+			}
 	        break;
 	    case Stage02Bs4:
 	        if filePlaying != 6 and curMusic != global.stage02Bs1 {
@@ -152,7 +161,9 @@ function musicFunctions() {
 	            curMusic = global.stage02Bs1;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 				audio_sound_set_track_position(Instance, 120.07);
-	        }
+	        } else if (global.practice >= 0) {
+				audio_sound_set_track_position(Instance, 120.07);
+			}
 	        break;
 	    case Stage02Bs5:
 	        if filePlaying != 7.8 and curMusic != global.lovetrap {
@@ -204,6 +215,19 @@ function musicFunctions() {
 	            curMusic = global.stage03Bs2;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
+			if (global.practice >= 0) {
+				temp = global.practice - 100*floor(global.practice/100);
+				if (temp == 5) {
+					// PDplayer
+					audio_sound_set_track_position(Instance, 0);
+				} else if (temp == 6) {
+					// Intermission between PDplayer and Kukul
+					audio_sound_set_track_position(Instance, 37.32);
+				} else if (temp == 7) {
+					// Kukul
+					audio_sound_set_track_position(Instance, 57.32);
+				}
+			}
 	        break;
 	    case Stage03Bs4:
 	        if filePlaying != 14 and curMusic != global.dotkid {
@@ -221,6 +245,22 @@ function musicFunctions() {
 	            curMusic = global.stage03Bs3;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
+			if (global.practice >= 0) {
+				temp = global.practice - 100*floor(global.practice/100);
+				if (global.practice == 9) {
+					// ~ before Viridian
+					audio_sound_set_track_position(Instance, 0);
+				} else if (global.practice == 10) {
+					// Viridian
+					audio_sound_set_track_position(Instance, 4.5);
+				} else if (global.practice == 11) {
+					// Pochi
+					audio_sound_set_track_position(Instance, 10.9);
+				} else if (global.practice == 12) {
+					// Final pattern
+					audio_sound_set_track_position(Instance, 22.5);
+				}
+			}
 	        break;
 	    case Stage04A:
 	    case Stage04B:
@@ -273,7 +313,9 @@ function musicFunctions() {
 	            filePlaying = 21;
 	            curMusic = global.stage04Bs2;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-	        }
+	        } else if (global.practice >= 0) {
+				audio_sound_set_track_position(Instance, 0);
+			}
 	        break;
 	    case Stage04Bs5:
 	        if filePlaying != 22 and curMusic != global.stage04Bs3 {
@@ -281,7 +323,9 @@ function musicFunctions() {
 	            filePlaying = 22;
 	            curMusic = global.stage04Bs3;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-	        }
+	        } else if (global.practice >= 0) {
+				audio_sound_set_track_position(Instance, 0);
+			}
 	        break;
 	    case Stage04Bs6:
 			if (credit_played) {

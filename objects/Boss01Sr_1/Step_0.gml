@@ -39,7 +39,7 @@ t += 0.8;
 CY = oy + 5*sin(degtorad(t));
 
 if (!ready) {
-	if (instance_exists(player) && keyboard_check_pressed(world.skipKey)) {
+	if (!global.console && instance_exists(player) && keyboard_check_pressed(world.skipKey)) {
 		instance_create_depth(0, 0, -100, light);
 		with(Boss01Sr_5) instance_destroy();
 		instance_create_depth(800, 0, -5, Boss01Sr_2);

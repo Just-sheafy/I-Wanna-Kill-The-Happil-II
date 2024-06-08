@@ -2,10 +2,10 @@
 if (!is_riding) grav = grav_amount * (2*Gravity-1);
 else grav = 0;
 
-var dir_up = keyboard_check_direct(world.upKey);
-var dir_down = keyboard_check_direct(world.downKey);
-var dir_left = keyboard_check_direct(world.leftKey);
-var dir_right = keyboard_check_direct(world.rightKey);
+var dir_up = !global.console && keyboard_check_direct(world.upKey);
+var dir_down = !global.console && keyboard_check_direct(world.downKey);
+var dir_left = !global.console && keyboard_check_direct(world.leftKey);
+var dir_right = !global.console && keyboard_check_direct(world.rightKey);
 var dir = 0;
 
 //If the player is frozen no movement is applied
@@ -90,11 +90,11 @@ if (!is_riding) {
 
 if (!frozen) {
 	if (!on_vineR && !on_vineL) {
-		if (keyboard_check_pressed(world.jumpKey)) {
+		if (!global.console && keyboard_check_pressed(world.jumpKey)) {
 			player_jump();
 		}
 		
-		if (keyboard_check_released(world.jumpKey)) {
+		if (!global.console && keyboard_check_released(world.jumpKey)) {
 			player_fall();
 		}
 	}
@@ -104,13 +104,13 @@ if (!frozen) {
 		if (shoot_time <= 0) {
 		    if world.items[2] and world.WASP_ok {
 		        if wasp_time < 8 - 6*(room == Stage03Sr) and wasp_time > 0 {wasp_time += 1;} else {wasp_time = 0;}
-		        if keyboard_check(world.shootKey) and wasp_time == 0 {player_shoot(); wasp_time += 1;}
+		        if !global.console and keyboard_check(world.shootKey) and wasp_time == 0 {player_shoot(); wasp_time += 1;}
 		    } else {
-		        if (keyboard_check_pressed(world.shootKey)) player_shoot();
+		        if (!global.console && keyboard_check_pressed(world.shootKey)) player_shoot();
 		    }
 		}
 	} else {
-		if keyboard_check(world.shootKey) {if !instance_exists(bow2) {instance_create_depth(x, y, -3, bow2);}}
+		if (!global.console && keyboard_check(world.shootKey)) {if !instance_exists(bow2) {instance_create_depth(x, y, -3, bow2);}}
             else {with(bow2) {instance_destroy();}}
 	}
 	
@@ -125,8 +125,8 @@ if (!frozen) {
 	    sprite_index = sprPlayerSliding;
 		
 		if (GravityH) {
-		    if ((on_vineR && keyboard_check_pressed(world.downKey)) || (on_vineL && keyboard_check_pressed(world.upKey))) {
-		        if (keyboard_check_direct(world.jumpKey)) {
+		    if (!global.console && ((on_vineR && keyboard_check_pressed(world.downKey)) || (on_vineL && keyboard_check_pressed(world.upKey)))) {
+		        if (!global.console && keyboard_check_direct(world.jumpKey)) {
 		            vspd = (on_vineR) ? 15 : -15;
 		            hspd = -9 * (2*Gravity-1);
 		            sprite_index = sprPlayerJump;
@@ -137,8 +137,8 @@ if (!frozen) {
 		        }
 		    }
 		} else {
-		    if ((on_vineR && keyboard_check_pressed(world.rightKey)) || (on_vineL && keyboard_check_pressed(world.leftKey))) {
-		        if (keyboard_check_direct(world.jumpKey)) {
+		    if (!global.console && ((on_vineR && keyboard_check_pressed(world.rightKey)) || (on_vineL && keyboard_check_pressed(world.leftKey)))) {
+		        if (!global.console && keyboard_check_direct(world.jumpKey)) {
 		            hspd = (on_vineR) ? 15 : -15;
 		            vspd = -9 * (2*Gravity-1);
 		            sprite_index = sprPlayerJump;

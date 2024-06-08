@@ -79,7 +79,7 @@ if (patt == -6) {
     with(Boss02_2) {sprite_index = sprBoss02_4;}
     with(Boss02_3) {visible = true; crazy = 1;}
 	
-    if instance_exists(player) {
+    if (global.practice < 0 && instance_exists(player)) {
         world.re_nodie = false;
         saveControls();
         with(world) {
@@ -140,6 +140,22 @@ if (patt == -6) {
     patt += 1;
     if patt == 43 { alarm[3] = 120;}
 } else if patt == 43 {
+    if (global.practice == 9) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
     instance_create_depth(0, 0, -100, light);
 	Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(world) {filePlaying = -0.5; curMusic = global.None; audio_stop_sound(Instance);}

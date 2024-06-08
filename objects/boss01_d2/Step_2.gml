@@ -8,5 +8,5 @@ if image_index == 0 {
 	}
 }
 if image_index == 1 {
-    if !instance_exists(player) {room_speed = 50;}
+    if !instance_exists(player) {room_speed = global.ROOM_SPEED;}
 }

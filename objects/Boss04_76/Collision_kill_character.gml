@@ -1,1 +1,1 @@
-with(player) { kill_player(); }
+if (kill) { with(player) { kill_player(); } }

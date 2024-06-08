@@ -64,24 +64,23 @@ if (image_index == 0) {
 			else image_yscale = min(608/68/abs(sin(degtorad(theta))), 800/68/abs(cos(degtorad(theta))));
 			image_angle = theta-90;
 			
-			if (mode <= 3) { with(Boss04_76) { alpha = min(alpha+0.025, 1); } }
-			else { with(Boss04_76) { alpha = max(alpha-0.01, 0); } }
+			if (mode <= 3) { with(Boss04_76) alpha = min(alpha+0.025, 1); }
 			with(Boss04_76) { dir = Boss04_67.theta; }
 			with(Boss04_77) angle += Boss04_67.theta-Boss04_67.theta_prev;
 		} else {
 			mode_num = min(mode_num+1, 200);
 			y = 304+800*(1-cos(degtorad(mode_num*90/200)));
+			
+			with(Boss04_76) alpha = max(alpha-0.01, 0);
 		}
 		
-		if (orient == 1) {
-			with(Boss04_77) {
+		with(Boss04_77) {
+			if (orient == Boss04_67.orient) {
 				x = room_width/2 + (xx-room_width/2)*sin(degtorad(Boss04_67.theta))
 					- (yy-room_height/2)*cos(degtorad(Boss04_67.theta));
 				y = room_height/2 + (xx-room_width/2)*cos(degtorad(Boss04_67.theta))
 					+ (yy-room_height/2)*sin(degtorad(Boss04_67.theta));
-			}
-		} else {
-			with(Boss04_77) {
+			} else {
 				x = room_width/2 + xx*sin(degtorad(Boss04_67.theta))
 					- (yy-room_height/2)*cos(degtorad(Boss04_67.theta));
 				y = room_height/2 + xx*cos(degtorad(Boss04_67.theta))

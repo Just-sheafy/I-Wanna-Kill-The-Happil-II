@@ -8,9 +8,11 @@ with(player){
 	vspd = 0;
 }
 
-world.re_nodie = false;
-saveControls();
-with(world) {
-    saveEncrypt();
-    saveDeaths();
+if (global.practice < 0) {
+	world.re_nodie = false;
+	saveControls();
+	with(world) {
+	    saveEncrypt();
+	    saveDeaths();
+	}
 }

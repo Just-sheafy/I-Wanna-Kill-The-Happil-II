@@ -42,7 +42,7 @@ temp = instance_create_depth(736, 64, -50, objTime1);
 temp.time = 2220;
 temp.time_max = temp.time;
 
-if (world.var_temp == 0 && world.items[0] && world.BH_ok) {
+if (global.practice < 0 && world.var_temp == 0 && world.items[0] && world.BH_ok) {
 	temp = instance_create_depth(480, 568, 250, Boss04_52);
 	temp.image_angle = -6;
 	temp.move = false;
@@ -73,3 +73,10 @@ alarm[2] = 50;
 alarm[3] = 2275;
 
 patt = 0;
+
+// Practice
+if (global.practice >= 0) {
+	with(StageGet) instance_destroy();
+    with(dark1) instance_destroy();
+	alarm[11] = 1;
+}

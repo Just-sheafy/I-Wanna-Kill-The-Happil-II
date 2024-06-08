@@ -1,4 +1,4 @@
-if (!instance_exists(player)) room_speed = 50;
+if (!instance_exists(player)) room_speed = global.ROOM_SPEED;
 
 if (!surface_exists(surf)) surf = surface_create(10*sprite_get_width(sprite_index), 10*sprite_get_height(sprite_index));
 

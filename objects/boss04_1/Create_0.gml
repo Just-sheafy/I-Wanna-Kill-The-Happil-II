@@ -55,6 +55,8 @@ if (room == Stage04Bs) {
 		world.hp_before = -1;
 	}
 	
+	if (global.practice >= 0) global.practice -= 400;
+	
     instance_create_depth(x, y, 50, Boss04_31);
     if (layer_exists("Tiles"))
 	layer_set_visible(layer_get_id("Tiles"), false);

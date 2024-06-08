@@ -3,7 +3,7 @@ if (instance_exists(player)) {
         if ((Gravity and place_meeting(x, y+1, block)) or (!Gravity and place_meeting(x, y-1, block)))
             Boss04_1.shell_count = 0;
     }
-    if (shell_count >= 8 and !world.achieve[40])
+    if (global.practice < 0 && shell_count >= 8 && !world.achieve[40])
         world.achieve[40] = true;
 }
 

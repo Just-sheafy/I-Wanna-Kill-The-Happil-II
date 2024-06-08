@@ -1,6 +1,6 @@
 var r, theta, temp;
 
-if (patt == 0) {	
+if (patt == 0) {
 	with(Boss04_56) {
 		t_spd = 1;
 		t2_spd = 1;

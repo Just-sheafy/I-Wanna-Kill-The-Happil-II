@@ -20,7 +20,7 @@ if hp <= 0 {
     var zx = instance_create_depth(x, y, depth, Boss_h);
     zx.sprite_index = sprite_index;
     
-    room_speed = 35;
+    room_speed = global.ROOM_SPEED * 35 / 50;
     with(Boss04_2) {
         instance_destroy();
         with(shield_id) instance_destroy();

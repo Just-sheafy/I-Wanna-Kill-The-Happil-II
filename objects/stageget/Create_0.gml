@@ -1,6 +1,9 @@
 var cam = view_camera[0];
 
-if (!world.SI_ok or room == Stage02Bs3 or room == Stage02Bs4 or room == Stage04Bs4 or room == Stage04Bs8) {visible = false; exit;}
+if (global.practice != -1 or !world.SI_ok or room == Stage02Bs3 or room == Stage02Bs4 or
+	room == Stage04Bs4 or room == Stage04Bs8) {
+	visible = false;
+} else Instance = audio_play_sound(sndStage, 0, false, world.sound_vol);
 x=camera_get_view_x(cam)+camera_get_view_width(cam);
 y=camera_get_view_y(cam);
 ox=0;
@@ -10,7 +13,6 @@ grav=0;
 patt=0;
 image_speed=0;
 alarm[0] = 1;
-Instance = audio_play_sound(sndStage, 0, false, world.sound_vol);
 
 text = "";
 index = 1;

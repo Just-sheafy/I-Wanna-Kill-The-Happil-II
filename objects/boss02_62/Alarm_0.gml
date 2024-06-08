@@ -89,16 +89,35 @@ if (patt == -1) {
     patt += 1;
     alarm[0] = 60;
 } else if patt == 67 {
-    zx = instance_create_depth(0, 0, 0, soundEx2);
-    zx.M2 = world.Instance;
-    zx.M1 = audio_play_sound(global.stage02Bs3, 10, true, 0);
-    zx.Vol = 0;
-    zx.ang = 0;
-    audio_sound_gain(zx.M1, world.music_vol, 0);
-    with(world) {filePlaying = 7.5; curMusic = global.stage02Bs3; Instance = soundEx2.M1;}
+	if (global.practice <= 0) {
+	    zx = instance_create_depth(0, 0, 0, soundEx2);
+	    zx.M2 = world.Instance;
+	    zx.M1 = audio_play_sound(global.stage02Bs3, 10, true, 0);
+		audio_sound_set_track_position(zx.M1, 1.33);
+	    zx.Vol = 0;
+	    zx.ang = 0;
+	    audio_sound_gain(zx.M1, world.music_vol, 0);
+	    with(world) {filePlaying = 7.5; curMusic = global.stage02Bs3; Instance = soundEx2.M1;}
+	}
     patt += 1;
     alarm[0] = 100;
 } else if patt == 68 {
+    if (global.practice == 4) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
     with(player) {x = 400; y = 192;}
 	with(playerHealth) {world.hp_before = hp;}
     world.c = 1;

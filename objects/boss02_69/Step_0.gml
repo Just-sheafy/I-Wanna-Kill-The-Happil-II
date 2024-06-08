@@ -173,6 +173,22 @@ if (patt == 25) {
 } else if (patt == 1600) {
 	with(Boss02F4) alarm[1] = 0;
 } else if (patt == 1700) {
+	if (global.practice == 10) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
     instance_create_depth(player.x, -60, -2, Boss02F2);
 } else if (patt == 1750) {
     instance_create_depth(player.x, 668, -2, Boss02F2);
@@ -259,7 +275,7 @@ if (patt == 25) {
     instance_create_depth(player.x, 668, -2, Boss02F2);
 } else if (patt == 2950) {
     with(Boss02F1) {
-        sp = 1.8;
+        sp = 2.0;
         alarm[0] = 7;
     }
 } else if (patt == 3350) {
@@ -268,6 +284,22 @@ if (patt == 25) {
     zx = instance_create_depth(0, 0, -5, Boss02_70);
     zx.a = 1;
 } else if (patt == 3575) {
+	if (global.practice == 11) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
     with(Boss02F1) {instance_destroy();}
     with(fruit) {instance_destroy();}
     instance_destroy();

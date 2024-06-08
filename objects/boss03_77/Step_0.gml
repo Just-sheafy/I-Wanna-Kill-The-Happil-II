@@ -21,7 +21,7 @@ if press {
 	}
     
 	
-    if keyboard_check_pressed(vk_anykey) {
+    if (!global.console && keyboard_check_pressed(vk_anykey)) {
 		if (keyboard_lastkey == key) {
 	        press = 0;
 	        with(Boss03_80) {instance_destroy(); instance_create_depth(x, y, -4, Boss02_71);}

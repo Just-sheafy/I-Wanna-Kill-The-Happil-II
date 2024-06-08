@@ -28,7 +28,23 @@ if patt < 8 {
     patt += 1;
     alarm[0] = 25;
     if patt == 8 {
-        instance_create_depth(0, 0, -100, light);
+		if (global.practice == 9) {
+			with(player) { instance_destroy(); }
+			with(world) {
+				warn = 0;
+				hp_before = -1;
+				var_temp = 0;
+				audio_stop_channel(1);
+				audio_stop_channel(2);
+				music_speed = 1;
+				music_sp = 1;
+				audio_resume_sound(Instance);
+			}
+			room_goto(Stage03Bs);
+			exit;
+		}
+		
+        if (global.practice < 0) instance_create_depth(0, 0, -100, light);
         instance_create_depth(400, 160, -2, Boss03_68);
         image_index = 0;
         alarm[0] = 80;
@@ -49,6 +65,22 @@ if patt < 8 {
     alarm[0] = 40;
     if patt == 13 {alarm[0] = 80;}
 } else if patt == 13 {
+	if (global.practice == 10) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
     instance_create_depth(128, -100, -2, Boss03_71);
     instance_create_depth(672, -100, -2, Boss03_73);
     patt += 1;
@@ -73,7 +105,23 @@ if patt < 8 {
     patt += 1;
     alarm[0] = 275;
 } else {
-    instance_create_depth(0, 0, -100, light);
+	if (global.practice == 11) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
+    if (global.practice < 0) instance_create_depth(0, 0, -100, light);
     gravity_direction = 0;
     gravity = 0.05;
     image_index = 2;

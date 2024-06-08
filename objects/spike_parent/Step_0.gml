@@ -1,1 +1,1 @@
-if ac {if image_alpha < 1 {image_alpha += 0.05;} else {image_alpha = 1; ac = 0;}}
+ftn_step();

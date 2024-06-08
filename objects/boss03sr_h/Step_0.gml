@@ -36,7 +36,7 @@ if hp <= 0 {
     
     audio_play_sound(sndDeath, 0, false, world.sound_vol);
     Instance = audio_play_sound(sndSr03_3, 0, false, world.sound_vol);
-	audio_sound_pitch(Instance, 0.75);
+	audio_sound_pitch(Instance, 0.75 * global.ROOM_SPEED / 50);
     
     with(world) {audio_stop_sound(Instance);}
     with(Boss03Sr_h2) {instance_destroy();}

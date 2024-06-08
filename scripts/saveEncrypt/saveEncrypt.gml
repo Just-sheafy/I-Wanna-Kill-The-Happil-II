@@ -76,11 +76,14 @@ function saveEncrypt() {
 	filename = gameCaption+"save";
 	ID = 577215664;
 	prevent = 0;
+	/*
+	// OS detector
 	_map = os_get_info();
 	if (_map != -1 && is_string(_map[? "udid"])) {
 	    ID = floor(string_digits(_map[? "udid"]));
 	    ds_map_destroy(_map);
 	}
+	*/
 
 
 	_map = ds_map_create();

@@ -3,9 +3,26 @@ var zx;
 if a == 0 {
     with(Hamjung03Bs1) {d = 1;}
     s = 1;
+    pat = 1;
     a += 1;
     alarm[1] = 90;
 } else if a == 1 {
+	if (global.practice == 3) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
     zx = instance_create_depth(x, y, 0, Boss01_23);
     zx.sid = id;
     zx.alarm[0] = 120;
@@ -19,7 +36,6 @@ if a == 0 {
 	with(playerHealth) {not_check = true;}
     with(Hamjung03Bs5) {d = 1; vspd = 1;}
     with(Boss03_dead1) {a = 1;}
-    pat = 1;
     a += 1;
     alarm[1] = 30;
 } else if a == 3 {

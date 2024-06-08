@@ -182,6 +182,22 @@ if (patt == 150) {
     with(Boss04F2) patt += 1;
     with(Boss04F3) instance_destroy();
 } else if (patt == 834) {
+	if (global.practice == 2) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
     instance_create_depth(0, 0, -100, light);
     if (layer_exists("Background")) {
 		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back04Bs6);

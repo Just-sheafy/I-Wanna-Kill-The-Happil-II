@@ -61,55 +61,150 @@ function loadDeaths() {
 	}*/
 
 	var ID, num2, prevent, text, i, j, filename, _map;
-	var prevent_ftn, num_ftn;
+	var load_data_ftn;
 	
-	prevent_ftn = function(__map, __text, __ID, __num2, __prevent) {
-		return __prevent + __map[? __text]*((__ID div power(10, __num2)) mod 10);
-	};
-	num_ftn = function(__ID, __num2) {
-		if (power(10, __num2+1) <= __ID) return __num2 + 1;
-		else return 0;
+	load_data_ftn = function(__filename, __ID) {
+		var num2, prevent, i, j, _map;
+		var prevent_ftn, num_ftn;
+		
+		prevent_ftn = function(__map, __text, __ID, __num2, __prevent) {
+			return __prevent + __map[? __text]*((__ID div power(10, __num2)) mod 10);
+		};
+		num_ftn = function(__ID, __num2) {
+			if (power(10, __num2+1) <= __ID) return __num2 + 1;
+			else return 0;
+		};
+		
+		if (file_exists(__filename)) {
+		    _map = ds_map_secure_load(__filename);
+			prevent = 0;
+			num2 = 0;
+    
+		    if (_map[? "gamediff"] != undefined) {
+				prevent = prevent_ftn(_map, "gamediff", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+			
+		    if (_map[? "deaths0"] != undefined and _map[? "deaths1"] != undefined and
+		        _map[? "deaths2"] != undefined and _map[? "deaths3"] != undefined) {
+				prevent = prevent_ftn(_map, "deaths0", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+				prevent = prevent_ftn(_map, "deaths1", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+				prevent = prevent_ftn(_map, "deaths2", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+				prevent = prevent_ftn(_map, "deaths3", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+    
+		    for(i=0; i<9; i+=1) {
+		        text = "achieve" + string(i);
+		        if (_map[? text] != undefined) {
+					prevent = prevent_ftn(_map, text, __ID, num2, prevent);
+					num2 = num_ftn(__ID, num2);
+		        }
+		    }
+    
+		    for(i=0; i<2; i+=1) {
+		        text = "items" + string(i);
+		        if (_map[? text] != undefined) {
+					prevent = prevent_ftn(_map, text, __ID, num2, prevent);
+					num2 = num_ftn(__ID, num2);
+		        }
+		    }
+    
+		    if (_map[? "h0"] != undefined and _map[? "h1"] != undefined and
+		        _map[? "h2"] != undefined) {
+				prevent = prevent_ftn(_map, "h0", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+				prevent = prevent_ftn(_map, "h1", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+				prevent = prevent_ftn(_map, "h2", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+		    if (_map[? "m"] != undefined) {
+				prevent = prevent_ftn(_map, "m", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+			if (_map[? "s"] != undefined) {
+				prevent = prevent_ftn(_map, "s", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+    
+		    if (_map[? "ok_series"] != undefined) {
+				prevent = prevent_ftn(_map, "ok_series", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+		    }
+		
+			if (_map[? "HEALTH_type"] != undefined) {
+				prevent = prevent_ftn(_map, "HEALTH_type", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+    
+		    if (_map[? "music_vol"] != undefined) {
+				prevent = prevent_ftn(_map, "music_vol", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+			if (_map[? "sound_vol"] != undefined) {
+				prevent = prevent_ftn(_map, "sound_vol", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+		
+			if (_map[? "music_slowdown"] != undefined) {
+				prevent = prevent_ftn(_map, "music_slowdown", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+			if (_map[? "vsync"] != undefined) {
+				prevent = prevent_ftn(_map, "vsync", __ID, num2, prevent);
+				num2 = num_ftn(__ID, num2);
+			}
+		
+		    if (_map[? "prevent"] != undefined) {
+		        if (_map[? "prevent"] == (prevent mod 10000)) {
+					ds_map_destroy(_map);
+					return true;
+				}
+			}
+			
+		    ds_map_destroy(_map);
+		}
+		
+		return false;
 	};
 	
 
 	filename = "globaldata";
-	ID = 577215664;
-	prevent = 0;
-	num2 = 0;
+	ID = -1;
 	_map = os_get_info();
 	if (_map != -1 && is_string(_map[? "udid"])) {
 	    ID = floor(string_digits(_map[? "udid"]));
+		if (!load_data_ftn(filename, ID)) ID = -1;
 	    ds_map_destroy(_map);
 	}
-
-	if (file_exists(filename)) {
+	
+	if (ID == -1) {
+		ID = 577215664;
+		if (!load_data_ftn(filename, ID)) ID = -1;
+	}
+	
+	if (ID != -1) {
 	    _map = ds_map_secure_load(filename);
     
 	    if (_map[? "gamediff"] != undefined) {
 	        gamediff[0] = _map[? "gamediff"];
-			prevent = prevent_ftn(_map, "gamediff", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
+		
 	    if (_map[? "deaths0"] != undefined and _map[? "deaths1"] != undefined and
-	        _map[? "deaths2"] != undefined and _map[? "deaths3"] != undefined)
+	        _map[? "deaths2"] != undefined and _map[? "deaths3"] != undefined) {
 	        deaths[0] = _map[? "deaths3"]*(101*103*107)+_map[? "deaths2"]*(101*103)+
 	            _map[? "deaths1"]*101+_map[? "deaths0"];
-			prevent = prevent_ftn(_map, "deaths0", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
-			prevent = prevent_ftn(_map, "deaths1", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
-			prevent = prevent_ftn(_map, "deaths2", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
-			prevent = prevent_ftn(_map, "deaths3", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
+		}
     
 	    for(i=0; i<9; i+=1) {
 	        text = "achieve" + string(i);
 	        if (_map[? text] != undefined) {
 	            for(j=0; j<8; j+=1)
 	                achieve[8*i+j] = (_map[? text] div power(2, j)) mod 2;
-				prevent = prevent_ftn(_map, text, ID, num2, prevent);
-				num2 = num_ftn(ID, num2);
 	        }
 	    }
     
@@ -118,30 +213,18 @@ function loadDeaths() {
 	        if (_map[? text] != undefined) {
 	            for(j=0; j<8; j+=1)
 	                items[8*i+j] = (_map[? text] div power(2, j)) mod 2;
-				prevent = prevent_ftn(_map, text, ID, num2, prevent);
-				num2 = num_ftn(ID, num2);
 	        }
 	    }
     
 	    if (_map[? "h0"] != undefined and _map[? "h1"] != undefined and
 	        _map[? "h2"] != undefined) {
 	        h = _map[? "h2"]*(314*159)+_map[? "h1"]*314+_map[? "h0"];
-			prevent = prevent_ftn(_map, "h0", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
-			prevent = prevent_ftn(_map, "h1", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
-			prevent = prevent_ftn(_map, "h2", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
 	    if (_map[? "m"] != undefined) {
 	        m = _map[? "m"];
-			prevent = prevent_ftn(_map, "m", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
 		if (_map[? "s"] != undefined) {
 	        s = _map[? "s"];
-			prevent = prevent_ftn(_map, "s", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
     
 	    if (_map[? "ok_series"] != undefined) {
@@ -153,41 +236,25 @@ function loadDeaths() {
 	        BN_ok = (_map[? "ok_series"] div 80) mod 2;
 	        HI_ok = (_map[? "ok_series"] div 160) mod 2;
 	        SI_ok = (_map[? "ok_series"] div 320) mod 2;
-			prevent = prevent_ftn(_map, "ok_series", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 	    }
 		
 		if (_map[? "HEALTH_type"] != undefined) {
 	        HEALTH_type = _map[? "HEALTH_type"];
-			prevent = prevent_ftn(_map, "HEALTH_type", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
     
 	    if (_map[? "music_vol"] != undefined) {
 	        music_vol = _map[? "music_vol"]/100;
-			prevent = prevent_ftn(_map, "music_vol", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
 		if (_map[? "sound_vol"] != undefined) {
 	        sound_vol = _map[? "sound_vol"]/100;
-			prevent = prevent_ftn(_map, "sound_vol", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
 		
 		if (_map[? "music_slowdown"] != undefined) {
 	        music_slowdown = _map[? "music_slowdown"];
-			prevent = prevent_ftn(_map, "music_slowdown", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
 		}
 		if (_map[? "vsync"] != undefined) {
 	        vsync = _map[? "vsync"];
 			display_reset(0, (vsync == 1));
-			prevent = prevent_ftn(_map, "vsync", ID, num2, prevent);
-			num2 = num_ftn(ID, num2);
-		}
-		
-	    if (_map[? "prevent"] != undefined) {
-	        // if (_map[? "prevent"] != (prevent mod 10000))
 		}
     
 	    ds_map_destroy(_map);

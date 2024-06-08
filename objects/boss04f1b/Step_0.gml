@@ -291,6 +291,22 @@ if (patt == 94) {
         direction = point_direction(player.x, player.y, x, y);
     }
 } else if (patt == 1055) {
+	if (global.practice == 4) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
     for(i=0; i<ds_list_size(square_x); i+=1) {
         ii = i+1;
         if (ii == ds_list_size(square_x)) ii = 0;

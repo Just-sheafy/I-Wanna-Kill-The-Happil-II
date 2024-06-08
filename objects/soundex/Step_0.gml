@@ -8,3 +8,5 @@ if ang {
 }
 audio_sound_gain(M1, Vol, 0);
 audio_sound_gain(M2, world.music_vol-Vol, 0);
+audio_sound_pitch(M1, world.music_sp * global.ROOM_SPEED / 50);
+audio_sound_pitch(M2, world.music_sp * global.ROOM_SPEED / 50);

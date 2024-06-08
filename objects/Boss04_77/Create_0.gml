@@ -7,3 +7,4 @@ hs = 0;
 vs = 0;
 angle = 0;
 as = 0;
+orient = 1;

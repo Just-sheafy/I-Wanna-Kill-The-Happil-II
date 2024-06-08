@@ -5,6 +5,9 @@ var i;
 if (ds_exists(list_obj_before, ds_type_list)) ds_list_destroy(list_obj_before);
 if (ds_exists(list_objx_before, ds_type_list)) ds_list_destroy(list_objx_before);
 if (ds_exists(list_objy_before, ds_type_list)) ds_list_destroy(list_objy_before);
+if (ds_exists(list_console_text, ds_type_list)) ds_list_destroy(list_console_text);
+if (ds_exists(map_macro_key, ds_type_map)) ds_map_destroy(map_macro_key);
+if (ds_exists(map_macro, ds_type_map)) ds_map_destroy(map_macro);
 
 font_delete(global.fontBoss02);
 font_delete(global.fontBoss04);
@@ -80,7 +83,6 @@ audio_destroy_stream_check(global.catastrophe);
 audio_destroy_stream_check(global.stage01SrBef);
 audio_destroy_stream_check(global.stage01Sr1);
 audio_destroy_stream_check(global.stage01Sr2);
-audio_destroy_stream_check(global.stage01Sr2Loop);
 audio_destroy_stream_check(global.stage01Sr3);
 audio_destroy_stream_check(global.stage01Sr4);
 audio_destroy_stream_check(global.stage02Sr1);

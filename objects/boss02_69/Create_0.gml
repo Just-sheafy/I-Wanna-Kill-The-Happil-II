@@ -28,3 +28,10 @@ if (world.HEALTH_ok) {
 	}
 	world.hp_before = -1;
 }
+
+// Practice
+if (global.practice >= 0) {
+	with(StageGet) instance_destroy();
+    with(dark1) instance_destroy();
+	alarm[11] = 1;
+}

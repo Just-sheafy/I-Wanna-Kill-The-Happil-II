@@ -9,7 +9,6 @@ if instance_exists(SavePoint2) {
                 curMusic = global.stage01Bs1;
                 Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
             }
-            break;
         }
         instance_create_depth(736, 0, -2, Boss01_1);
 		

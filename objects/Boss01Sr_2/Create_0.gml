@@ -25,5 +25,6 @@ vspd = 0;
 grav = 0.2;
 
 canhit = true;
+nothit = false;
 is_dead = false;
 oy = 0;

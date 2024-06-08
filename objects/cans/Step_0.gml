@@ -8,7 +8,7 @@ if instance_exists(player) {
     } else {
         if image_yscale > 0 {image_yscale -= 0.1;}
     }
-    if keyboard_check_pressed(world.skipKey) {
+    if (!global.console && keyboard_check_pressed(world.skipKey)) {
         if (!player.Gravity or player.GravityH) {
             player.GravityH = false;
             player.Gravity = true;

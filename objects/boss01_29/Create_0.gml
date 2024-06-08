@@ -11,6 +11,9 @@ a2 = 0;
 a3 = 0;
 a4 = 0;
 a9 = 0;
+heal = false;
+heal_time = 0;
+heal_alpha = 0;
 
 instance_create_depth(0, 0, -8, Boss01_h11);
 air = 1;
@@ -18,6 +21,12 @@ alarm[0] = irandom_range(200, 350);
 alarm[9] = irandom_range(50, 150);
 alarm[10] = irandom_range(150-air*50, 250-air*100);
 alarm[8] = 1;
+
+if (global.practice >= 0) {
+	with(StageGet) instance_destroy();
+    with(dark1) instance_destroy();
+}
+
 var zx = instance_create_depth(x, y, -10, Boss01_n);
 zx.sid = id;
 zx.ox = -91;

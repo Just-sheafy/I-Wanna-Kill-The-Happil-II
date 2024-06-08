@@ -58,7 +58,6 @@ global.catastrophe = audio_create_stream("BGM/Catastrophe.ogg");
 global.stage01SrBef = -1;
 global.stage01Sr1 = audio_create_stream("BGM/Stage01Secret1.ogg");
 global.stage01Sr2 = audio_create_stream("BGM/Stage01Secret2.ogg");
-global.stage01Sr2Loop = audio_create_stream("BGM/Stage01Secret2Loop.ogg");
 global.stage01Sr3 = -1;
 global.stage01Sr4 = -1;
 global.stage02Sr1 = audio_create_stream("BGM/Stage02Secret1.ogg");

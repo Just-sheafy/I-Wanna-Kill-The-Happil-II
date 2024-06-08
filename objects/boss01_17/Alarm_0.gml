@@ -46,7 +46,33 @@ if patt == 0 {
     patt += 1;
     alarm[0] = 52;
 } else if patt == 7 {
-	instance_create_depth(-96, 0, -2, Boss01_41);
+	zx = instance_create_depth(-96, 0, -3, Boss01_41);
+	zx.index = choose(0, 1, 2);
+	zx.sid1 = instance_create_depth(-96-192, 0, -4, Boss01_41);
+	zx.sid1.sprite_index = sprBoss01_37;
+	zx.sid1.image_index = zx.index;
+	if (zx.index == 1) {
+		zx.sid1.image_xscale = -3.5;
+		zx.sid1.image_yscale = 3.5;
+	}
+	zx.sid1.hspeed = 0;
+	zx.sid1.vspeed = 0;
+	zx.sid1.gravity = 0;
+	zx.sid1.bump = true;
+	zx.sid1.alarm[0] = 0;
+	zx.sid1.alarm[11] = 0;
+	zx.oy1 = -192;
+	
+	zx.sid2 = instance_create_depth(-96, 0, -4, Boss01_41);
+	zx.sid2.sprite_index = sprBoss01_38;
+	zx.sid2.image_speed = 1/2;
+	zx.sid2.hspeed = 0;
+	zx.sid2.vspeed = 0;
+	zx.sid2.gravity = 0;
+	zx.sid2.bump = true;
+	zx.sid2.alarm[0] = 0;
+	zx.sid2.alarm[11] = 0;
+	
     with(Boss01_19) {friction = 0; speed = 6; gravity_direction = direction; gravity = 0.1;}
     patt += 1;
     alarm[0] = 30;
@@ -93,6 +119,22 @@ if patt == 0 {
     patt += 1;
     alarm[0] = 90;
 } else if patt == 15 {
+	if (global.practice == 4) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage01Bs);
+		exit;
+	}
+	
     zx = instance_create_depth(x, y-64, -2, Boss01_25);
     zx.vspeed = -10;
     zx.friction = 0.5;

@@ -31,7 +31,7 @@ if (is_riding) {
 	if (danger == 1) danger = 2;
 	if (danger == 3) {
 		is_riding = false; no_fall = 0;
-		with(player) { is_riding = false; hspd = 0; vspd = -4; grav = 0; }
+		with(player) { is_riding = false; reset_jumps(); hspd = 0; vspd = -4; grav = 0; }
 		exit;
 	}
 	
@@ -44,6 +44,8 @@ if (is_riding) {
     var v = dir_down;
     if (!h) h = -dir_left;
     if (!v) v = -dir_up;
+	
+	if (global.console) { h = 0; v = 0; }
 	
 	xsafe = x;
 	ysafe = y;
@@ -103,7 +105,7 @@ if (is_riding) {
 
 if (y >= room_height + 64 and vspd > 0) {
 	if (is_riding) {
-		with(player) { is_riding = false; hspd = 0; vspd = 0; grav = 0; }
+		with(player) { is_riding = false; reset_jumps(); hspd = 0; vspd = 0; grav = 0; }
 	}
 	instance_destroy();
 }

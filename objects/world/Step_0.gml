@@ -1,5 +1,3 @@
-/// @description *Debugging Stuffs
-
 // DELETE LATER!!
 // SHOULD ALSO DELETE saveControls and loadControls!!
 
@@ -28,7 +26,7 @@ if (file_exists("SaveMusicTemp.dat")) {
 	}
 }
 
-if (instance_exists(playerMove)) {
+if (global.TEST and !global.console and !instance_exists(objPause) and instance_exists(playerMove)) {
     if (mouse_check_button_released(mb_right)) {
         temp = instance_create_depth(playerMove.x, playerMove.y, -2, player);
         temp.Gravity = playerMove.Gravity;
@@ -40,7 +38,7 @@ if (instance_exists(playerMove)) {
     }
 }
 
-if (instance_exists(player) and !instance_exists(objPause)) {
+if (global.TEST and !global.console and !instance_exists(objPause) and instance_exists(player)) {
     /*
 	if (keyboard_check_pressed(forcedSave)) {
         game_save("Save.dat");
@@ -96,18 +94,22 @@ if (instance_exists(player) and !instance_exists(objPause)) {
 if music_speed != 1 {
     music_sp = max(music_sp - 0.006, 0);
 	if (music_slowdown) {
-		if (music_sp > 0) audio_sound_pitch(Instance, music_sp);
+		if (music_sp > 0) audio_sound_pitch(Instance, music_sp * global.ROOM_SPEED / 50);
 		else if (audio_is_playing(Instance)) audio_pause_sound(Instance);
 	} else if (audio_is_playing(Instance)) audio_pause_sound(Instance);
-} else audio_sound_pitch(Instance, 1);
+} else {
+	music_sp = 1;
+	audio_sound_pitch(Instance, global.ROOM_SPEED / 50);
+}
 
 if (!instance_exists(objPause)) {
-    if keyboard_check_pressed(gameRestart) {
+    if (!global.console && keyboard_check_pressed(gameRestart)) {
 		if (room == Stage04Bs7) {
 			audio_play_sound(sndWrong, 0, false, sound_vol);
 		} else if (room != initRoom and room != beforeRoom and room != startRoom and room != loadRoom and room != beginning) {
             if (!instance_exists(player)) re_nodie = true;
 			hp_before = -1;
+			global.practice = -1;
             
             room_before = room;
             for(i=0; i<8; i+=1) {

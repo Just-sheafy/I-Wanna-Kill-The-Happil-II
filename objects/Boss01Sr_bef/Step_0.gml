@@ -4,7 +4,7 @@ if (index >= 40) index -= 40;
 if (!instance_exists(player)) exit;
 
 if (practice) {
-	if (keyboard_check_pressed(world.skipKey)) {
+	if (!global.console && keyboard_check_pressed(world.skipKey)) {
 		var zx;
 		
         with(world) {
@@ -13,9 +13,9 @@ if (practice) {
                 audio_stop_sound(Instance);
                 filePlaying = 3.95;
                 curMusic = global.stage01Sr2;
+				audio_sound_loop_start(curMusic, 18.11);
                 Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
             }
-            break; 
         }
 		
 		if (world.HEALTH_ok) {
@@ -163,8 +163,7 @@ if (practice) {
 	                filePlaying = 3.9;
 	                curMusic = global.stage01Sr1;
 	                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-	            }
-	            break; 
+				}
 	        }
 			
 			zx = instance_create_depth(0, 0, -8, Boss01Sr_1);
@@ -215,9 +214,9 @@ if (practice) {
 	                audio_stop_sound(Instance);
 	                filePlaying = 3.95;
 	                curMusic = global.stage01Sr2;
+					audio_sound_loop_start(curMusic, 18.11);
 	                Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	            }
-	            break; 
 	        }
 			
 			if (world.HEALTH_ok) {

@@ -21,7 +21,7 @@ if hp <= 0 {
     zx.sprite_index = sprite_index;
 	zx.c = false;
     
-    room_speed = 35;
+    room_speed = global.ROOM_SPEED * 35 / 50;
     with(Boss04_3) {
         instance_destroy();
         with(shield_id) instance_destroy();

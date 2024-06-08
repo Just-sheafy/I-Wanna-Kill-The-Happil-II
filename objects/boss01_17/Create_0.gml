@@ -4,7 +4,7 @@ vspeed = 16;
 alarm[0] = 6;
 patt = 0;
 ang = 0;
-audio_play_sound(snd01_10, 0, false, world.sound_vol);
+if (global.practice == 4) audio_play_sound(snd01_10, 0, false, world.sound_vol);
 canhit = 1;
 nothit = 0;
 var zx = instance_create_depth(x, y, -10, Boss01_n);

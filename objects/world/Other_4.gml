@@ -1,5 +1,5 @@
 //set room speed, so it stays constant throughout the game
-room_speed=50;
+room_speed = global.ROOM_SPEED;
 //caption - change to whatever you want it to be
 room_caption="I Wanna Kill The Happil II";
 

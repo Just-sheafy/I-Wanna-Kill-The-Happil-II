@@ -122,6 +122,22 @@ if (patt == 30) {
     with(Boss01F5) {direction = point_direction(400, 0, x, y); speed = 7;}
     with(Boss01F6) {instance_destroy();}
 } else if (patt == 1480) {
+	if (global.practice == 6) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage01Bs);
+		exit;
+	}
+	
     with(Boss01F9) instance_destroy();
     instance_create_layer(0, 0, "Player", Boss01F10);
 } else if (patt == 1505) {

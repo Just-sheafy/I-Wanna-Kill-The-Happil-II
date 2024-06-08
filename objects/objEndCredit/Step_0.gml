@@ -56,6 +56,7 @@ if (number_hit >= 0) {
 			depth = 150;
 			instance_create_depth(0, 0, 180, Boss04_56);
 			instance_create_depth(400, 304, 0, Boss04_57);
+			instance_create_depth(room_width/2, room_height/2, -80, Boss04_51);
 			
 			if (!world.items[1]) instance_create_layer(0, 0, "Player", MouseC);
 			with(player) { visible = true; image_alpha = 0; }

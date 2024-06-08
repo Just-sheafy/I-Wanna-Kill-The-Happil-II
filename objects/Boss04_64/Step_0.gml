@@ -26,7 +26,7 @@ if (!frozen) {
 
 set_mask();
 
-if (dir != 0) {
+if (!global.console && dir != 0) {
 	xscale = dir;
 	if (GravityH) vspd = -max_hspd * dir;
 	else hspd = max_hspd * dir;
@@ -61,7 +61,7 @@ if (GravityH) {
 	}
 }
 
-if (!frozen) {
+if (!global.console && !frozen) {
 	if (keyboard_check_pressed(world.jumpKey)) {
 		player_jump();
 	}

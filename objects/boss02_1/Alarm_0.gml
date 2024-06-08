@@ -369,7 +369,23 @@ else if patt == 76 {
     patt += 1;
     alarm[0] = 30;
 } else if patt == 81 {
-    instance_create_depth(400, 124, -2, Boss02_17);
+    if (global.practice == 1) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage02Bs);
+		exit;
+	}
+	
+	instance_create_depth(400, 124, -2, Boss02_17);
     if (instance_exists(player)) {
         if (player.x >= 400) instance_create_depth(192, 488, -2, Boss02_20);
         else instance_create_depth(608, 488, -2, Boss02_20);

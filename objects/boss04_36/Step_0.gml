@@ -161,7 +161,7 @@ if ((world.curMusic == global.stage04Bs3 and val >= 91.6)
 	        }
 			
 			audio_sound_set_track_position(world.Instance, val - 91.6);
-			audio_sound_pitch(world.Instance, world.music_sp);
+			audio_sound_pitch(world.Instance, world.music_sp * global.ROOM_SPEED / 50);
 			val -= 91.6;
 		}
 		while(val >= 0.457) {
@@ -217,6 +217,22 @@ if ((world.curMusic == global.stage04Bs3 and val >= 91.6)
 } else move_faster = false;
 
 if (!dead and hp0 <= 0 and hp1 <= 0) {
+	if (global.practice == 7 or global.practice == 8) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
 	temp = instance_create_depth(0, 0, -100, light);
 	temp.error = true;
 	dead = true;

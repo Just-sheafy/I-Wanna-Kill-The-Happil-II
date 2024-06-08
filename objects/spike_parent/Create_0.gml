@@ -1,3 +1,5 @@
 event_inherited();
-ac = 0; // show spikes
-asdf = false; // send the bullets up
+
+trigger = 0;
+function ftn_step() { return; };
+function ftn_trigger(trigger) { return; };

@@ -124,6 +124,22 @@ if patt == 0 {
     alarm[0] = 60;
     if patt == 18 {alarm[0] += 60;}
 } else if patt == 18 {
+	if (global.practice == 1) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage01Bs);
+		exit;
+	}
+	
     patt = 0;
     audio_play_sound(snd01_3, 0, false, world.sound_vol);
     instance_create_depth(-159.2, 224, -2, Boss01_11);

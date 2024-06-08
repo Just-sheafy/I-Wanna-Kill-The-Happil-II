@@ -15,6 +15,22 @@ if (patt == 0) {
 	patt += 1;
 	alarm[4] = 50;
 } else if (patt == 1) {
+	if (instance_exists(player) && global.practice == 12) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
 	with(Boss04_75) instance_destroy();
 	patt += 1;
 	if (instance_exists(player)) alarm[4] = 1124;
@@ -33,6 +49,23 @@ if (patt == 0) {
 	alarm[4] = 50;
 } else if (patt == 3) {
 	if (!instance_exists(player)) exit;
+	
+	if (global.practice == 13) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
 	if (world.screen_effect_enable) {
 		zx = instance_create_depth(0, 0, 0, view_an4);
 		zx.asdf = 1;
@@ -108,6 +141,22 @@ if (patt == 0) {
 	alarm[4] = 800;
 } else if (patt == 4) {
 	if (!instance_exists(player)) exit;
+	
+	if (global.practice == 14) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
 	
 	mode = 10;
 	mode_time = 0;

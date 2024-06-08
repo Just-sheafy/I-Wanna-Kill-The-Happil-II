@@ -2,6 +2,22 @@ var i, j, temp, dir;
 
 if (patt == 0) {
 	if (!instance_exists(player)) exit;
+	if (global.practice == 11) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage04Bs);
+		exit;
+	}
+	
 	audio_play_sound(snd04_47, 0, false, world.sound_vol);
 	instance_create_depth(0, 0, -15, Boss04_72);
 	

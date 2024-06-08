@@ -1,7 +1,7 @@
 /// @description Title
 // You can write your code in this editor
 
-if instance_exists(objPause) {exit;}
+if (global.console || instance_exists(objPause)) {exit;}
 
 var i;
 
@@ -33,3 +33,4 @@ if (spr_temp != -1 and sprite_exists(spr_temp)) {
 }
 
 secretBoss1Skip = 0;
+global.ROOM_SPEED = 50;

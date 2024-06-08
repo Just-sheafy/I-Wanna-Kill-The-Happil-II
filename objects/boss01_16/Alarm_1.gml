@@ -18,7 +18,6 @@ with(world) {
         curMusic = global.stage01Bs2;
         Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
     }
-    break;
 }
 instance_create_depth(320, 0, -2, Boss01_17);
 with(playerHealth) {

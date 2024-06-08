@@ -1,7 +1,7 @@
 if y <= -600 {gravity = 0; speed = 0;}
 if !instance_exists(player) {alarm[1] = 0;}
 else {
-    if keyboard_check_pressed(world.skipKey) {
+    if (!global.console && keyboard_check_pressed(world.skipKey)) {
         with(world) {
 		    if filePlaying != 11 and curMusic != global.stage03Bs1 {
 		        audio_stop_sound(Instance);

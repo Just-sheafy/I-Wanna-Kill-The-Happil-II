@@ -39,8 +39,8 @@ function blockSprite() {
 	else if room == Stage01E {
 	    sprite_index = block01E;
 	    if place_meeting(x,y,Hamjung01E1) {
-	        if place_meeting(x, y, blockChange1) {image_index = 1;}
-	        if place_meeting(x, y, blockChange2) {image_index = 2;}
+	        // if place_meeting(x, y, blockChange1) {image_index = 1;}
+	        // if place_meeting(x, y, blockChange2) {image_index = 2;}
 	        exit;
 	    }
 	    if place_meeting_block(x+16, y) and place_meeting_block(x-16, y) {
@@ -112,7 +112,7 @@ function blockSprite() {
 	else if room == Stage02J {
 	    sprite_index = block02J;
 	    if y == 576 {image_index = 1;}
-	    if place_meeting(x, y, blockChange1) {visible = false;}
+	    // if place_meeting(x, y, blockChange1) {visible = false;}
 	}
 	else if room == Stage02Bs or room == Stage02Bs3 or room == Stage02Bs4 or room == Stage02Bs5 {
 	    sprite_index = block02Bs;
@@ -146,8 +146,8 @@ function blockSprite() {
 	else if room == Stage03F {
 	    sprite_index = block03F;
 	    if place_meeting(x,y,Hamjung01E1) {
-	        if place_meeting(x, y, blockChange1) {image_index = 1;}
-	        if place_meeting(x, y, blockChange2) {image_index = 2;}
+	        // if place_meeting(x, y, blockChange1) {image_index = 1;}
+	        // if place_meeting(x, y, blockChange2) {image_index = 2;}
 	        exit;
 	    }
 	    if place_meeting_block(x+16, y) and place_meeting_block(x-16, y) {
@@ -165,8 +165,8 @@ function blockSprite() {
 	    visible = false;
 	    if place_meeting(x, y, Hamjung01E1) {
 	        visible = true;
-	        if place_meeting(x, y, blockChange1) {sprite_index = sprHamjung03G2;}
-	        if place_meeting(x, y, blockChange2) {sprite_index = block03G;}
+	        // if place_meeting(x, y, blockChange1) {sprite_index = sprHamjung03G2;}
+	        // if place_meeting(x, y, blockChange2) {sprite_index = block03G;}
 	    }
 	}
 	else if room == Stage03H {

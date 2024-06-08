@@ -81,6 +81,22 @@ if patt <= 2 {
     }
     if patt == 18 {alarm[0] += 140;}
 } else if patt == 18 {
+	if (global.practice == 1) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
 	audio_play_sound(snd03_8, 0, false, world.sound_vol);
     patt += 1;
     alarm[0] = 60;
@@ -154,6 +170,22 @@ if patt <= 2 {
     patt += 1;
     alarm[0] = 315;
 } else if patt == 30 {
+	if (global.practice == 2) {
+		with(player) { instance_destroy(); }
+		with(world) {
+			warn = 0;
+			hp_before = -1;
+			var_temp = 0;
+			audio_stop_channel(1);
+			audio_stop_channel(2);
+			music_speed = 1;
+			music_sp = 1;
+			audio_resume_sound(Instance);
+		}
+		room_goto(Stage03Bs);
+		exit;
+	}
+	
     with(Boss03_26) {friction = 0; gravity = -0.5;}
     instance_create_depth(-300, -300, 2, Boss03_43);
     for(i=0; i<3; i+=1) {

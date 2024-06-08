@@ -100,6 +100,7 @@ if (y >= 384 && vspd > 0) {
 	}
 }
 
+/*
 if (world.curMusic == global.stage01Sr2) {
 	var val = 0;
 	
@@ -107,15 +108,17 @@ if (world.curMusic == global.stage01Sr2) {
 		val = audio_sound_get_track_position(world.Instance);
 	if (val >= 13.17) {
 		with(world) {
-            if filePlaying != 3.98 and curMusic != global.stage01Sr2Loop {
+            if filePlaying != 3.95 and curMusic != global.stage01Sr2 {
                 audio_stop_sound(Instance);
-                filePlaying = 3.98;
-                curMusic = global.stage01Sr2Loop;
+                filePlaying = 3.95;
+                curMusic = global.stage01Sr2;
+				audio_sound_loop_start(curMusic, 18.11);
                 Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
+				audio_sound_set_track_position(Instance, 18.11);
             }
         }
 		
 		if (val > 0) audio_sound_set_track_position(world.Instance, val - 13.17);
-		audio_sound_pitch(world.Instance, world.music_sp);
+		audio_sound_pitch(world.Instance, world.music_sp * global.ROOM_SPEED / 50);
 	}
 }
