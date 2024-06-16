@@ -141,14 +141,14 @@ if (patt == 30) {
     with(Boss01F9) instance_destroy();
     instance_create_layer(0, 0, "Player", Boss01F10);
 } else if (patt == 1505) {
-    with(Boss01F10) {image_index = 1;}
+    with(Boss01F10) {idx = 1;event_user(0)}
 } else if (patt == 1527) {
     with(Boss01F10) {instance_destroy();}
     instance_create_layer(0, 0, "Player", Boss01F9);
 } else if (patt == 1550) {
     with(Boss01F9) {instance_destroy();}
     zx = instance_create_layer(0, 0, "Player", Boss01F10);
-    zx.image_index = 2;
+    zx.idx = 2;
 } else if (patt == 1575) {
     for(i=0; i<5; i+=1) {
         zx = instance_create_layer(400, 200, "Player", Boss01F7);

@@ -1,8 +1,10 @@
 image_alpha = 0.1;
 a = 1;
 alarm[0] = 360;
+lx = x + 66;
+ly = y + 249;
 var zx = instance_create_depth(x, y, -10, Boss01_n);
 zx.image_index = 3;
 zx.sid = id;
-zx.ox = 64;
-zx.oy = -64;
+zx.ox = 64+66;
+zx.oy = -64+249;

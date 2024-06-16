@@ -20,3 +20,5 @@ img_before = 0;
 for(i=0; i<800; i+=1) {
     bl[i] = -1;
 }
+
+vortexSurf = -1;
