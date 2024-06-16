@@ -109,7 +109,7 @@ if patt == 0 {
 } else if patt = 12 {
     instance_create_depth(0, 0, -100, light);
     instance_create_depth(400, -64, -3, Boss01_7);
-    instance_create_depth(639, 355, -3, Boss01_9);
+    instance_create_depth(639-66, 355-249, -3, Boss01_9);
     with(vineL) {instance_destroy();}
     with(vineR) {instance_destroy();}
     patt += 1;

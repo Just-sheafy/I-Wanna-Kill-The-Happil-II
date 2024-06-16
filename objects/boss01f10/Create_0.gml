@@ -1,1 +1,2 @@
-image_speed = 0;
+idx = 0;
+surf = -1;

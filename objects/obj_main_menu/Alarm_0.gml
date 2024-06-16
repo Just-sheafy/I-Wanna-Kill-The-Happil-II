@@ -11,7 +11,7 @@ switch(select)
 				sprite_prefetch(sprHamjung03Bs1);
 				sprite_prefetch(sprBoss04_40);
 				sprite_prefetch(back01Bs6);
-				sprite_prefetch(back04Bs1);
+				sprite_prefetch(back04Bs2);
 				sprite_prefetch(back04E1);
 				sprite_prefetch(back04Bs10);
 				sprite_prefetch(sprBoss02Sr_1);

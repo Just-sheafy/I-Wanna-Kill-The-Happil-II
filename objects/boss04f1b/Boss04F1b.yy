@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBoss04F2",
-    "path":"sprites/sprBoss04F2/sprBoss04F2.yy",
+    "name":"sprBoss02_68",
+    "path":"sprites/sprBoss02_68/sprBoss02_68.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -19,7 +19,7 @@ if (patt == 94) {
         for(j=0; j<12; j+=1) {
             xx = (ds_list_find_value(star_x, i)*(12-j)+ds_list_find_value(star_x, ii)*j)/12;
             yy = (ds_list_find_value(star_y, i)*(12-j)+ds_list_find_value(star_y, ii)*j)/12;
-            temp = instance_create_depth(x, y, -4, fruit);
+            temp = instance_create_depth(lx, ly, -4, fruit);
             temp.sprite_index = sprFruit;
             temp.speed = sqrt(xx*xx+yy*yy)*1/10;
             temp.direction = point_direction(0, 0, xx, yy)-10;
@@ -51,7 +51,7 @@ if (patt == 94) {
         for(j=0; j<12; j+=1) {
             xx = (ds_list_find_value(star_x, i)*(12-j)+ds_list_find_value(star_x, ii)*j)/12;
             yy = (ds_list_find_value(star_y, i)*(12-j)+ds_list_find_value(star_y, ii)*j)/12;
-            temp = instance_create_depth(x, y, -4, fruit);
+            temp = instance_create_depth(lx, ly, -4, fruit);
             temp.sprite_index = sprFruit;
             temp.speed = sqrt(xx*xx+yy*yy)*1/10;
             temp.direction = point_direction(0, 0, xx, yy)-10;
@@ -181,7 +181,7 @@ if (patt == 94) {
         for(j=0; j<11; j+=1) {
             xx = (ds_list_find_value(triangle_x, i)*(11-j)+ds_list_find_value(triangle_x, ii)*j)/11;
             yy = (ds_list_find_value(triangle_y, i)*(11-j)+ds_list_find_value(triangle_y, ii)*j)/11;
-            temp = instance_create_depth(x, y, -4, fruit);
+            temp = instance_create_depth(lx, ly, -4, fruit);
             temp.sprite_index = sprFruit;
             temp.speed = sqrt(xx*xx+yy*yy)*1/10;
             temp.direction = point_direction(0, 0, xx, yy)-10;
@@ -209,7 +209,7 @@ if (patt == 94) {
         for(j=0; j<11; j+=1) {
             xx = (ds_list_find_value(pentagon_x, i)*(11-j)+ds_list_find_value(pentagon_x, ii)*j)/11;
             yy = (ds_list_find_value(pentagon_y, i)*(11-j)+ds_list_find_value(pentagon_y, ii)*j)/11;
-            temp = instance_create_depth(x, y, -4, fruit);
+            temp = instance_create_depth(lx, ly, -4, fruit);
             temp.sprite_index = sprFruitGr;
             temp.speed = sqrt(xx*xx+yy*yy)*1/10;
             temp.direction = point_direction(0, 0, xx, yy)-10;
@@ -314,7 +314,7 @@ if (patt == 94) {
         for(j=0; j<10; j+=1) {
             xx = (ds_list_find_value(square_x, i)*(10-j)+ds_list_find_value(square_x, ii)*j)/10;
             yy = (ds_list_find_value(square_y, i)*(10-j)+ds_list_find_value(square_y, ii)*j)/10;
-            temp = instance_create_depth(x, y, -2, Boss04F7);
+            temp = instance_create_depth(lx, ly, -2, Boss04F7);
             temp.sprite_index = sprFruit;
             temp.sp = sqrt(xx*xx+yy*yy)*1/10;
             temp.dir = point_direction(0, 0, xx, yy)+45;
@@ -346,7 +346,7 @@ if (patt == 94) {
         for(j=0; j<10; j+=1) {
             xx = (ds_list_find_value(square_x, i)*(10-j)+ds_list_find_value(square_x, ii)*j)/10;
             yy = (ds_list_find_value(square_y, i)*(10-j)+ds_list_find_value(square_y, ii)*j)/10;
-            temp = instance_create_depth(x, y, -2, Boss04F7);
+            temp = instance_create_depth(lx, ly, -2, Boss04F7);
             temp.sprite_index = sprFruitB;
             temp.sp = sqrt(xx*xx+yy*yy)*1/10;
             temp.dir = point_direction(0, 0, xx, yy)+45;
@@ -387,7 +387,7 @@ if (patt == 94) {
         for(j=0; j<10; j+=1) {
             xx = (ds_list_find_value(triangle_x, i)*(10-j)+ds_list_find_value(triangle_x, ii)*j)/10;
             yy = (ds_list_find_value(triangle_y, i)*(10-j)+ds_list_find_value(triangle_y, ii)*j)/10;
-            temp = instance_create_depth(x, y, -2, Boss04F7);
+            temp = instance_create_depth(lx, ly, -2, Boss04F7);
             temp.sprite_index = sprFruit;
             temp.sp = -sqrt(xx*xx+yy*yy)*1/10;
             temp.dist = -temp.sp*200;
@@ -427,7 +427,7 @@ if (patt == 94) {
         for(j=0; j<10; j+=1) {
             xx = (ds_list_find_value(pentagon_x, i)*(10-j)+ds_list_find_value(pentagon_x, ii)*j)/10;
             yy = (ds_list_find_value(pentagon_y, i)*(10-j)+ds_list_find_value(pentagon_y, ii)*j)/10;
-            temp = instance_create_depth(x, y, -2, Boss04F7);
+            temp = instance_create_depth(lx, ly, -2, Boss04F7);
             temp.sprite_index = sprFruitB;
             temp.sp = -sqrt(xx*xx+yy*yy)*1/10;
             temp.dist = -temp.sp*230;

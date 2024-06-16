@@ -63,8 +63,10 @@ if (patt == 8) {
     
 	if (layer_exists("Background"))
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_white);
-	if (layer_exists("Background2"))
-		layer_set_visible(layer_get_id("Background2"), true);
+	with(Hamjung04Bs5)
+		active = true;
+	//if (layer_exists("Background2"))
+		//layer_set_visible(layer_get_id("Background2"), true);
     
     // change blocks
     with(block) {
@@ -135,8 +137,10 @@ if (patt == 8) {
     sprite_index = sprBoss04_15;
     image_index = 0; image_speed = 0.5;
 	dead = false; trans = true; is_end = true;
-	if (layer_exists("Background2"))
-		layer_background_visible(layer_background_get_id(layer_get_id("Background2")), false);
+	with(Hamjung04Bs5)
+		active = false;
+	//if (layer_exists("Background2"))
+		//layer_background_visible(layer_background_get_id(layer_get_id("Background2")), false);
 	if (layer_exists("Background"))
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_black);
     

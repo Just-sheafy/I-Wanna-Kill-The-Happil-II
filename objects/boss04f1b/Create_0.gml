@@ -1,10 +1,12 @@
 var i, temp;
 
 depth = 201;
-hx = x+120;
-hy = y+15;
-mx = x+80;
-my = y-170;
+hx = x+120+66;
+hy = y+15+249;
+mx = x+80+66;
+my = y-170+249;
+lx = x+66;
+ly = y+249;
 
 star_x = ds_list_create();
 star_y = ds_list_create();

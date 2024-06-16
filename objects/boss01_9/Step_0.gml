@@ -5,9 +5,9 @@ else if a == 0 {
 } else if a == -1 {
     if instance_exists(player) {
         audio_play_sound(sndShoot, 0, false, world.sound_vol);
-        var b = instance_create_depth(x, y, -4, fruit);
-        b.direction = point_direction(x, y, player.x, player.y);
+        var b = instance_create_depth(lx, ly, -4, fruit);
+        b.direction = point_direction(lx, ly, player.x, player.y);
         b.speed = 8;
-        instance_create_depth(x, y, -5, Explo3);
+        instance_create_depth(lx, ly, -5, Explo3);
     }
 }

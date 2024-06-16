@@ -93,6 +93,8 @@ if (patt == 8) {
     ds_list_destroy(l);
     
     // change background
+	with(Hamjung04Bs5)
+		active = false;
 	for(i=2; i<=8; i+=1) {
 		if (layer_exists("Background" + string(i)))
 			layer_set_visible(layer_get_id("Background" + string(i)), false);
@@ -111,7 +113,9 @@ if (patt == 8) {
     
     if (num == 0) {
 		if (layer_exists("Background2"))
-			layer_set_visible(layer_get_id("Background2"), true);
+			with(Hamjung04Bs5)
+				active = true;
+			//layer_set_visible(layer_get_id("Background2"), true);
         with(object666) visible = true;
     } else if (num == 1) {
 		if (layer_exists("Background3"))

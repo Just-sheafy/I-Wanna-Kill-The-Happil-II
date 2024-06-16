@@ -199,9 +199,14 @@ if (patt == 150) {
 	}
 	
     instance_create_depth(0, 0, -100, light);
-    if (layer_exists("Background")) {
-		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back04Bs6);
+	with(Hamjung04Bs5)
+	{
+		leftInverted = true;
+		rightInverted = true;
 	}
+    /*if (layer_exists("Background")) {
+		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back04Bs6);
+	}*/
 	with(block) sprite_index = block04Bs7;
 	
     image_index = 1;
