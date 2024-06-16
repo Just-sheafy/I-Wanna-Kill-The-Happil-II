@@ -79,7 +79,7 @@ if (tt2 >= 250 and tt2 <= 375) {
 		    zx.asdf = 20;
 		
 			if (instance_exists(player)) {
-				if ((destroy and point_distance(x, y, player.x, player.y) < 480) or point_distance(x, y, player.x, player.y) > 72) {
+				if ((destroy and point_distance(x, y, player.x, player.y) < 480) or (!destroy and point_distance(x, y, player.x, player.y) > 72)) {
 					if ((destroy or time == 375) and world.kill) {
 						var temp, zx, cam_w, cam_h, cam = view_camera[0];
 					

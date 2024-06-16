@@ -3,4 +3,6 @@ if (instance_exists(platform_id)) {
 }
 if (instance_exists(sid)) {
 	draw_sprite_ext(sid.sprite_index, sid.image_index, x, y, -sid.image_xscale * sid.xscale, 1, image_angle, c_white, image_alpha);
+	if (world.show_mask)
+		draw_sprite_ext(maskPlayer, 0, x, y, -sid.image_xscale * sid.xscale, 1, image_angle, c_white, image_alpha * 0.5);
 }
