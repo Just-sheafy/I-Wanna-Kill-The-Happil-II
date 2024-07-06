@@ -3,7 +3,10 @@ image_yscale = 7;
 image_speed = 1/2;
 
 if (world.shader_supported)
+{
 	t_uniform = shader_get_uniform(shd_noise_weighted, "time");
+	weights_uniform = shader_get_uniform(shd_noise_weighted, "weights");	
+}
 t = random(1);
 tt = 0;
 

@@ -10,6 +10,7 @@ if crazy and sprite_index != sprBoss02_3 {
 		surface_set_target(surf);
 		shader_set(shd_noise_weighted);
 		shader_set_uniform_f(t_uniform, t);
+		shader_set_uniform_f(weights_uniform, 0.45, 1.65);
 		draw_sprite(sprBoss02_79, 0, 0, 0);
 		shader_reset();
 		surface_reset_target();

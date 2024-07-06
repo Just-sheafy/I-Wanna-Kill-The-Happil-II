@@ -28,3 +28,4 @@ shake = 0;
 alarm[10] = 3;
 
 surf = -1;
+surfNoise = -1;

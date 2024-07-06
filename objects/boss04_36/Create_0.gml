@@ -127,3 +127,5 @@ if (global.practice >= 0) {
 }
 
 alarm[11] = 1;
+
+surfNoise = -1;

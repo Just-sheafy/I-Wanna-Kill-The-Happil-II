@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_draw_noise",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_draw_noise",
+  "parent":{
+    "name":"UtilityFunctions",
+    "path":"folders/Scripts/UtilityFunctions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

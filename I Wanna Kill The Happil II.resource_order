@@ -684,6 +684,7 @@
     {"name":"saveControls","order":4,"path":"scripts/saveControls/saveControls.yy",},
     {"name":"saveDeaths","order":2,"path":"scripts/saveDeaths/saveDeaths.yy",},
     {"name":"saveEncrypt","order":3,"path":"scripts/saveEncrypt/saveEncrypt.yy",},
+    {"name":"scr_draw_noise","order":12,"path":"scripts/scr_draw_noise/scr_draw_noise.yy",},
     {"name":"scr_draw_text_outline","order":1,"path":"scripts/scr_draw_text_outline/scr_draw_text_outline.yy",},
     {"name":"scr_fade_screen","order":4,"path":"scripts/scr_fade_screen/scr_fade_screen.yy",},
     {"name":"scr_keytostring","order":11,"path":"scripts/scr_keytostring/scr_keytostring.yy",},

@@ -5,9 +5,8 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 uniform float time;
+uniform vec2 weights; //min weight, max weight
 
-const float min_weight = 0.45;
-const float max_weight = 1.65;
 
 float rand(vec2 co)
 {
@@ -16,8 +15,17 @@ float rand(vec2 co)
 
 void main()
 {
-	float weight = min_weight + texture2D(gm_BaseTexture, v_vTexcoord).r * (max_weight - min_weight);
-	float rng = pow(rand(v_vTexcoord), weight);
-	float px = floor(rng * 3.) / 2.;
-    gl_FragColor = vec4(px, px, px, 1.);
+	vec4 texCols = texture2D(gm_BaseTexture, v_vTexcoord);
+	float px;
+	if(texCols.b != 0.) //Plain color
+	{
+		px = 1. - texCols.b;
+	}
+	else //Rng color
+	{
+		float weight = weights[0] + texCols.r * (weights[1] - weights[0]);
+		float rng = pow(rand(v_vTexcoord), weight);
+		px = floor(rng * 3.) / 2.;
+	}
+    gl_FragColor = vec4(px, px, px, texCols.a);
 }

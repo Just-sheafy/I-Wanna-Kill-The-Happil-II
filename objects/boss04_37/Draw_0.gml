@@ -1,6 +1,30 @@
 var i, num, r1, r2, r3, shp, hpm, NUM;
 
-draw_self();
+
+var use_shdr = ((index == 0 && Boss04_36.hp0 <= 0) ||
+		   (index == 1 && Boss04_36.hp1 <= 0)
+		   && world.shader_supported);
+
+
+
+if(use_shdr)
+{
+	var w = sprite_get_width(sprite_index);
+	var h = sprite_get_height(sprite_index);
+	var divFactor = 4;
+
+	if(!surface_exists(surfNoise))
+	{
+		surfNoise = surface_create(w / divFactor, h / divFactor);
+	}
+	
+	scr_draw_noise(sprite_index, 1, x, y, image_angle, image_blend, image_alpha, 1.5, 2.2, divFactor, surfNoise);
+
+}
+else
+{
+	draw_self();	
+}
 
 if (alpha > 0 && world.items[0] && world.BH_ok) {
 	if (!surface_exists(surf)) surf = surface_create(sprite_get_width(sprBoss04_h5), sprite_get_height(sprBoss04_h5));
