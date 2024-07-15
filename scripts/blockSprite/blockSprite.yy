@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"blockSprite",
   "isCompatibility":false,
   "isDnD":false,

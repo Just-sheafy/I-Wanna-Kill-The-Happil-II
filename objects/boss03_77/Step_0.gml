@@ -65,9 +65,9 @@ if y > room_height + 600 and !broken {
     instance_create_depth(0, 0, -100, light);
     zx = instance_create_depth(0, 0, 0, view_an3);
     zx.asdf = 50;
-    with(Boss03_61) {image_index = 1; angle_speed = 0;}
-    with(Boss03_62) {image_index = 1; angle_speed = 0;}
-    with(Boss03_63) {image_index = 1; angle_speed = 0;}
+    with(Boss03_61) {image_index = 1; angle_speed = 0; d_speed = 0;}
+    with(Boss03_62) {image_index = 1; angle_speed = 0; d_speed = 0;}
+    with(Boss03_63) {image_index = 1; angle_speed = 0; d_speed = 0;}
     with(Boss03_65) {
 		image_index = 0; image_speed = 0;
 		vspeed = -random_range(8, 10); gravity = 0.3;

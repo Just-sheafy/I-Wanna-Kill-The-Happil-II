@@ -4,3 +4,5 @@ image_yscale = 2;
 depth = 7;
 
 angle_speed = 1;
+d = 0;
+d_speed = 360 / 1000;

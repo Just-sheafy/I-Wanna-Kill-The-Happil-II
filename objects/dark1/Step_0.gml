@@ -1,4 +1,4 @@
 if a {exit;}
-image_alpha -= alpha_dec;
-if instance_exists(SavePoint2) {if image_alpha <= 0.5 {image_alpha = 0.5;}}
-if image_alpha <= 0 {instance_destroy();}
+alpha -= alpha_dec;
+if instance_exists(SavePoint2) {if alpha <= 0.5 {alpha = 0.5;}}
+if alpha <= 0 {instance_destroy();}

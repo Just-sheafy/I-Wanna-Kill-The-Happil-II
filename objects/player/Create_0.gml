@@ -15,6 +15,10 @@ on_block = false;
 on_platform = false;
 frozen = false;
 
+hyper_spd = 8;
+hyper = false;
+hyper_time = 0;
+
 invinc = false;
 invinc_time = 0;
 shoot_time = 0;

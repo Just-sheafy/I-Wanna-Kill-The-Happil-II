@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"Hamjung01E1",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"block","path":"objects/block/block.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"block","path":"objects/block/block.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"Hamjung01E1",

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"saveControls",
   "isCompatibility":false,
   "isDnD":false,

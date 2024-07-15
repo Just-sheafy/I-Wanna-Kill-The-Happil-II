@@ -39,14 +39,25 @@ if (GravityH) {
 }
 
 if (!is_riding) {
+	if (hyper) {
+		hyper_time = max(hyper_time-1, 0);
+		if (hyper_time <= 0) hyper = false;
+		dir = xscale;
+	}
+	
 	if (dir != 0) {
 		if (!on_vineR && !on_vineL) {
 			xscale = dir;
 		}
 	
 		if ((dir == 1 && !on_vineR) || (dir == -1 && !on_vineL)) {
-			if (GravityH) vspd = -max_hspd * dir;
-			else hspd = max_hspd * dir;
+			if (GravityH) {
+				vspd = -max_hspd * dir;
+				if (hyper) vspd = -hyper_spd * dir;
+			} else {
+				hspd = max_hspd * dir;
+				if (hyper) hspd = hyper_spd * dir;
+			}
 			image_speed = 0.5;
 			sprite_index = sprPlayerRunning;
 		}

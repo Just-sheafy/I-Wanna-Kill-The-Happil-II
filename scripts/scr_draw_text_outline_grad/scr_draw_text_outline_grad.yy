@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_draw_text_outline_grad",
   "isCompatibility":false,
   "isDnD":false,

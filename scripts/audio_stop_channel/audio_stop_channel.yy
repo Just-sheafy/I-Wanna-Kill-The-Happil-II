@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"audio_stop_channel",
   "isCompatibility":false,
   "isDnD":false,

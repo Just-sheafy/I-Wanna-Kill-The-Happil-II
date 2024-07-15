@@ -44,11 +44,22 @@ for(i=0; i<ds_list_size(end_text); i+=1) {
 	if (str == "") continue;
 	
 	if (error) {
-		j = irandom_range(1, string_length(str));
-		str_temp = string_char_at(str, j);
-		if (str_temp != " ") {
-			str_temp = string_delete(str, j, 1);
-			str_temp = string_insert(str_temp, choose("FATAL", "ERROR"), j);
+		var l, s;
+		
+		if (string_count(",", str) >= 1) l = string_split(str, ", ");
+		else l = string_split(str, " ");
+		s = array_length(l);
+		j = irandom_range(0, s-1);
+		l[j] = choose("FATAL", "ERROR");
+		
+		l = array_shuffle(l);
+		str_temp = "";
+		for(j=0; j<s; j+=1) {
+			str_temp += l[j];
+			if (j < s-1) {
+				if (string_count(",", str) >= 1) str_temp += ", ";
+				else str_temp += " ";
+			}
 		}
 	}
 	

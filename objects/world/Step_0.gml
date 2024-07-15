@@ -165,6 +165,8 @@ if (!instance_exists(objPause)) {
 				
 				jump_height = [8.5, 7]; jump_total = 2;
 				
+				hyper = false; hyper_time = 0;
+				
 				noGravity = false; frozen = 0;
 			}
             if (instance_exists(soundEx) or instance_exists(soundEx2)) {

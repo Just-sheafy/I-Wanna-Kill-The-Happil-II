@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_fade_screen",
   "isCompatibility":false,
   "isDnD":false,

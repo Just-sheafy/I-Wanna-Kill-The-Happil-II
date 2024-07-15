@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scrPlayerBehaviour",
   "isCompatibility":false,
   "isDnD":false,

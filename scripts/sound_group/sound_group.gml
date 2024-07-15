@@ -164,6 +164,8 @@ function sound_group() {
 	ds_list_add(list_sounds[1], snd02_28);
 	ds_list_add(list_sounds[1], snd02_29);
 	ds_list_add(list_sounds[1], snd02_30);
+	ds_list_add(list_sounds[1], snd02_31);
+	ds_list_add(list_sounds[1], snd02_32);
 
 	ds_list_add(list_sounds[1], snd03_1);
 	ds_list_add(list_sounds[1], snd03_2);
@@ -199,6 +201,7 @@ function sound_group() {
 	ds_list_add(list_sounds[1], snd03_32);
 	ds_list_add(list_sounds[1], snd03_33);
 	ds_list_add(list_sounds[1], snd03_34);
+	ds_list_add(list_sounds[1], snd03_35);
 
 	ds_list_add(list_sounds[1], snd04_1);
 	ds_list_add(list_sounds[1], snd04_2);

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ds_list_delete_element",
   "isCompatibility":false,
   "isDnD":false,
