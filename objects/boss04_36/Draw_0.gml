@@ -1,4 +1,22 @@
-draw_self();
+var use_shdr = (Boss04_36.hp0 <= 0 && Boss04_36.hp1 <= 0
+		   && world.shader_supported);
+
+if(use_shdr)
+{
+	var w = sprite_get_width(sprite_index);
+	var h = sprite_get_height(sprite_index);
+	var divFactor = 4;
+
+	if(!surface_exists(surfNoise))
+	{
+		surfNoise = surface_create(w / divFactor, h / divFactor);
+	}
+	
+	scr_draw_noise(sprite_index, 2, x, y, image_angle, image_blend, image_alpha, 0.8, 2.2, divFactor, surfNoise);
+	
+}
+else
+	draw_self();
 
 if (blackhole_alpha > 0) {
 	if (!surface_exists(surf))

@@ -979,6 +979,7 @@
     {"id":{"name":"saveControls","path":"scripts/saveControls/saveControls.yy",},},
     {"id":{"name":"saveDeaths","path":"scripts/saveDeaths/saveDeaths.yy",},},
     {"id":{"name":"saveEncrypt","path":"scripts/saveEncrypt/saveEncrypt.yy",},},
+    {"id":{"name":"scr_draw_noise","path":"scripts/scr_draw_noise/scr_draw_noise.yy",},},
     {"id":{"name":"scr_draw_text_outline_grad","path":"scripts/scr_draw_text_outline_grad/scr_draw_text_outline_grad.yy",},},
     {"id":{"name":"scr_draw_text_outline","path":"scripts/scr_draw_text_outline/scr_draw_text_outline.yy",},},
     {"id":{"name":"scr_fade_screen","path":"scripts/scr_fade_screen/scr_fade_screen.yy",},},
