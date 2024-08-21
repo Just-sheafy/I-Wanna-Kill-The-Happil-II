@@ -13,8 +13,8 @@ zx.oy = -78;
 if (world.HEALTH_ok) {
 	zx = instance_create_depth(0, 0, -49, playerHealth);
 	if (world.hp_before != -1) zx.hp = world.hp_before;
-	else zx.hp = 3;
-	zx.hpm = 3;
+	else zx.hp = 4;
+	zx.hpm = 4;
 	world.hp_before = -1;
 }
 

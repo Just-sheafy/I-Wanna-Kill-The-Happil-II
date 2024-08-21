@@ -1,5 +1,5 @@
-asdf = 44;
-alarm[0] = 60;
+asdf = 88;
+alarm[0] = 30;
 alarm[1] = 2;
 alarm[2] = 30;
 alarm[3] = 240;

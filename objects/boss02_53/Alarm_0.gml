@@ -5,4 +5,4 @@ if asdf > 1 {
     ox = x;
     oy = y;
 } else {instance_destroy();}
-alarm[0] = 60;
+alarm[0] = 30;

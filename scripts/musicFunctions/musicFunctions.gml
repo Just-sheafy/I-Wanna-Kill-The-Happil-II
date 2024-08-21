@@ -149,20 +149,23 @@ function musicFunctions() {
 	            curMusic = global.stage02Bs3;
 				audio_sound_loop_start(curMusic, 5.33);
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-				audio_sound_set_track_position(Instance, 3.33);
+				// audio_sound_set_track_position(Instance, 3.33);
 	        } else if (global.practice >= 0) {
 				audio_sound_set_track_position(Instance, 3.33);
 			}
 	        break;
 	    case Stage02Bs4:
-	        if filePlaying != 6 and curMusic != global.stage02Bs1 {
-				audio_stop_channel(0);
-	            filePlaying = 6;
-	            curMusic = global.stage02Bs1;
-	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
-				audio_sound_set_track_position(Instance, 120.07);
-	        } else if (global.practice >= 0) {
-				audio_sound_set_track_position(Instance, 120.07);
+			if !world.c {
+		        if filePlaying != 6.5 and curMusic != global.stage02Bs4 {
+					audio_stop_channel(0);
+		            filePlaying = 6.5;
+		            curMusic = global.stage02Bs4;
+		            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
+					// audio_sound_set_track_position(Instance, 120.07);
+					// audio_sound_set_track_position(Instance, 100.7);
+		        } else if (global.practice >= 0) {
+					audio_sound_set_track_position(Instance, 120.07);
+				}
 			}
 	        break;
 	    case Stage02Bs5:

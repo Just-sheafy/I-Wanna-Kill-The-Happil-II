@@ -55,6 +55,7 @@ audio_destroy_stream_check(global.stage02B);
 audio_destroy_stream_check(global.stage02Bs1);
 audio_destroy_stream_check(global.stage02Bs2);
 audio_destroy_stream_check(global.stage02Bs3);
+audio_destroy_stream_check(global.stage02Bs4);
 audio_destroy_stream_check(global.lovetrap);
 
 audio_destroy_stream_check(global.stage03A);

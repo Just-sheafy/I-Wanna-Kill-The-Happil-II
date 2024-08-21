@@ -22,14 +22,34 @@ if patt == 0 {
 	    zx = instance_create_depth(0, 0, 0, view_an2);
 	    zx.asdf = 16;
 	}
-    block.image_index = 2;
-	if (layer_exists("Background")) {
-		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back02Bs4);
-		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_white);
+    with(block) {
+		image_index = 9;
+		if (y == 576) {
+			visible = false;
+			var temp = instance_create_depth(x+16, y+16, depth-1, Hamjung02Bs4);
+			temp.image_angle = 180;
+			temp.block_id = id;
+			temp.patt = -temp.x/8;
+		}
 	}
-    instance_create_depth(0, 0, -1, Boss02_22);
+	if (layer_exists("Background")) {
+		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back02Bs14);
+		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_white);
+		layer_background_xscale(layer_background_get_id(layer_get_id("Background")), 608 / 248);
+		layer_background_yscale(layer_background_get_id(layer_get_id("Background")), 608 / 248);
+		layer_hspeed(layer_get_id("Background"), -1);
+	}
+	if (layer_exists("Background4")) {
+		layer_background_sprite(layer_background_get_id(layer_get_id("Background4")), back02Bs13);
+		layer_background_blend(layer_background_get_id(layer_get_id("Background4")), c_white);
+		layer_background_xscale(layer_background_get_id(layer_get_id("Background4")), 608 / 248);
+		layer_background_yscale(layer_background_get_id(layer_get_id("Background4")), 608 / 248);
+		layer_y(layer_get_id("Background4"), 150);
+		layer_hspeed(layer_get_id("Background4"), -0.1);
+	}
+    // instance_create_depth(0, 0, -1, Boss02_22);
     patt += 1;
-    alarm[1] = 60;
+    alarm[3] = 60;
 } else if patt == 1 {
     Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
@@ -245,10 +265,16 @@ else if patt == 61 {
 	
     with(Boss02_22) {instance_destroy();}
     with(Boss02_23) {instance_destroy();}
+    with(Hamjung02Bs4) {instance_destroy();}
+	block.visible = true;
     block.image_index = 0;
 	if (layer_exists("Background")) {
 		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), noone);
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_black);
+	}
+	if (layer_exists("Background4")) {
+		layer_background_sprite(layer_background_get_id(layer_get_id("Background4")), noone);
+		layer_background_blend(layer_background_get_id(layer_get_id("Background4")), c_black);
 	}
     audio_play_sound(snd02_14, 0, false, world.sound_vol);
     instance_create_depth(0, 0, -100, light);
@@ -265,7 +291,7 @@ else if patt == 61 {
     alarm[1] = 30;
 } else if patt == 64 {
     with(Boss02_3) {sprite_index = sprBoss02_57; image_speed = 0.3;}
-    Instance = audio_play_sound(snd02_22, 0, true, 0);
+    Instance = audio_play_sound(snd02_22, 0, true, world.sound_vol);
     zx = instance_create_depth(0, 0, 0, soundEx);
     zx.M1 = world.Instance;
     zx.M2 = audio_play_sound(global.stage02Bs2, 10, true, 0);

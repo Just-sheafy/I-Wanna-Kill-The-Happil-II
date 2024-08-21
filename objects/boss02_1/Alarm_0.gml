@@ -1,7 +1,7 @@
 var zx;
 
 if patt == 0 {
-    Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
+    // Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     instance_create_depth(x, y, 1, Boss02_3);
     with(Boss02_2) {sprite_index = sprBoss02_3; crazy = 1;}
     with(Boss02_3) {visible = false; crazy = 0;}
@@ -20,21 +20,22 @@ if patt == 0 {
 } else if patt == 2 {
     instance_create_depth(0, 0, -100, light);
     instance_create_depth(16, 0, -1, Boss02_5);
-    instance_create_depth(784, 0, -1, Boss02_5);
+    // instance_create_depth(784, 0, -1, Boss02_5);
     zx = instance_create_depth(0, 0, 0, view_an2);
     zx.asdf = 16;
     zx = instance_create_depth(400, 352, -2, Boss02_4);
     zx.alarm[0] = 60;
     zx.qwer = "You Will Die";
     with(block) image_index = 1;
+	instance_create_depth(0, 0, 450, Boss02_74);
 	if (layer_exists("Background")) {
-		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), back02Bs3);
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_white);
 	}
     zx = instance_create_depth(x, y, -10, Boss02_n);
     zx.sid = id;
     patt += 1;
-    alarm[0] = 60;
+	// alarm[0] = 60;
+    alarm[2] = 60;
 } else if patt == 3 {
     Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
@@ -335,6 +336,8 @@ else if patt == 76 {
     with(Boss02_3) {visible = false; crazy = 0;}
     with(Boss02_5) {instance_destroy();}
     with(Boss02_6) {instance_destroy();}
+    with(Boss02_22) {instance_destroy();}
+    with(Boss02_23) {instance_destroy();}
     patt += 1;
     alarm[0] = 15;
 } else if patt == 77 {
@@ -353,8 +356,8 @@ else if patt == 76 {
     with(Boss02_3) {visible = false;}
     with(Boss02_16) {instance_destroy();}
     block.image_index = 0;
+	with(Boss02_74) instance_destroy();
 	if (layer_exists("Background")) {
-		layer_background_sprite(layer_background_get_id(layer_get_id("Background")), noone);
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_black);
 	}
     instance_create_depth(0, 0, -100, light);

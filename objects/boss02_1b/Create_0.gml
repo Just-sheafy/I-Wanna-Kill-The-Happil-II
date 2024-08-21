@@ -55,7 +55,6 @@ if (room == Stage02Bs4) {
     alarm[3] = 1;
     
     if (world.c) {
-        world.c = 0;
 		patt = -6;
 		alarm[3] = 1;
 		
@@ -66,11 +65,11 @@ if (room == Stage02Bs4) {
         
         zx = instance_create_depth(0, 0, 0, soundEx2);
         zx.M2 = world.Instance;
-        zx.M1 = audio_play_sound(global.stage02Bs1, 10, true, world.music_vol);
+        zx.M1 = audio_play_sound(global.Silent, 10, true, world.music_vol);
         zx.Vol = 0;
         zx.ang = 0;
-        audio_sound_set_track_position(zx.M1, 120.070);
+        // audio_sound_set_track_position(zx.M1, 120.070);
         audio_sound_gain(zx.M1, world.music_vol, 0);
-        with(world) {filePlaying = 6; curMusic = global.stage02Bs1; Instance = soundEx2.M1;}
+        with(world) {filePlaying = -1; curMusic = global.Silent; Instance = soundEx2.M1;}
     }
 }

@@ -192,7 +192,7 @@ else if patt == 8 {
 }
 ////////////////////////////////////////////////////////////////////
 else if patt == 11 {
-    with(world) {filePlaying = 6; curMusic = global.stage02Bs1;}
+    with(world) {filePlaying = -1; curMusic = global.Silent;}
 	with(playerHealth) {world.hp_before = hp;}
     world.c = 1;
     room_goto(Stage02Bs4);

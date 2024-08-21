@@ -30,6 +30,7 @@ global.stage02B = audio_create_stream("BGM/Stage02B.ogg");
 global.stage02Bs1 = audio_create_stream("BGM/Stage02Boss1.ogg");
 global.stage02Bs2 = audio_create_stream("BGM/Stage02Boss2.ogg");
 global.stage02Bs3 = audio_create_stream("BGM/Stage02Boss3.ogg");
+global.stage02Bs4 = audio_create_stream("BGM/Stage02Boss4.ogg");
 global.lovetrap = audio_create_stream("BGM/LoveTrap.ogg");
 
 global.stage03A = audio_create_stream("BGM/Stage03A.ogg");

@@ -18,6 +18,7 @@ if (patt == -6) {
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_white);
 	}
 	
+	world.c = 0;
 	patt += 1;
 	alarm[3] = 30;
 } else if (patt == -5) {
@@ -100,6 +101,7 @@ if (patt == -6) {
 		audio_play_sound(snd02_32, 0, false, world.sound_vol);
 	}
 	
+	with(world) musicFunctions();
     audio_play_sound(snd02_28, 0, false, world.sound_vol);
 	zx = instance_create_depth(0, 0, -100, dark1);
 	zx.alpha_dec = 0.02;

@@ -97,7 +97,8 @@ if (patt == -1) {
 	    zx.Vol = 0;
 	    zx.ang = 0;
 	    audio_sound_gain(zx.M1, world.music_vol, 0);
-	    with(world) {filePlaying = 7.5; curMusic = global.stage02Bs3; Instance = soundEx2.M1;}
+	    with(world) {filePlaying = 7.5; curMusic = global.stage02Bs3;
+			audio_sound_loop_start(curMusic, 5.33); Instance = soundEx2.M1;}
 	}
     patt += 1;
     alarm[0] = 100;

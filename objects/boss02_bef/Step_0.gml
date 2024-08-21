@@ -7,14 +7,15 @@ if instance_exists(SavePoint2) {
                 audio_stop_sound(Instance);
                 filePlaying = 6;
                 curMusic = global.stage02Bs1;
+				audio_sound_loop_start(curMusic, 0.06);
                 Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
             }
         }
 		
 		if (world.HEALTH_ok) {
 			zx = instance_create_depth(0, 0, -49, playerHealth);
-			zx.hp = 3;
-			zx.hpm = 3;
+			zx.hp = 4;
+			zx.hpm = 4;
 		}
 		
         instance_create_depth(0, 0, -100, light);
