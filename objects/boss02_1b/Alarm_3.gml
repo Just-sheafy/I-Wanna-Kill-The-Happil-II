@@ -1,6 +1,22 @@
 var i, zx;
 
-if (patt == -6) {
+if (patt == -7) {
+    audio_stop_sound(Instance);
+    with(Boss02_2) {sprite_index = sprBoss02_4;}
+    with(Boss02_3) {visible = true; crazy = 1;}
+	
+    if (global.practice < 0 && instance_exists(player)) {
+        world.re_nodie = false;
+        saveControls();
+        with(world) {
+            saveEncrypt();
+            saveDeaths();
+        }
+    }
+    
+    patt = 0;
+    alarm[3] = 20;
+} else if (patt == -6) {
     Instance = audio_play_sound(snd02_1, 0, true, world.sound_vol);
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false; crazy = 0;}

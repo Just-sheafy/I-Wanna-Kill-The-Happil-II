@@ -15,6 +15,13 @@ heal = false;
 heal_time = 0;
 heal_alpha = 0;
 
+if (world.shader_supported) {
+	uTime = shader_get_uniform(shdShield, "time");
+	uCoords = shader_get_uniform(shdShield, "coords");
+}
+
+rad = 21;
+
 instance_create_depth(0, 0, -8, Boss01_h11);
 air = 1;
 alarm[0] = irandom_range(200, 350);

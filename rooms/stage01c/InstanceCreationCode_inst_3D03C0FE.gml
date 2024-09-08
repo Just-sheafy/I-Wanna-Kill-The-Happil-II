@@ -11,8 +11,8 @@ ftn_trigger = function(trigger) {
 ftn_step_begin = function() {
 	if (active) {
 		if (trig[0] && trigger_id[0] != -1 && instance_exists(trigger_id[0])) {
-			if (time < 8) { with(trigger_id[0]) vspd = -4; }
-			else { with(trigger_id[0]) vspd = 0; }
+			if (time < 8) { with(trigger_id[0]) vspeed = -4; }
+			else { with(trigger_id[0]) vspeed = 0; }
 		}
 	}
 };

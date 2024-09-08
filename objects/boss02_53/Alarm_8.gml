@@ -1,1 +1,1 @@
-with(block) vspd = 0;
+with(block) vspeed = 0;

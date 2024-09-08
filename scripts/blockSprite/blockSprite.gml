@@ -14,7 +14,7 @@ function blockSprite() {
 	    {sprite_index = sprBrick; visible = false;}
 	else if room == Stage01A or room == Stage01D {
 	    sprite_index = block01A;
-	    if !place_meeting_block(x, y-16) and y > 0 {
+	    if !place_meeting_block(x, y-16) and (y > 0 or room == Stage01D) {
 	        image_index = 0;
 	    } else {
 	        image_index = 1;

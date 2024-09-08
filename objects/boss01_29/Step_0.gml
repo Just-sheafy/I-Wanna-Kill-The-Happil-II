@@ -30,6 +30,7 @@ if vspeed != 0 {sprite_index = sprBoss01_17; image_speed = 1/2;}
 
 heal = false;
 heal_time += 1;
+if (heal_time >= 22) heal_time -= 22;
 if (instance_exists(Boss01_34) and Boss01_34.b != 1) heal = true;
 if (heal) heal_alpha = min(heal_alpha + 0.05, 1);
 else heal_alpha = max(heal_alpha - 0.05, 0);

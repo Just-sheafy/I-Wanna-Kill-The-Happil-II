@@ -27,11 +27,14 @@ reset_jumps();
 
 xsafe = x;
 ysafe = y;
+xold = x;
+yold = y;
 
 Gravity = 1;
 GravityH = 0;
 noGravity = false;
 is_riding = false;
+vwarp = false;
 
 with(world) {
     if !file_exists(gameCaption+"save") {saveEncrypt();}

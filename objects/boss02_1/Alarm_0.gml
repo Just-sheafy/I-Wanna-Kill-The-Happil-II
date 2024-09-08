@@ -26,7 +26,7 @@ if patt == 0 {
     zx = instance_create_depth(400, 352, -2, Boss02_4);
     zx.alarm[0] = 60;
     zx.qwer = "You Will Die";
-    with(block) image_index = 1;
+    with(block) { image_index = 1; if (x == 352 || x == 384 || x == 416) visible = false; }
 	instance_create_depth(0, 0, 450, Boss02_74);
 	if (layer_exists("Background")) {
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_white);
@@ -355,7 +355,7 @@ else if patt == 76 {
     with(Boss02_2) {sprite_index = sprBoss02_3;}
     with(Boss02_3) {visible = false;}
     with(Boss02_16) {instance_destroy();}
-    block.image_index = 0;
+    with(block) { visible = true; image_index = 0; }
 	with(Boss02_74) instance_destroy();
 	if (layer_exists("Background")) {
 		layer_background_blend(layer_background_get_id(layer_get_id("Background")), c_black);

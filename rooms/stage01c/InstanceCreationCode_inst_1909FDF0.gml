@@ -17,14 +17,14 @@ ftn_step_begin = function() {
 	if (active) {
 		for(i=0; i<3; i+=1) {
 			if (trig[i] && trigger_id[i] != -1 && instance_exists(trigger_id[i])) {
-				if (time < 32) { with(trigger_id[i]) vspd = 2; }
-				else if (time < 48) { with(trigger_id[i]) { hspd = -2; vspd = 0; } }
-				else if (time < 80) { with(trigger_id[i]) hspd = 2; }
-				else if (time < 96) { with(trigger_id[i]) hspd = -2; }
-				else if (time < 112) { with(trigger_id[i]) { hspd = 0; vspd = -4; } }
-				else if (time < 128) { with(trigger_id[i]) vspd = 4; }
-				else if (time < 144) { with(trigger_id[i]) vspd = -4; }
-				else { with(trigger_id[i]) vspd = 0; }
+				if (time < 32) { with(trigger_id[i]) vspeed = 2; }
+				else if (time < 48) { with(trigger_id[i]) { hspeed = -2; vspeed = 0; } }
+				else if (time < 80) { with(trigger_id[i]) hspeed = 2; }
+				else if (time < 96) { with(trigger_id[i]) hspeed = -2; }
+				else if (time < 112) { with(trigger_id[i]) { hspeed = 0; vspeed = -4; } }
+				else if (time < 128) { with(trigger_id[i]) vspeed = 4; }
+				else if (time < 144) { with(trigger_id[i]) vspeed = -4; }
+				else { with(trigger_id[i]) vspeed = 0; }
 			}
 		}
 	}

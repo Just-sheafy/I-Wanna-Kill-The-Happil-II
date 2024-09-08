@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"back03Sr6_tileset",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -25,10 +25,6 @@
   "textureGroupId":{
     "name":"Stage",
     "path":"texturegroups/Stage",
-  },
-  "tileAnimation":{
-    "FrameData":[0,1,2,],
-    "SerialiseFrameCount":1,
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

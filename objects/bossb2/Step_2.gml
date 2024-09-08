@@ -8,3 +8,5 @@ if (instance_exists(sid)) {
         y = sid.y - 36*sin(degtorad(sid.image_angle-45));
     } else instance_destroy();
 } else instance_destroy();
+
+t += 1 / length;

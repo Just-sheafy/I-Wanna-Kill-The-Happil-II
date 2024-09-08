@@ -16,9 +16,121 @@ if (place_meeting(x, y, block)) {
 			break;
 		}
     }
-	
-	if (place_meeting(x, y, block)) kill_player(true);
 }
+
+with(block) {
+	var inst = other;
+	
+	if (inst != noone) {
+		// carry_instance
+		if (!player.GravityH) {
+			if (collision_rectangle(old_left, old_top - (2*player.Gravity-1), old_right, old_bottom - (2*player.Gravity-1), inst, true, true)) {
+			    var carry_x = mean(bbox_left, bbox_right) - mean(old_left, old_right);
+			    var carry_y;
+				if (player.Gravity) carry_y = bbox_top - inst.bbox_bottom - 1;
+				else carry_y = bbox_bottom - inst.bbox_top;
+			
+			    with (inst) {                                     
+			        if (carry_x != 0) {
+			            if (!instance_place(x + carry_x, y, block)) {
+			                x += carry_x;
+			            } else {
+							while (!instance_place(x + sign(carry_x), y, block)) {
+								x += sign(carry_x);
+							}
+			            }
+			        }
+			        if (carry_y > 0) {
+			            if (!instance_place(x, y + carry_y, block)) {
+			                y += carry_y;
+						} else {
+							while (!instance_place(x, y + sign(carry_y), block)) {
+								y += sign(carry_y);
+							}
+			            }
+			        }
+			    }
+			}
+		} else {
+			if (collision_rectangle(old_left - (2*player.Gravity-1), old_top, old_right - (2*player.Gravity-1), old_bottom, inst, true, true)) {
+			    var carry_y = mean(bbox_top, bbox_bottom) - mean(old_top, old_bottom);
+			    var carry_x;
+				if (player.Gravity) carry_x = bbox_left - inst.bbox_right - 1;
+				else carry_x = bbox_right - inst.bbox_left + 1;
+			
+			    with (inst) {                                     
+			        if (carry_x != 0) {
+			            if (!instance_place(x + carry_x, y, block)) {
+			                x += carry_x;
+			            } else {
+							while (!instance_place(x + sign(carry_x), y, block)) {
+								x += sign(carry_x);
+							}
+			            }
+			        }
+			        if (carry_y > 0) {
+			            if (!instance_place(x, y + carry_y, block)) {
+			                y += carry_y;
+						} else {
+							while (!instance_place(x, y + sign(carry_y), block)) {
+								y += sign(carry_y);
+							}
+			            }
+			        }
+			    }
+			}
+		}
+		
+		// push_instance
+		if (place_meeting(x, y, inst)) {
+		    var move_x = 0, move_y = 0;
+				
+		    #region Push horizontally
+		    if (inst.bbox_bottom - (inst.y - inst.yold) >= old_top && inst.bbox_top - (inst.y - inst.yold) <= old_bottom) {
+		        if (inst.bbox_left - (inst.x - inst.xold) >= old_right) {
+		            move_x = bbox_right - inst.bbox_left + 1;
+		            move_x += ((inst.x + move_x) % 2 == 1.5);
+		        } else if (inst.bbox_right - (inst.x - inst.xold) <= old_left) {
+		            move_x = bbox_left - inst.bbox_right - 1;
+		            move_x -= ((inst.x + move_x) % 2 == 0.5);
+		        }
+					
+		        if (move_x != 0) {
+		            with (inst) {
+		                if (!instance_place(x + move_x, y, block)) {
+		                    x += move_x;
+		                }
+		            }
+		        }
+		    }
+		    #endregion
+	        
+		    #region Push vertically
+		    if (inst.bbox_right - (inst.x - inst.xold) >= old_left && inst.bbox_left - (inst.x - inst.xold) <= old_right) {
+		        if (inst.bbox_top - (inst.y - inst.yold) >= old_bottom) {
+		            move_y = bbox_bottom - inst.bbox_top + 1;
+		            move_y += ((inst.y + move_y) % 2 == 1.5);
+		        } else if (inst.bbox_bottom - (inst.y - inst.yold) <= old_top) {
+		            move_y = bbox_top - inst.bbox_bottom - 1;
+		            move_y -= ((inst.y + move_y) % 2 == 0.5);
+		        }
+				
+		        if (move_y != 0) {
+		            with (inst) {
+		                if (!instance_place(x, y + move_y, block)) {
+		                    y += move_y;
+		                }
+		            }
+		        }
+		    }
+		    #endregion
+		}
+	}
+}
+xold = x;
+yold = y;
+
+if (place_meeting(x, y, block)) kill_player(true);
 
 #endregion
 
@@ -55,7 +167,13 @@ if (killer != noone) {
 #region Touches screen border
 if (outside_room()) {
 	if (room != Stage04Bs6 and room != Stage04Bs7) {
-		if (world.kill) kill_player(true);
+		if (instance_exists(Hamjung01E2)) {
+			if (vwarp && y > room_height) {
+				vwarp = false; y -= room_height;
+			} else if (y < 0) {
+				y += room_height;
+			} else if (world.kill) kill_player(true);
+		} else if (world.kill) kill_player(true);
 	} else {
 		audio_stop_sound(snd04_59); audio_stop_sound(snd04_60); audio_stop_sound(snd04_61);
 		audio_play_sound(choose(snd04_59, snd04_60, snd04_61), 0, false, world.sound_vol);

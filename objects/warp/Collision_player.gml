@@ -20,7 +20,7 @@ switch(room) {
                     break;
     case Stage01D: room_goto(Stage01E);
                     player.x = 64;
-                    player.y = 512;
+                    player.y = 128;
                     break;
     case Stage01E: room_goto(Stage01F);
                     player.x = 768;

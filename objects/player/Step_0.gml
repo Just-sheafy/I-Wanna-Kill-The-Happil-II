@@ -277,6 +277,7 @@ if (__block != noone) {
 	x += hspd;
 	y += vspd;
 	
+	/*
 	if (GravityH) {
 		//Makes player move based on the block speed
 		if (!place_meeting(x, y + __block.vspd, block)) {
@@ -293,7 +294,6 @@ if (__block != noone) {
 		y += __block.vspd;
 	}
 	
-	/*
 	//If after the movement it's still inside a block, you die
 	if (place_meeting(x, y, block)) {
 		kill_player();

@@ -1,1 +1,0 @@
-draw_rectangle_color(0, 0, window_get_width(), window_get_height(), c_aqua, c_red, c_red, c_aqua, false);

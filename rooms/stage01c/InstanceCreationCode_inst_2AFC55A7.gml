@@ -19,9 +19,9 @@ ftn_step_begin = function() {
 	if (active) {
 		for(i=0; i<3; i+=1) {
 			if (trig[i] && trigger_id[i] != -1 && instance_exists(trigger_id[i])) {
-				if (time < 24) { with(trigger_id[i]) hspd = 4; }
-				else if (time < 32) { with(trigger_id[i]) { hspd = 0; vspd = -4; } }
-				else { with(trigger_id[i]) vspd = 0; }
+				if (time < 24) { with(trigger_id[i]) hspeed = 4; }
+				else if (time < 32) { with(trigger_id[i]) { hspeed = 0; vspeed = -4; } }
+				else { with(trigger_id[i]) vspeed = 0; }
 			}
 		}
 	}

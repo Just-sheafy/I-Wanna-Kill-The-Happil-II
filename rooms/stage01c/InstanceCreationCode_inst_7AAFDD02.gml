@@ -16,13 +16,15 @@ ftn_step = function() {
 			}
 		} else if (time <= 114) {
 			with(trigger_id[0]) depth = -3;
-		} else if (time <= 402) {
+		} else if (time <= 434) {
 			with(trigger_id[0]) x += 1;
-		} else if (time <= 452) {
-			if (time == 403) {
+		} else if (time <= 484) {
+			if (time == 435) {
 				audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
 				temp = instance_create_depth(0, 0, 0, view_an3);
 				temp.asdf = 15;
+				with(inst_658D14B2) trigger_activate();
+				with(inst_15C344C4) trigger_activate();
 			}
 			with(trigger_id[0]) x += 16;
 		} else instance_destroy();

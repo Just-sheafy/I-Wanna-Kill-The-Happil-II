@@ -50,7 +50,7 @@ if (global.practice >= 0) {
 }
 
 if (room == Stage02Bs4) {
-    patt = -1;
+    patt = -7;
     alarm[2] = 0;
     alarm[3] = 1;
     
