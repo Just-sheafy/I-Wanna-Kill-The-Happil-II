@@ -2,7 +2,7 @@ var i;
 
 if (hspeed < 0 and x <= 32+sprite_get_width(sprite_index)*abs(image_xscale)/2) {
     hspeed = abs(hspeed);
-    x = 32+sprite_get_width(sprite_index)*abs(image_xscale)/2;
+	x = 32+sprite_get_width(sprite_index)*abs(image_xscale)/2;
 }
 if (hspeed > 0 and x >= room_width-32-sprite_get_width(sprite_index)*abs(image_xscale)/2) {
     hspeed = -abs(hspeed);

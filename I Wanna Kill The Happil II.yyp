@@ -280,7 +280,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.0.169",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"I Wanna Kill The Happil II",
   "resources":[
@@ -459,6 +459,7 @@
     {"id":{"name":"Boss02_78","path":"objects/Boss02_78/Boss02_78.yy",},},
     {"id":{"name":"Boss02_79","path":"objects/Boss02_79/Boss02_79.yy",},},
     {"id":{"name":"Boss02_8","path":"objects/Boss02_8/Boss02_8.yy",},},
+    {"id":{"name":"Boss02_80","path":"objects/Boss02_80/Boss02_80.yy",},},
     {"id":{"name":"Boss02_9","path":"objects/Boss02_9/Boss02_9.yy",},},
     {"id":{"name":"Boss02_bef","path":"objects/Boss02_bef/Boss02_bef.yy",},},
     {"id":{"name":"Boss02_h","path":"objects/Boss02_h/Boss02_h.yy",},},
@@ -1973,6 +1974,7 @@
     {"id":{"name":"sprPlayerSliding_guy","path":"sprites/sprPlayerSliding_guy/sprPlayerSliding_guy.yy",},},
     {"id":{"name":"sprPlayerSliding","path":"sprites/sprPlayerSliding/sprPlayerSliding.yy",},},
     {"id":{"name":"sprPlayerStart","path":"sprites/sprPlayerStart/sprPlayerStart.yy",},},
+    {"id":{"name":"sprPredictorWarning","path":"sprites/sprPredictorWarning/sprPredictorWarning.yy",},},
     {"id":{"name":"sprSavePoint","path":"sprites/sprSavePoint/sprSavePoint.yy",},},
     {"id":{"name":"sprSavePoint2","path":"sprites/sprSavePoint2/sprSavePoint2.yy",},},
     {"id":{"name":"sprScreenshot","path":"sprites/sprScreenshot/sprScreenshot.yy",},},

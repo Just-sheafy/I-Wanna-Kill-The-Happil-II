@@ -61,11 +61,19 @@ else if patt == 16 {
     with(Boss02_2) {sprite_index = sprBoss02_4;}
     with(Boss02_3) {sprite_index = sprBoss02_83; visible = true; image_speed = 1;}
     patt += 1;
-    alarm[3] = 30;
+    alarm[3] = pokey_spawn_time;
+	for(var i = 0; i < pokey_count; i++) {
+		var xx = 160*(i+1) - pokey_spd[i] * pokey_spawn_time;
+		var predictor = instance_create_depth(xx, 608, -2, Boss02_80);
+		predictor.hspeed = pokey_spd[i];
+	}
 } else if patt == 18 {
-	for(i=0; i<4; i+=1) {
+	with(Boss02_80) {
+		destroy = true;	
+	}
+	for(i=0; i<pokey_count; i+=1) {
 	    temp = instance_create_depth(160*(i+1), 0, -2, Boss02_77);
-		temp.hspeed = choose(2, -2);
+		temp.hspeed = pokey_spd[i];
 		temp.num = (i == 1 || i == 2)? 3:2;
 		temp.yy1 = 608+64;
 		temp.yy1_spd = (i == 1 || i == 2)? -13:-12;
