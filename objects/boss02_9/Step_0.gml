@@ -1,4 +1,7 @@
-if y > room_height+32 {instance_destroy();}
+if y > room_height+32 {
+	objGoombaController.onGoombaDestroy(id);
+	instance_destroy();
+}
 if !asdf {
     if !place_meeting(x, y+vspeed, block) {gravity = 0.5;} else {
         gravity = 0;

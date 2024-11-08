@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
-  "%Name":"sprBoss02_8",
+  "%Name":"sprBoss02_90",
   "bboxMode":0,
   "bbox_bottom":31,
-  "bbox_left":0,
-  "bbox_right":31,
-  "bbox_top":0,
+  "bbox_left":2,
+  "bbox_right":29,
+  "bbox_top":20,
   "collisionKind":4,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -22,7 +22,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"d783a1db-36eb-4974-9817-b3e178a2353a","blendMode":0,"displayName":"default","isLocked":false,"name":"d783a1db-36eb-4974-9817-b3e178a2353a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"sprBoss02_8",
+  "name":"sprBoss02_90",
   "nineSlice":null,
   "origin":7,
   "parent":{
@@ -70,10 +70,10 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d72d81f9-d16c-42c8-a29b-268b652e7000","path":"sprites/sprBoss02_8/sprBoss02_8.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d72d81f9-d16c-42c8-a29b-268b652e7000","path":"sprites/sprBoss02_90/sprBoss02_90.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"13722b7a-4d21-4a21-a6a9-6c89d01f2ee7","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"815fb47d-525c-4b59-953c-3dbf820f3860","path":"sprites/sprBoss02_8/sprBoss02_8.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"815fb47d-525c-4b59-953c-3dbf820f3860","path":"sprites/sprBoss02_90/sprBoss02_90.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7ef42312-1c4e-4ecc-9bc8-3ac24b8ce79d","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

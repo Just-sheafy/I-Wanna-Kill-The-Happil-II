@@ -378,3 +378,7 @@ if (platform != noone) {
 */
 
 #endregion
+
+with(objGoombaController) {
+	onPlayerStepEnd();	
+}
