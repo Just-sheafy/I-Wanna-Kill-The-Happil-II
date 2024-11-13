@@ -1,0 +1,1 @@
+if (ds_exists(map_text_show, ds_type_map)) ds_map_destroy(map_text_show);

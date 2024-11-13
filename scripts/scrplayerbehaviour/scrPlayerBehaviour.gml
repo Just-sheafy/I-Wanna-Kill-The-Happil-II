@@ -104,7 +104,7 @@ function reset_jumps() {
 
 function kill_player(outside = false) {
     if (instance_exists(player)) {
-		var xx = player.x, yy = player.y, cam = view_camera[0];
+		var temp, xx = player.x, yy = player.y, cam = view_camera[0];
 		
 		if (!world.kill) {
 			if (player.invinc) exit;
@@ -136,6 +136,15 @@ function kill_player(outside = false) {
 		
 		if (instance_exists(objEndCredit) && objEndCredit.gameover) {
 			world.Kill = audio_play_sound(global.Sdeath3, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);
+		} else if (instance_exists(Hamjung01J1)) {
+			world.Kill = audio_play_sound(global.Sdeath3, 5, false, world.music_vol); audio_play_sound(sndDeath, 0, false, world.sound_vol);
+			temp = instance_create_depth(camera_get_view_x(cam)+camera_get_view_width(cam)/2,
+				camera_get_view_y(cam)+camera_get_view_height(cam)/2, -1000, GAMEOVER);
+			temp.sprite_index = spr_credit_gameover;
+			temp.visible = false;
+			temp.image_alpha = 1;
+			temp.mode = 1;
+			temp.alarm[0] = 40;
 		} else {
 			if (room != Stage04Bs7) {
 				if instance_exists(DIE2B) {with(kill_character) {instance_destroy();} instance_create_depth(0, 0, -20, Hamjung02Bs3);}
@@ -150,6 +159,10 @@ function kill_player(outside = false) {
 		world.filePlaying = -1; //For music purposes
 
 		bsq = instance_create_layer(xx, yy, "Player", bloodSquirt);
+		if (instance_exists(Hamjung01J1)) {
+			bsq.mode = 1;
+			bsq.timer = 20;
+		}
 		bsq.xx = xx;
 		bsq.yy = yy;
 		bsq.Gravity = player.Gravity;

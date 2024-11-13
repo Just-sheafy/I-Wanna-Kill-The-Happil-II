@@ -35,7 +35,14 @@ ftn_step = function() {
 	
 	if (active) {
 		if (time < 144) {
-			if (time == 96 || time == 128) audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
+			if (time == 96 || time == 128) {
+				audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
+				if (time == 96) { with(inst_B567DCC) active = true; }
+				else {
+					with(inst_B567DCC) active = false;
+					with(inst_6470990E) active = false;
+				}
+			}
 			for(i=3; i<5; i+=1) {
 				if (trig[i] && trigger_id[i] != -1 && instance_exists(trigger_id[i])) {
 					if (time < 32) trigger_id[i].y += 2;

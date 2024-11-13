@@ -15,7 +15,7 @@ if instance_exists(player) {
             audio_play_sound(sndVJump, 0, false, world.sound_vol);
         }
         switch(room) {
-            case Stage01Hd: room_goto(Stage01J);
+            case Stage01Hd: room_goto(Stage01J2);
                             player.x = 48;
                             player.y = 2752;
                             break;

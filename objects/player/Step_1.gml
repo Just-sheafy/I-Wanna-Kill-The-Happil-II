@@ -7,8 +7,8 @@ if (__screen) {
 	old_mouse_x = mouse_x;
 	old_mouse_y = mouse_y;
 } else {
-	old_mouse_x = display_mouse_get_x() - window_get_x();
-	old_mouse_y = display_mouse_get_y() - window_get_y();
+	old_mouse_x = camera_get_view_x(cam) + display_mouse_get_x() - window_get_x();
+	old_mouse_y = camera_get_view_y(cam) + display_mouse_get_y() - window_get_y();
 }
 mouse_in_window = (old_mouse_x > camera_get_view_x(cam) && old_mouse_x < (800 + camera_get_view_x(cam)) // Horizontal
                     && old_mouse_y > camera_get_view_y(cam) && old_mouse_y < (608 + camera_get_view_y(cam))) // Vertical

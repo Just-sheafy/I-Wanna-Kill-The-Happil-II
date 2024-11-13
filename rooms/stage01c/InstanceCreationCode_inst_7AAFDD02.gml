@@ -14,17 +14,18 @@ ftn_step = function() {
 				image_xscale += 2/32;
 				image_yscale = image_xscale;
 			}
-		} else if (time <= 114) {
+		} else if (time <= 164) {
 			with(trigger_id[0]) depth = -3;
-		} else if (time <= 434) {
-			with(trigger_id[0]) x += 1;
 		} else if (time <= 484) {
-			if (time == 435) {
+			with(trigger_id[0]) x += 1;
+		} else if (time <= 534) {
+			if (time == 485) {
 				audio_play_sound(sndSpikeTrap, 0, false, world.sound_vol);
 				temp = instance_create_depth(0, 0, 0, view_an3);
 				temp.asdf = 15;
 				with(inst_658D14B2) trigger_activate();
 				with(inst_15C344C4) trigger_activate();
+				with(inst_1959CA06) active = false;
 			}
 			with(trigger_id[0]) x += 16;
 		} else instance_destroy();

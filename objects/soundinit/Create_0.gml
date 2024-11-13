@@ -20,6 +20,7 @@ global.overworldB = audio_create_stream("BGM/OverworldB.ogg");
 
 global.stage01A = audio_create_stream("BGM/Stage01A.ogg");
 global.stage01B = audio_create_stream("BGM/Stage01B.ogg");
+global.stage01C = audio_create_stream("BGM/Stage01C.ogg");
 global.stage01Bs1 = audio_create_stream("BGM/Stage01Boss1.ogg");
 global.stage01Bs2 = audio_create_stream("BGM/Stage01Boss2.ogg");
 global.phantom = audio_create_stream("BGM/Phantom.ogg");
@@ -113,7 +114,10 @@ global.stage03Sr2 = audio_create_stream("BGM2/Stage03Secret2.ogg");
 // ETC
 
 global.sndDogma = audio_create_stream("sound/SFX/sndDogma.ogg");
-global.sndEmperor = audio_create_stream("sound/SFX/sndEmperor.wav");
+global.sndEmperor = audio_create_stream("sound/SFX/sndEmperor.ogg");
+global.sndCutscene01J = audio_create_stream("sound/SFX/sndCutscene01J.ogg");
+global.sndCutscene01J2 = audio_create_stream("sound/SFX/sndCutscene01J2.ogg");
+global.sndCutscene01J3 = audio_create_stream("sound/SFX/sndCutscene01J3.ogg");
 
 // CREATE WORLD
 

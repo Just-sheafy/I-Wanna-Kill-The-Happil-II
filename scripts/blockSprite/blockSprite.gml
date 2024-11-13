@@ -67,7 +67,19 @@ function blockSprite() {
 	else if room == Stage01I {
 	    sprite_index = block01I;
 	}
-	else if room == Stage01J or room == Stage01Bs or room == Stage01Bs3 {
+	else if room == Stage01J {
+	    if place_meeting(x,y,Hamjung01E1) {
+			sprite_index = block01J;
+		    if !place_meeting_block(x, y-16) and y > 0 {
+		        image_index = 0;
+		    } else {
+		        image_index = 1;
+		    }
+			exit;
+		}
+	    sprite_index = sprBrick; visible = false;
+	}
+	else if room == Stage01J2 or room == Stage01Bs or room == Stage01Bs3 {
 	    if place_meeting(x,y,Hamjung01E1) {sprite_index = block01Bs; exit;}
 	    sprite_index = sprBrick; visible = false;
 	}
