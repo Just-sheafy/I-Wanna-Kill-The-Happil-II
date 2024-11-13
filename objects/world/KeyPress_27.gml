@@ -32,5 +32,6 @@ if (spr_temp != -1 and sprite_exists(spr_temp)) {
 	spr_temp = -1;
 }
 
+Stage01JSkip = 0;
 secretBoss1Skip = 0;
 global.ROOM_SPEED = 50;

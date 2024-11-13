@@ -20,6 +20,7 @@ function sound_group() {
 
 	ds_list_add(list_sounds[0], global.stage01A);
 	ds_list_add(list_sounds[0], global.stage01B);
+	ds_list_add(list_sounds[0], global.stage01C);
 	ds_list_add(list_sounds[0], global.stage01Bs1);
 	ds_list_add(list_sounds[0], global.stage01Bs2);
 	ds_list_add(list_sounds[0], global.phantom);
@@ -84,9 +85,13 @@ function sound_group() {
 	ds_list_add(list_sounds[1], sndBossHit2);
 	ds_list_add(list_sounds[1], sndBreak);
 	ds_list_add(list_sounds[1], sndBulletBounce);
+	ds_list_add(list_sounds[1], sndCamera);
 	ds_list_add(list_sounds[1], sndChark);
 	ds_list_add(list_sounds[1], sndCherry);
 	ds_list_add(list_sounds[1], sndClear);
+	ds_list_add(list_sounds[0], global.sndCutscene01J);
+	ds_list_add(list_sounds[0], global.sndCutscene01J2);
+	ds_list_add(list_sounds[0], global.sndCutscene01J3);
 	ds_list_add(list_sounds[1], sndDeath);
 	ds_list_add(list_sounds[1], sndDJump);
 	ds_list_add(list_sounds[0], global.sndDogma);
@@ -133,6 +138,7 @@ function sound_group() {
 	ds_list_add(list_sounds[1], snd01_13);
 	ds_list_add(list_sounds[1], snd01_14);
 	ds_list_add(list_sounds[1], snd01_15);
+	ds_list_add(list_sounds[1], snd01_16);
 	ds_list_add(list_sounds[1], sndBossB);
 
 	ds_list_add(list_sounds[1], snd02_1);

@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"back01J6_tileset",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"back01J6_tileset",
+  "out_columns":3,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Stage01",
+    "path":"folders/Tile Sets/Stage01.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"back01J6",
+    "path":"sprites/back01J6/back01J6.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Stage",
+    "path":"texturegroups/Stage",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":32,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":32,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":12,
+}

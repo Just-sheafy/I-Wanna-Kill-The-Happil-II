@@ -1,0 +1,1 @@
+if (mode == 1 && y > room_height + 64) instance_destroy();

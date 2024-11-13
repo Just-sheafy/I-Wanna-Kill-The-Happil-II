@@ -5,6 +5,7 @@ b = 0;
 c = 0;
 d = 0;
 h = 8;
+mode = 0;
 if !instance_exists(Hamjung02Bs3) {a = 1;}
 
 event = 0;

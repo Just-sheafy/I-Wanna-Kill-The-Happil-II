@@ -45,6 +45,7 @@ audio_destroy_stream_check(global.overworldB);
 
 audio_destroy_stream_check(global.stage01A);
 audio_destroy_stream_check(global.stage01B);
+audio_destroy_stream_check(global.stage01C);
 audio_destroy_stream_check(global.stage01Bs1);
 audio_destroy_stream_check(global.stage01Bs2);
 audio_destroy_stream_check(global.phantom);
@@ -94,3 +95,6 @@ audio_destroy_stream_check(global.stage03Sr2);
 
 audio_destroy_stream_check(global.sndDogma);
 audio_destroy_stream_check(global.sndEmperor);
+audio_destroy_stream_check(global.sndCutscene01J);
+audio_destroy_stream_check(global.sndCutscene01J2);
+audio_destroy_stream_check(global.sndCutscene01J3);

@@ -11,7 +11,7 @@ switch(room) {
                     player.x = 128;
                     player.y = 64;
                     break;
-    case Stage01Hd: room_goto(Stage01J);
+    case Stage01Hd: room_goto(Stage01J2);
                     player.x = 48;
                     player.y = 2752;
                     world.items[0] = 1;

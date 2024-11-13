@@ -6,6 +6,7 @@ if room == Stage01D {sprite_index = sprSpikeDown1D;}
 if room == Stage01E {sprite_index = sprSpikeDown1E;}
 if room == Stage01G {sprite_index = sprSpikeDown1G;}
 if room == Stage01I {sprite_index = sprSpikeDown1I;}
+if room == Stage01J {sprite_index = sprSpikeDown1J;}
 if room == Stage02A {sprite_index = sprSpikeDown2A;}
 if room == Stage02D {sprite_index = sprSpikeDown2D;}
 if room == Stage02E or room == Stage02H or room == Stage02I or room == Stage03H {sprite_index = sprSpikeDown2E;}

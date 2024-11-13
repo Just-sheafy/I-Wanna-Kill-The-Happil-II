@@ -80,10 +80,18 @@ function musicFunctions() {
 	        }
 	        break;
 	    case Stage01J:
-	        if filePlaying != 1.5 and curMusic != global.stage01B {
+	        if filePlaying != 1.25 and curMusic != global.stage01B {
+				audio_stop_channel(0);
+	            filePlaying = -1;
+	            curMusic = global.Silent;
+	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
+	        }
+	        break;
+	    case Stage01J2:
+	        if filePlaying != 1.5 and curMusic != global.stage01C {
 				audio_stop_channel(0);
 	            filePlaying = 1.5;
-	            curMusic = global.stage01B;
+	            curMusic = global.stage01C;
 	            Instance = audio_play_sound(curMusic, 10, true, world.music_vol);
 	        }
 	        break;

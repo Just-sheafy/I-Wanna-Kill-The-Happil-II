@@ -65,10 +65,10 @@ if (room !=  initRoom and room != beforeRoom and room != startRoom and room != l
 	if !instance_exists(camera) {
 	    instance_create_layer(0, 0, "Player", camera);
 	}
-	if (!instance_exists(MouseC) && room != Stage04Bs6) {
+	if (!instance_exists(MouseC) && room != Stage01J && room != Stage04Bs6) {
 	    instance_create_layer(0, 0, "Player", MouseC);
 	}
-	if (!instance_exists(StageGet) and room != Stage04Bs6) {
+	if (!instance_exists(StageGet) && room != Stage01J && room != Stage04Bs6) {
 		instance_create_depth(3200, 0, -2000, StageGet);
 	}
 }

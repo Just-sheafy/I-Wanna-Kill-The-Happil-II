@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprHamjung01F1",
-    "path":"sprites/sprHamjung01F1/sprHamjung01F1.yy",
+    "name":"sprHamjung01E2",
+    "path":"sprites/sprHamjung01E2/sprHamjung01E2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

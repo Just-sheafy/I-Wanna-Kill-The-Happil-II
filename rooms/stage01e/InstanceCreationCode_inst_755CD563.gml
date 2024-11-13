@@ -10,6 +10,10 @@ trigger_activate = function() {
 	
 	if (!active) {
 		audio_play_sound(sndBlockChange, 0, false, world.sound_vol);
+		instance_create_depth(0, 0, -2, Hamjung01E4);
+		for(i=0; i<53; i+=1) {
+			instance_create_depth(256+32*i, 544, 10, Hamjung01E3);
+		}
 		active = true;
 	} else if (patt == 1) {
 		audio_play_sound(sndBlockChange, 0, false, world.sound_vol);

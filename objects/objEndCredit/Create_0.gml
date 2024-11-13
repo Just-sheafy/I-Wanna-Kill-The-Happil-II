@@ -43,7 +43,6 @@ if (global.practice < 0 && world.credit_played) {
 		world.hp_before = -1;
 	}
 	
-	if (world.SI_ok) audio_play_sound(sndStage, 0, false, world.sound_vol);
 	var zx = instance_create_depth(800, 0, -2000, StageGet);
 	zx.image_index = 68;
 } else {
@@ -87,11 +86,12 @@ ds_list_add(end_text, "Fatherpucci, Forehead Man, Fruitless");
 															ds_list_add(col, "LIGHTWHITE");
 ds_list_add(end_text, "Game Player Dark, Happy, Hercule");	ds_list_add(col, "LIGHTWHITE");
 ds_list_add(end_text, "Hosungryn, IanBoy141, Keecker");		ds_list_add(col, "LIGHTWHITE");
-ds_list_add(end_text, "Kizelf, Matsugon, Muni, Murzikk");	ds_list_add(col, "LIGHTWHITE");
-ds_list_add(end_text, "Only, Phooey, Mayuri, Renko97");
+ds_list_add(end_text, "Kizelf, Marix, Matsugon, Mayuri");	ds_list_add(col, "LIGHTWHITE");
+ds_list_add(end_text, "Muni, Murzikk, Only, Phooey, Renko97");
 															ds_list_add(col, "LIGHTWHITE");
-ds_list_add(end_text, "ScienceKiller, Sharp, Square");		ds_list_add(col, "LIGHTWHITE");
-ds_list_add(end_text, "Tasffil, Zilyno");					ds_list_add(col, "LIGHTWHITE");
+ds_list_add(end_text, "ScienceKiller, Scrapilman, Sharp, Square");
+															ds_list_add(col, "LIGHTWHITE");
+ds_list_add(end_text, "Tasffil, YGamingDude, Zilyno");		ds_list_add(col, "LIGHTWHITE");
 ds_list_add(end_text, "");									ds_list_add(col, "WHITE");
 ds_list_add(end_text, "");									ds_list_add(col, "WHITE");
 ds_list_add(end_text, "");									ds_list_add(col, "WHITE");

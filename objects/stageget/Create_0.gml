@@ -1,9 +1,10 @@
 var cam = view_camera[0];
 
+Instance = -1;
 if (global.practice != -1 or !world.SI_ok or room == Stage02Bs3 or room == Stage02Bs4 or
 	room == Stage04Bs4 or room == Stage04Bs8) {
 	visible = false;
-} else Instance = audio_play_sound(sndStage, 0, false, world.sound_vol);
+}
 x=camera_get_view_x(cam)+camera_get_view_width(cam);
 y=camera_get_view_y(cam);
 ox=0;
@@ -27,7 +28,7 @@ if room == Stage01F {image_index=6;}
 if room == Stage01G {image_index=7;}
 if room == Stage01H {image_index=8;}
 if room == Stage01I {image_index=9;}
-if room == Stage01J {image_index=10;}
+if room == Stage01J or room == Stage01J2 {image_index=10;}
 if room == Stage01Bs {image_index=0;}
 if room == Stage01Bs2 {image_index=12;}
 if room == Stage01Bs3 {image_index=13;}

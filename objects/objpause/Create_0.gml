@@ -31,7 +31,7 @@ surface_reset_target();
 
 instance_deactivate_all(1);
 instance_activate_object(world);
-application_surface_enable(false);
+// application_surface_enable(false);
 
 audio_pause_sound(world.Instance);
 

@@ -11,13 +11,19 @@ pause_time = max(pause_time-1, 0);
 if (!instance_exists(objPause)) {
 	if (room != initRoom and room != beforeRoom and room != startRoom and room != loadRoom and room != beginning) {
 		if (global.TEST && keyboard_check_pressed(vk_anykey)) {
-			if (keyboard_key == consoleKey) {
+			if (keyboard_key == consoleKey or (keyboard_check(vk_alt) && keyboard_key == 31)) {
 				// Enable console
 				global.console = !global.console;
 				macro_text = "";
 				error_text = "";
 				macro_input = 0;
 				delete_time = 0;
+			} else if (!global.console && keyboard_key == hotKey) {
+				if (ds_list_size(list_console_text) > 0) {
+					global.console = true;
+					macro_input = 0;
+					macro_temp = ds_list_find_value(list_console_text, 0);
+				}
 			} else if (!global.console && ds_exists(map_macro_key, ds_type_map) && ds_exists(map_macro, ds_type_map)) {
 				for(i=0; i<macro_num; i+=1) {
 					if (ds_map_exists(map_macro_key, "macro" + string(i)) &&
@@ -41,11 +47,14 @@ if (!instance_exists(objPause)) {
 		room != Stage04Bs7 and (instance_exists(SavePoint2) or (room != Stage01Bs and room != Stage02Bs and
 		room != Stage03Bs and room != Stage04Bs and room != Stage01Sr and room != Stage02Sr and
 		room != Stage03Sr))) {
-		if (!global.console && pause_time <= 0 && keyboard_check_pressed(pauseKey)) {
-			// Pause
-			var cam = view_camera[0];
-	        instance_create_depth(camera_get_view_x(cam),camera_get_view_y(cam),-1200,objPause);
-			audio_play_sound(sndPaused, 0, false, world.sound_vol);
+		if (!instance_exists(Cutscene01J)) {
+			// not playing cutscene
+			if (!global.console && pause_time <= 0 && keyboard_check_pressed(pauseKey)) {
+				// Pause
+				var cam = view_camera[0];
+		        instance_create_depth(camera_get_view_x(cam),camera_get_view_y(cam),-1200,objPause);
+				audio_play_sound(sndPaused, 0, false, world.sound_vol);
+			}
 		}
 	}
 }
@@ -68,9 +77,9 @@ if (global.console) {
 			if (str == vk_escape) {
 				macro_input = 0;
 				error_text = "";
-			} else if (str == vk_enter or str == vk_f2 or str == leftKey or str == rightKey or
+			} else if (str == vk_enter or str == vk_f2 or str == vk_alt or str == leftKey or str == rightKey or
 				str == upKey or str == downKey or str == jumpKey or str == shootKey or str == skipKey or
-				str == gameRestart or str == pauseKey or str == consoleKey) {
+				str == gameRestart or str == pauseKey or str == consoleKey or str == hotKey) {
 				macro_input = 0;
 				error_text = "INVALID INPUTS";
 			} else if (str != vk_f4 and str != vk_f9) {

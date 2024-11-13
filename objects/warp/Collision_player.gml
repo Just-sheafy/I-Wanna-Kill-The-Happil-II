@@ -42,11 +42,11 @@ switch(room) {
                     
                    }
                     break;
-    case Stage01I: room_goto(Stage01J);
+    case Stage01I: room_goto(Stage01J2);
                     player.x = 48;
                     player.y = 2752;
                     break;
-    case Stage01J: room_goto(Stage01Bs);
+    case Stage01J2: room_goto(Stage01Bs);
                     player.x = 64;
                     player.y = 384;
                     world.achieve[13] = 1;

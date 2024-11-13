@@ -63,6 +63,7 @@ suicide = ord("Q");
 musicKey = ord("M");
 pauseKey = ord("P");
 consoleKey = 192;
+hotKey = vk_tab;
 
 forcedSave = ord("C"); // debug setting
 forcedLoad = ord("X");
@@ -165,6 +166,7 @@ pause_time = 0;
 surf_temp = -1;
 spr_temp = -1;
 
+Stage01JSkip = 0;
 secretBoss1Skip = 0;
 Boss4HP = 44;
 
@@ -282,7 +284,7 @@ TEST_FUNCTIONS.ROOM = function(__str1, __str2, ability = true) {
 	} else if (str1 == "1") {
 		l1 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "BS", "BOSS", "SR", "SECRET", "HD", "HIDDEN"];
 		l2 = [Stage01A, Stage01B, Stage01C, Stage01D, Stage01E, Stage01F, Stage01G, Stage01H,
-			Stage01I, Stage01J, Stage01Bs, Stage01Bs, Stage01Sr, Stage01Sr, Stage01Hd, Stage01Hd];
+			Stage01I, Stage01J2, Stage01Bs, Stage01Bs, Stage01Sr, Stage01Sr, Stage01Hd, Stage01Hd];
 		for(i=0; i<array_length(l1); i+=1) {
 			if (str2 == l1[i]) {
 				if (room != l2[i]) {
@@ -546,7 +548,8 @@ TEST_FUNCTIONS.ITEM = function(__str1, __str2, ability = true) {
 		}
 	} else if (str1 != "" && str1 == string_digits(str1)) {
 		num = floor(int64(str1));
-		if (num >= 0 and num < 16) {
+		if (num >= 1 and num <= 16) {
+			num -= 1;
 			if (str2 == "T" or str2 == "TRUE") {
 				if (ability) items[num] = true;
 				return true;
@@ -594,7 +597,8 @@ TEST_FUNCTIONS.ACHIEVEMENT = function(__str1, __str2, ability = true) {
 		}
 	} else if (str1 != "" && str1 == string_digits(str1)) {
 		num = floor(int64(str1));
-		if (num >= 0 and num < 72) {
+		if (num >= 1 and num <= 72) {
+			num -= 1;
 			if (str2 == "T" or str2 == "TRUE") {
 				if (ability) achieve[num] = true;
 				return true;

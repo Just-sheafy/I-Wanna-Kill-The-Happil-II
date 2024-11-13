@@ -5,3 +5,5 @@ timer = 0;
 amount = 40;
 Gravity = 1;
 GravityH = 0;
+
+mode = 0;
